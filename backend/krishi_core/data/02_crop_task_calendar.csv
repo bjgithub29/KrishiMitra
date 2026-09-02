@@ -1,0 +1,552 @@
+task_id,crop_name,stage,day_from_sowing_start,day_from_sowing_end,task_category,task,description,frequency,priority
+1,Potato,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+2,Potato,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+3,Potato,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+4,Potato,Sowing,0,3,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+5,Potato,Sowing,0,3,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+6,Potato,Sowing,0,3,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+7,Potato,Germination & Establishment,3,14,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+8,Potato,Germination & Establishment,3,14,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+9,Potato,Germination & Establishment,3,14,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+10,Potato,Vegetative Growth,14,40,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+11,Potato,Vegetative Growth,14,40,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+12,Potato,Vegetative Growth,14,40,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+13,Potato,Vegetative Growth,14,40,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+14,Potato,Flowering / Reproductive,40,63,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+15,Potato,Flowering / Reproductive,40,63,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+16,Potato,Flowering / Reproductive,40,63,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+17,Potato,Flowering / Reproductive,40,63,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+18,Potato,Maturity & Pre-Harvest,63,86,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+19,Potato,Maturity & Pre-Harvest,63,86,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+20,Potato,Maturity & Pre-Harvest,63,86,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+21,Potato,Harvest & Post-Harvest,86,90,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+22,Potato,Harvest & Post-Harvest,86,90,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+23,Potato,Harvest & Post-Harvest,86,90,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+24,Fennel,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+25,Fennel,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+26,Fennel,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+27,Fennel,Sowing,0,4,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+28,Fennel,Sowing,0,4,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+29,Fennel,Sowing,0,4,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+30,Fennel,Germination & Establishment,4,22,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+31,Fennel,Germination & Establishment,4,22,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+32,Fennel,Germination & Establishment,4,22,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+33,Fennel,Vegetative Growth,22,68,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+34,Fennel,Vegetative Growth,22,68,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+35,Fennel,Vegetative Growth,22,68,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+36,Fennel,Vegetative Growth,22,68,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+37,Fennel,Flowering / Reproductive,68,105,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+38,Fennel,Flowering / Reproductive,68,105,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+39,Fennel,Flowering / Reproductive,68,105,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+40,Fennel,Flowering / Reproductive,68,105,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+41,Fennel,Maturity & Pre-Harvest,105,142,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+42,Fennel,Maturity & Pre-Harvest,105,142,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+43,Fennel,Maturity & Pre-Harvest,105,142,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+44,Fennel,Harvest & Post-Harvest,142,150,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+45,Fennel,Harvest & Post-Harvest,142,150,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+46,Fennel,Harvest & Post-Harvest,142,150,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+47,ChickPea,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+48,ChickPea,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+49,ChickPea,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+50,ChickPea,Sowing,0,3,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+51,ChickPea,Sowing,0,3,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+52,ChickPea,Sowing,0,3,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+53,ChickPea,Germination & Establishment,3,15,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+54,ChickPea,Germination & Establishment,3,15,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+55,ChickPea,Germination & Establishment,3,15,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+56,ChickPea,Vegetative Growth,15,45,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+57,ChickPea,Vegetative Growth,15,45,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+58,ChickPea,Vegetative Growth,15,45,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+59,ChickPea,Vegetative Growth,15,45,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+60,ChickPea,Flowering / Reproductive,45,70,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+61,ChickPea,Flowering / Reproductive,45,70,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+62,ChickPea,Flowering / Reproductive,45,70,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+63,ChickPea,Flowering / Reproductive,45,70,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+64,ChickPea,Maturity & Pre-Harvest,70,95,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+65,ChickPea,Maturity & Pre-Harvest,70,95,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+66,ChickPea,Maturity & Pre-Harvest,70,95,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+67,ChickPea,Harvest & Post-Harvest,95,100,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+68,ChickPea,Harvest & Post-Harvest,95,100,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+69,ChickPea,Harvest & Post-Harvest,95,100,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+70,Tomato,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+71,Tomato,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+72,Tomato,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+73,Tomato,Sowing,0,3,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+74,Tomato,Sowing,0,3,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+75,Tomato,Sowing,0,3,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+76,Tomato,Germination & Establishment,3,16,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+77,Tomato,Germination & Establishment,3,16,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+78,Tomato,Germination & Establishment,3,16,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+79,Tomato,Vegetative Growth,16,50,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+80,Tomato,Vegetative Growth,16,50,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+81,Tomato,Vegetative Growth,16,50,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+82,Tomato,Vegetative Growth,16,50,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+83,Tomato,Flowering / Reproductive,50,77,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+84,Tomato,Flowering / Reproductive,50,77,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+85,Tomato,Flowering / Reproductive,50,77,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+86,Tomato,Flowering / Reproductive,50,77,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+87,Tomato,Maturity & Pre-Harvest,77,104,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+88,Tomato,Maturity & Pre-Harvest,77,104,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+89,Tomato,Maturity & Pre-Harvest,77,104,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+90,Tomato,Harvest & Post-Harvest,104,110,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+91,Tomato,Harvest & Post-Harvest,104,110,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+92,Tomato,Harvest & Post-Harvest,104,110,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+93,Banana,Land Preparation,-30,0,Land Prep,Pit/field preparation,Dig pits or prepare beds with FYM incorporation.,One-time,Medium
+94,Banana,Land Preparation,-30,0,Land Prep,Layout & spacing,Mark planting layout per recommended spacing.,One-time,Medium
+95,Banana,Planting/Establishment,0,30,Sowing,Transplanting/Planting,Plant healthy seedlings/suckers/setts at correct depth.,One-time,Medium
+96,Banana,Planting/Establishment,0,30,Irrigation,Establishment irrigation,Irrigate immediately after planting and at frequent intervals.,Every 3-5 days,High
+97,Banana,Planting/Establishment,0,30,Monitoring,Gap filling,Replace dead/weak plants within first month.,One-time,Medium
+98,Banana,Vegetative Growth,30,150,Fertilizer,Basal + split fertilizer,Apply NPK in split doses as per crop stage.,Monthly,High
+99,Banana,Vegetative Growth,30,150,Irrigation,Regular irrigation,Maintain consistent moisture as per crop water requirement.,Weekly,High
+100,Banana,Vegetative Growth,30,150,Weeding,Weed control,Remove weeds/mulch to conserve moisture and reduce competition.,Monthly,Medium
+101,Banana,Vegetative Growth,30,150,Pest Scouting,Routine pest scouting,"Check for borers, mites, and sucking pests.",Weekly,High
+102,Banana,Flowering/Fruiting,150,250,Fertilizer,Flowering-stage nutrition,Apply K-rich fertilizer to support flowering/fruit set.,Monthly,High
+103,Banana,Flowering/Fruiting,150,250,Irrigation,Critical stage irrigation,Avoid moisture stress during flowering/fruit development.,Weekly,High
+104,Banana,Flowering/Fruiting,150,250,Disease Scouting,Fungal/bacterial disease check,"Inspect for wilt/leaf spot/anthracnose, especially in humid weather.",Weekly,Medium
+105,Banana,Maturity & Harvest,250,330,Monitoring,Maturity indicators,Check color/size/firmness for harvest readiness.,Weekly,Medium
+106,Banana,Maturity & Harvest,250,330,Harvest,Harvesting,Harvest in stages as produce matures.,As needed,Medium
+107,Banana,Maturity & Harvest,250,330,Post-Harvest,Grading & storage,"Grade, pack and store/transport produce promptly.",One-time,Medium
+108,Barley,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+109,Barley,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+110,Barley,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+111,Barley,Sowing,0,3,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+112,Barley,Sowing,0,3,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+113,Barley,Sowing,0,3,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+114,Barley,Germination & Establishment,3,17,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+115,Barley,Germination & Establishment,3,17,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+116,Barley,Germination & Establishment,3,17,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+117,Barley,Vegetative Growth,17,52,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+118,Barley,Vegetative Growth,17,52,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+119,Barley,Vegetative Growth,17,52,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+120,Barley,Vegetative Growth,17,52,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+121,Barley,Flowering / Reproductive,52,80,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+122,Barley,Flowering / Reproductive,52,80,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+123,Barley,Flowering / Reproductive,52,80,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+124,Barley,Flowering / Reproductive,52,80,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+125,Barley,Maturity & Pre-Harvest,80,109,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+126,Barley,Maturity & Pre-Harvest,80,109,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+127,Barley,Maturity & Pre-Harvest,80,109,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+128,Barley,Harvest & Post-Harvest,109,115,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+129,Barley,Harvest & Post-Harvest,109,115,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+130,Barley,Harvest & Post-Harvest,109,115,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+131,Maize,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+132,Maize,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+133,Maize,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+134,Maize,Sowing,0,3,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+135,Maize,Sowing,0,3,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+136,Maize,Sowing,0,3,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+137,Maize,Germination & Establishment,3,15,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+138,Maize,Germination & Establishment,3,15,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+139,Maize,Germination & Establishment,3,15,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+140,Maize,Vegetative Growth,15,45,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+141,Maize,Vegetative Growth,15,45,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+142,Maize,Vegetative Growth,15,45,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+143,Maize,Vegetative Growth,15,45,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+144,Maize,Flowering / Reproductive,45,70,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+145,Maize,Flowering / Reproductive,45,70,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+146,Maize,Flowering / Reproductive,45,70,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+147,Maize,Flowering / Reproductive,45,70,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+148,Maize,Maturity & Pre-Harvest,70,95,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+149,Maize,Maturity & Pre-Harvest,70,95,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+150,Maize,Maturity & Pre-Harvest,70,95,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+151,Maize,Harvest & Post-Harvest,95,100,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+152,Maize,Harvest & Post-Harvest,95,100,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+153,Maize,Harvest & Post-Harvest,95,100,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+154,Mustard,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+155,Mustard,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+156,Mustard,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+157,Mustard,Sowing,0,4,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+158,Mustard,Sowing,0,4,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+159,Mustard,Sowing,0,4,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+160,Mustard,Germination & Establishment,4,18,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+161,Mustard,Germination & Establishment,4,18,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+162,Mustard,Germination & Establishment,4,18,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+163,Mustard,Vegetative Growth,18,54,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+164,Mustard,Vegetative Growth,18,54,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+165,Mustard,Vegetative Growth,18,54,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+166,Mustard,Vegetative Growth,18,54,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+167,Mustard,Flowering / Reproductive,54,84,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+168,Mustard,Flowering / Reproductive,54,84,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+169,Mustard,Flowering / Reproductive,54,84,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+170,Mustard,Flowering / Reproductive,54,84,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+171,Mustard,Maturity & Pre-Harvest,84,114,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+172,Mustard,Maturity & Pre-Harvest,84,114,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+173,Mustard,Maturity & Pre-Harvest,84,114,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+174,Mustard,Harvest & Post-Harvest,114,120,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+175,Mustard,Harvest & Post-Harvest,114,120,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+176,Mustard,Harvest & Post-Harvest,114,120,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+177,Guar,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+178,Guar,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+179,Guar,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+180,Guar,Sowing,0,3,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+181,Guar,Sowing,0,3,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+182,Guar,Sowing,0,3,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+183,Guar,Germination & Establishment,3,14,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+184,Guar,Germination & Establishment,3,14,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+185,Guar,Germination & Establishment,3,14,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+186,Guar,Vegetative Growth,14,40,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+187,Guar,Vegetative Growth,14,40,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+188,Guar,Vegetative Growth,14,40,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+189,Guar,Vegetative Growth,14,40,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+190,Guar,Flowering / Reproductive,40,63,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+191,Guar,Flowering / Reproductive,40,63,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+192,Guar,Flowering / Reproductive,40,63,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+193,Guar,Flowering / Reproductive,40,63,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+194,Guar,Maturity & Pre-Harvest,63,86,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+195,Guar,Maturity & Pre-Harvest,63,86,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+196,Guar,Maturity & Pre-Harvest,63,86,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+197,Guar,Harvest & Post-Harvest,86,90,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+198,Guar,Harvest & Post-Harvest,86,90,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+199,Guar,Harvest & Post-Harvest,86,90,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+200,Castor,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+201,Castor,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+202,Castor,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+203,Castor,Sowing,0,4,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+204,Castor,Sowing,0,4,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+205,Castor,Sowing,0,4,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+206,Castor,Germination & Establishment,4,22,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+207,Castor,Germination & Establishment,4,22,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+208,Castor,Germination & Establishment,4,22,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+209,Castor,Vegetative Growth,22,68,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+210,Castor,Vegetative Growth,22,68,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+211,Castor,Vegetative Growth,22,68,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+212,Castor,Vegetative Growth,22,68,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+213,Castor,Flowering / Reproductive,68,105,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+214,Castor,Flowering / Reproductive,68,105,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+215,Castor,Flowering / Reproductive,68,105,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+216,Castor,Flowering / Reproductive,68,105,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+217,Castor,Maturity & Pre-Harvest,105,142,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+218,Castor,Maturity & Pre-Harvest,105,142,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+219,Castor,Maturity & Pre-Harvest,105,142,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+220,Castor,Harvest & Post-Harvest,142,150,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+221,Castor,Harvest & Post-Harvest,142,150,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+222,Castor,Harvest & Post-Harvest,142,150,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+223,Sunflower,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+224,Sunflower,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+225,Sunflower,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+226,Sunflower,Sowing,0,3,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+227,Sunflower,Sowing,0,3,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+228,Sunflower,Sowing,0,3,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+229,Sunflower,Germination & Establishment,3,14,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+230,Sunflower,Germination & Establishment,3,14,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+231,Sunflower,Germination & Establishment,3,14,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+232,Sunflower,Vegetative Growth,14,43,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+233,Sunflower,Vegetative Growth,14,43,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+234,Sunflower,Vegetative Growth,14,43,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+235,Sunflower,Vegetative Growth,14,43,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+236,Sunflower,Flowering / Reproductive,43,66,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+237,Sunflower,Flowering / Reproductive,43,66,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+238,Sunflower,Flowering / Reproductive,43,66,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+239,Sunflower,Flowering / Reproductive,43,66,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+240,Sunflower,Maturity & Pre-Harvest,66,90,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+241,Sunflower,Maturity & Pre-Harvest,66,90,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+242,Sunflower,Maturity & Pre-Harvest,66,90,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+243,Sunflower,Harvest & Post-Harvest,90,95,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+244,Sunflower,Harvest & Post-Harvest,90,95,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+245,Sunflower,Harvest & Post-Harvest,90,95,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+246,Sesame,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+247,Sesame,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+248,Sesame,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+249,Sesame,Sowing,0,3,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+250,Sesame,Sowing,0,3,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+251,Sesame,Sowing,0,3,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+252,Sesame,Germination & Establishment,3,14,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+253,Sesame,Germination & Establishment,3,14,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+254,Sesame,Germination & Establishment,3,14,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+255,Sesame,Vegetative Growth,14,40,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+256,Sesame,Vegetative Growth,14,40,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+257,Sesame,Vegetative Growth,14,40,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+258,Sesame,Vegetative Growth,14,40,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+259,Sesame,Flowering / Reproductive,40,63,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+260,Sesame,Flowering / Reproductive,40,63,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+261,Sesame,Flowering / Reproductive,40,63,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+262,Sesame,Flowering / Reproductive,40,63,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+263,Sesame,Maturity & Pre-Harvest,63,86,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+264,Sesame,Maturity & Pre-Harvest,63,86,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+265,Sesame,Maturity & Pre-Harvest,63,86,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+266,Sesame,Harvest & Post-Harvest,86,90,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+267,Sesame,Harvest & Post-Harvest,86,90,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+268,Sesame,Harvest & Post-Harvest,86,90,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+269,Cotton,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+270,Cotton,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+271,Cotton,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+272,Cotton,Sowing,0,5,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+273,Cotton,Sowing,0,5,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+274,Cotton,Sowing,0,5,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+275,Cotton,Germination & Establishment,5,27,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+276,Cotton,Germination & Establishment,5,27,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+277,Cotton,Germination & Establishment,5,27,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+278,Cotton,Vegetative Growth,27,81,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+279,Cotton,Vegetative Growth,27,81,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+280,Cotton,Vegetative Growth,27,81,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+281,Cotton,Vegetative Growth,27,81,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+282,Cotton,Flowering / Reproductive,81,126,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+283,Cotton,Flowering / Reproductive,81,126,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+284,Cotton,Flowering / Reproductive,81,126,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+285,Cotton,Flowering / Reproductive,81,126,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+286,Cotton,Maturity & Pre-Harvest,126,171,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+287,Cotton,Maturity & Pre-Harvest,126,171,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+288,Cotton,Maturity & Pre-Harvest,126,171,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+289,Cotton,Harvest & Post-Harvest,171,180,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+290,Cotton,Harvest & Post-Harvest,171,180,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+291,Cotton,Harvest & Post-Harvest,171,180,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+292,Groundnut,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+293,Groundnut,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+294,Groundnut,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+295,Groundnut,Sowing,0,3,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+296,Groundnut,Sowing,0,3,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+297,Groundnut,Sowing,0,3,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+298,Groundnut,Germination & Establishment,3,16,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+299,Groundnut,Germination & Establishment,3,16,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+300,Groundnut,Germination & Establishment,3,16,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+301,Groundnut,Vegetative Growth,16,50,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+302,Groundnut,Vegetative Growth,16,50,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+303,Groundnut,Vegetative Growth,16,50,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+304,Groundnut,Vegetative Growth,16,50,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+305,Groundnut,Flowering / Reproductive,50,77,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+306,Groundnut,Flowering / Reproductive,50,77,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+307,Groundnut,Flowering / Reproductive,50,77,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+308,Groundnut,Flowering / Reproductive,50,77,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+309,Groundnut,Maturity & Pre-Harvest,77,104,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+310,Groundnut,Maturity & Pre-Harvest,77,104,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+311,Groundnut,Maturity & Pre-Harvest,77,104,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+312,Groundnut,Harvest & Post-Harvest,104,110,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+313,Groundnut,Harvest & Post-Harvest,104,110,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+314,Groundnut,Harvest & Post-Harvest,104,110,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+315,Chilli,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+316,Chilli,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+317,Chilli,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+318,Chilli,Sowing,0,4,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+319,Chilli,Sowing,0,4,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+320,Chilli,Sowing,0,4,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+321,Chilli,Germination & Establishment,4,22,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+322,Chilli,Germination & Establishment,4,22,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+323,Chilli,Germination & Establishment,4,22,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+324,Chilli,Vegetative Growth,22,68,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+325,Chilli,Vegetative Growth,22,68,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+326,Chilli,Vegetative Growth,22,68,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+327,Chilli,Vegetative Growth,22,68,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+328,Chilli,Flowering / Reproductive,68,105,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+329,Chilli,Flowering / Reproductive,68,105,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+330,Chilli,Flowering / Reproductive,68,105,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+331,Chilli,Flowering / Reproductive,68,105,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+332,Chilli,Maturity & Pre-Harvest,105,142,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+333,Chilli,Maturity & Pre-Harvest,105,142,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+334,Chilli,Maturity & Pre-Harvest,105,142,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+335,Chilli,Harvest & Post-Harvest,142,150,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+336,Chilli,Harvest & Post-Harvest,142,150,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+337,Chilli,Harvest & Post-Harvest,142,150,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+338,Wheat,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+339,Wheat,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+340,Wheat,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+341,Wheat,Sowing,0,4,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+342,Wheat,Sowing,0,4,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+343,Wheat,Sowing,0,4,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+344,Wheat,Germination & Establishment,4,18,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+345,Wheat,Germination & Establishment,4,18,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+346,Wheat,Germination & Establishment,4,18,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+347,Wheat,Vegetative Growth,18,54,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+348,Wheat,Vegetative Growth,18,54,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+349,Wheat,Vegetative Growth,18,54,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+350,Wheat,Vegetative Growth,18,54,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+351,Wheat,Flowering / Reproductive,54,84,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+352,Wheat,Flowering / Reproductive,54,84,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+353,Wheat,Flowering / Reproductive,54,84,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+354,Wheat,Flowering / Reproductive,54,84,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+355,Wheat,Maturity & Pre-Harvest,84,114,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+356,Wheat,Maturity & Pre-Harvest,84,114,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+357,Wheat,Maturity & Pre-Harvest,84,114,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+358,Wheat,Harvest & Post-Harvest,114,120,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+359,Wheat,Harvest & Post-Harvest,114,120,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+360,Wheat,Harvest & Post-Harvest,114,120,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+361,Sugarcane,Land Preparation,-30,0,Land Prep,Pit/field preparation,Dig pits or prepare beds with FYM incorporation.,One-time,Medium
+362,Sugarcane,Land Preparation,-30,0,Land Prep,Layout & spacing,Mark planting layout per recommended spacing.,One-time,Medium
+363,Sugarcane,Planting/Establishment,0,30,Sowing,Transplanting/Planting,Plant healthy seedlings/suckers/setts at correct depth.,One-time,Medium
+364,Sugarcane,Planting/Establishment,0,30,Irrigation,Establishment irrigation,Irrigate immediately after planting and at frequent intervals.,Every 3-5 days,High
+365,Sugarcane,Planting/Establishment,0,30,Monitoring,Gap filling,Replace dead/weak plants within first month.,One-time,Medium
+366,Sugarcane,Vegetative Growth,30,150,Fertilizer,Basal + split fertilizer,Apply NPK in split doses as per crop stage.,Monthly,High
+367,Sugarcane,Vegetative Growth,30,150,Irrigation,Regular irrigation,Maintain consistent moisture as per crop water requirement.,Weekly,High
+368,Sugarcane,Vegetative Growth,30,150,Weeding,Weed control,Remove weeds/mulch to conserve moisture and reduce competition.,Monthly,Medium
+369,Sugarcane,Vegetative Growth,30,150,Pest Scouting,Routine pest scouting,"Check for borers, mites, and sucking pests.",Weekly,High
+370,Sugarcane,Flowering/Fruiting,150,250,Fertilizer,Flowering-stage nutrition,Apply K-rich fertilizer to support flowering/fruit set.,Monthly,High
+371,Sugarcane,Flowering/Fruiting,150,250,Irrigation,Critical stage irrigation,Avoid moisture stress during flowering/fruit development.,Weekly,High
+372,Sugarcane,Flowering/Fruiting,150,250,Disease Scouting,Fungal/bacterial disease check,"Inspect for wilt/leaf spot/anthracnose, especially in humid weather.",Weekly,Medium
+373,Sugarcane,Maturity & Harvest,250,365,Monitoring,Maturity indicators,Check color/size/firmness for harvest readiness.,Weekly,Medium
+374,Sugarcane,Maturity & Harvest,250,365,Harvest,Harvesting,Harvest in stages as produce matures.,As needed,Medium
+375,Sugarcane,Maturity & Harvest,250,365,Post-Harvest,Grading & storage,"Grade, pack and store/transport produce promptly.",One-time,Medium
+376,MungBean,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+377,MungBean,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+378,MungBean,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+379,MungBean,Sowing,0,2,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+380,MungBean,Sowing,0,2,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+381,MungBean,Sowing,0,2,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+382,MungBean,Germination & Establishment,2,10,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+383,MungBean,Germination & Establishment,2,10,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+384,MungBean,Germination & Establishment,2,10,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+385,MungBean,Vegetative Growth,10,29,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+386,MungBean,Vegetative Growth,10,29,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+387,MungBean,Vegetative Growth,10,29,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+388,MungBean,Vegetative Growth,10,29,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+389,MungBean,Flowering / Reproductive,29,46,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+390,MungBean,Flowering / Reproductive,29,46,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+391,MungBean,Flowering / Reproductive,29,46,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+392,MungBean,Flowering / Reproductive,29,46,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+393,MungBean,Maturity & Pre-Harvest,46,62,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+394,MungBean,Maturity & Pre-Harvest,46,62,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+395,MungBean,Maturity & Pre-Harvest,46,62,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+396,MungBean,Harvest & Post-Harvest,62,65,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+397,MungBean,Harvest & Post-Harvest,62,65,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+398,MungBean,Harvest & Post-Harvest,62,65,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+399,Turmeric,Land Preparation,-30,0,Land Prep,Pit/field preparation,Dig pits or prepare beds with FYM incorporation.,One-time,Medium
+400,Turmeric,Land Preparation,-30,0,Land Prep,Layout & spacing,Mark planting layout per recommended spacing.,One-time,Medium
+401,Turmeric,Planting/Establishment,0,30,Sowing,Transplanting/Planting,Plant healthy seedlings/suckers/setts at correct depth.,One-time,Medium
+402,Turmeric,Planting/Establishment,0,30,Irrigation,Establishment irrigation,Irrigate immediately after planting and at frequent intervals.,Every 3-5 days,High
+403,Turmeric,Planting/Establishment,0,30,Monitoring,Gap filling,Replace dead/weak plants within first month.,One-time,Medium
+404,Turmeric,Vegetative Growth,30,150,Fertilizer,Basal + split fertilizer,Apply NPK in split doses as per crop stage.,Monthly,High
+405,Turmeric,Vegetative Growth,30,150,Irrigation,Regular irrigation,Maintain consistent moisture as per crop water requirement.,Weekly,High
+406,Turmeric,Vegetative Growth,30,150,Weeding,Weed control,Remove weeds/mulch to conserve moisture and reduce competition.,Monthly,Medium
+407,Turmeric,Vegetative Growth,30,150,Pest Scouting,Routine pest scouting,"Check for borers, mites, and sucking pests.",Weekly,High
+408,Turmeric,Flowering/Fruiting,150,250,Fertilizer,Flowering-stage nutrition,Apply K-rich fertilizer to support flowering/fruit set.,Monthly,High
+409,Turmeric,Flowering/Fruiting,150,250,Irrigation,Critical stage irrigation,Avoid moisture stress during flowering/fruit development.,Weekly,High
+410,Turmeric,Flowering/Fruiting,150,250,Disease Scouting,Fungal/bacterial disease check,"Inspect for wilt/leaf spot/anthracnose, especially in humid weather.",Weekly,Medium
+411,Turmeric,Maturity & Harvest,250,270,Monitoring,Maturity indicators,Check color/size/firmness for harvest readiness.,Weekly,Medium
+412,Turmeric,Maturity & Harvest,250,270,Harvest,Harvesting,Harvest in stages as produce matures.,As needed,Medium
+413,Turmeric,Maturity & Harvest,250,270,Post-Harvest,Grading & storage,"Grade, pack and store/transport produce promptly.",One-time,Medium
+414,Bajra,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+415,Bajra,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+416,Bajra,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+417,Bajra,Sowing,0,2,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+418,Bajra,Sowing,0,2,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+419,Bajra,Sowing,0,2,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+420,Bajra,Germination & Establishment,2,12,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+421,Bajra,Germination & Establishment,2,12,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+422,Bajra,Germination & Establishment,2,12,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+423,Bajra,Vegetative Growth,12,36,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+424,Bajra,Vegetative Growth,12,36,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+425,Bajra,Vegetative Growth,12,36,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+426,Bajra,Vegetative Growth,12,36,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+427,Bajra,Flowering / Reproductive,36,56,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+428,Bajra,Flowering / Reproductive,36,56,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+429,Bajra,Flowering / Reproductive,36,56,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+430,Bajra,Flowering / Reproductive,36,56,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+431,Bajra,Maturity & Pre-Harvest,56,76,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+432,Bajra,Maturity & Pre-Harvest,56,76,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+433,Bajra,Maturity & Pre-Harvest,56,76,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+434,Bajra,Harvest & Post-Harvest,76,80,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+435,Bajra,Harvest & Post-Harvest,76,80,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+436,Bajra,Harvest & Post-Harvest,76,80,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+437,Soybean,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+438,Soybean,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+439,Soybean,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+440,Soybean,Sowing,0,3,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+441,Soybean,Sowing,0,3,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+442,Soybean,Sowing,0,3,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+443,Soybean,Germination & Establishment,3,15,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+444,Soybean,Germination & Establishment,3,15,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+445,Soybean,Germination & Establishment,3,15,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+446,Soybean,Vegetative Growth,15,45,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+447,Soybean,Vegetative Growth,15,45,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+448,Soybean,Vegetative Growth,15,45,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+449,Soybean,Vegetative Growth,15,45,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+450,Soybean,Flowering / Reproductive,45,70,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+451,Soybean,Flowering / Reproductive,45,70,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+452,Soybean,Flowering / Reproductive,45,70,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+453,Soybean,Flowering / Reproductive,45,70,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+454,Soybean,Maturity & Pre-Harvest,70,95,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+455,Soybean,Maturity & Pre-Harvest,70,95,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+456,Soybean,Maturity & Pre-Harvest,70,95,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+457,Soybean,Harvest & Post-Harvest,95,100,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+458,Soybean,Harvest & Post-Harvest,95,100,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+459,Soybean,Harvest & Post-Harvest,95,100,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+460,Onion,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+461,Onion,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+462,Onion,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+463,Onion,Sowing,0,3,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+464,Onion,Sowing,0,3,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+465,Onion,Sowing,0,3,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+466,Onion,Germination & Establishment,3,16,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+467,Onion,Germination & Establishment,3,16,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+468,Onion,Germination & Establishment,3,16,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+469,Onion,Vegetative Growth,16,50,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+470,Onion,Vegetative Growth,16,50,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+471,Onion,Vegetative Growth,16,50,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+472,Onion,Vegetative Growth,16,50,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+473,Onion,Flowering / Reproductive,50,77,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+474,Onion,Flowering / Reproductive,50,77,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+475,Onion,Flowering / Reproductive,50,77,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+476,Onion,Flowering / Reproductive,50,77,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+477,Onion,Maturity & Pre-Harvest,77,104,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+478,Onion,Maturity & Pre-Harvest,77,104,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+479,Onion,Maturity & Pre-Harvest,77,104,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+480,Onion,Harvest & Post-Harvest,104,110,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+481,Onion,Harvest & Post-Harvest,104,110,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+482,Onion,Harvest & Post-Harvest,104,110,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+483,UradBean,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+484,UradBean,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+485,UradBean,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+486,UradBean,Sowing,0,2,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+487,UradBean,Sowing,0,2,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+488,UradBean,Sowing,0,2,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+489,UradBean,Germination & Establishment,2,11,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+490,UradBean,Germination & Establishment,2,11,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+491,UradBean,Germination & Establishment,2,11,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+492,UradBean,Vegetative Growth,11,34,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+493,UradBean,Vegetative Growth,11,34,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+494,UradBean,Vegetative Growth,11,34,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+495,UradBean,Vegetative Growth,11,34,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+496,UradBean,Flowering / Reproductive,34,52,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+497,UradBean,Flowering / Reproductive,34,52,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+498,UradBean,Flowering / Reproductive,34,52,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+499,UradBean,Flowering / Reproductive,34,52,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+500,UradBean,Maturity & Pre-Harvest,52,71,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+501,UradBean,Maturity & Pre-Harvest,52,71,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+502,UradBean,Maturity & Pre-Harvest,52,71,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+503,UradBean,Harvest & Post-Harvest,71,75,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+504,UradBean,Harvest & Post-Harvest,71,75,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+505,UradBean,Harvest & Post-Harvest,71,75,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+506,Rice,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+507,Rice,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+508,Rice,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+509,Rice,Sowing,0,4,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+510,Rice,Sowing,0,4,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+511,Rice,Sowing,0,4,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+512,Rice,Germination & Establishment,4,20,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+513,Rice,Germination & Establishment,4,20,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+514,Rice,Germination & Establishment,4,20,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+515,Rice,Vegetative Growth,20,58,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+516,Rice,Vegetative Growth,20,58,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+517,Rice,Vegetative Growth,20,58,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+518,Rice,Vegetative Growth,20,58,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+519,Rice,Flowering / Reproductive,58,91,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+520,Rice,Flowering / Reproductive,58,91,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+521,Rice,Flowering / Reproductive,58,91,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+522,Rice,Flowering / Reproductive,58,91,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+523,Rice,Maturity & Pre-Harvest,91,124,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+524,Rice,Maturity & Pre-Harvest,91,124,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+525,Rice,Maturity & Pre-Harvest,91,124,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+526,Rice,Harvest & Post-Harvest,124,130,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+527,Rice,Harvest & Post-Harvest,124,130,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+528,Rice,Harvest & Post-Harvest,124,130,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium
+529,Pigeonpea,Land Preparation,-14,0,Land Prep,Deep ploughing,Plough field 20-25cm deep to break hardpan and expose pests to sun.,One-time,Medium
+530,Pigeonpea,Land Preparation,-14,0,Land Prep,Apply FYM/compost,Incorporate well-rotted farmyard manure 8-10 t/ha before sowing.,One-time,Medium
+531,Pigeonpea,Land Preparation,-14,0,Land Prep,Leveling & bunding,Level field and form bunds/ridges as per irrigation method.,One-time,Medium
+532,Pigeonpea,Sowing,0,4,Sowing,Seed treatment,Treat seed with recommended fungicide/rhizobium culture before sowing.,One-time,Medium
+533,Pigeonpea,Sowing,0,4,Sowing,Sowing operation,Sow at recommended spacing and depth for the variety.,One-time,Medium
+534,Pigeonpea,Sowing,0,4,Irrigation,Pre-sowing irrigation,Ensure adequate soil moisture at sowing; irrigate if dry.,One-time,High
+535,Pigeonpea,Germination & Establishment,4,22,Monitoring,Germination count,Check germination percentage 7-10 days after sowing; gap-fill if needed.,Weekly,Medium
+536,Pigeonpea,Germination & Establishment,4,22,Irrigation,Light irrigation,"Apply light irrigation to aid establishment, avoid waterlogging.",As needed,High
+537,Pigeonpea,Germination & Establishment,4,22,Weeding,First hand weeding,Remove weeds competing with young seedlings.,One-time,Medium
+538,Pigeonpea,Vegetative Growth,22,68,Fertilizer,First top dressing,Apply first split dose of Nitrogen as per soil test.,One-time,High
+539,Pigeonpea,Vegetative Growth,22,68,Irrigation,Scheduled irrigation,Irrigate at critical vegetative stage based on soil moisture/ET.,Every 7-10 days,High
+540,Pigeonpea,Vegetative Growth,22,68,Weeding,Inter-culturing,Hoe/inter-cultivate to control weeds and aerate soil.,Bi-weekly,Medium
+541,Pigeonpea,Vegetative Growth,22,68,Pest Scouting,Scout for sucking pests,Monitor for aphid/whitefly/jassid; apply need-based control.,Weekly,High
+542,Pigeonpea,Flowering / Reproductive,68,105,Fertilizer,Second top dressing,Apply remaining N and K dose at flowering/pre-flowering stage.,One-time,High
+543,Pigeonpea,Flowering / Reproductive,68,105,Irrigation,Critical stage irrigation,Ensure no moisture stress during flowering - most yield-sensitive stage.,Every 5-7 days,High
+544,Pigeonpea,Flowering / Reproductive,68,105,Pest Scouting,Monitor pod/fruit/boll borers,Install pheromone traps; scout and spray if ETL crossed.,Weekly,High
+545,Pigeonpea,Flowering / Reproductive,68,105,Disease Scouting,Fungal disease check,Inspect for blight/rust/mildew symptoms after rain or high humidity.,Weekly,Medium
+546,Pigeonpea,Maturity & Pre-Harvest,105,142,Irrigation,Reduce/stop irrigation,Withhold irrigation 10-15 days before harvest to aid maturity/drying.,One-time,High
+547,Pigeonpea,Maturity & Pre-Harvest,105,142,Monitoring,Maturity check,Check grain/pod moisture and visual maturity indicators.,Weekly,Medium
+548,Pigeonpea,Maturity & Pre-Harvest,105,142,Pest Scouting,Final pest check,Check for storage pests before harvest; avoid late-season sprays near harvest.,One-time,High
+549,Pigeonpea,Harvest & Post-Harvest,142,150,Harvest,Harvesting,Harvest at physiological maturity to minimize shattering/quality loss.,One-time,Medium
+550,Pigeonpea,Harvest & Post-Harvest,142,150,Post-Harvest,Drying & cleaning,Dry produce to safe moisture level and clean before storage/sale.,One-time,Medium
+551,Pigeonpea,Harvest & Post-Harvest,142,150,Post-Harvest,Storage,Store in proper conditions to prevent pest/fungal damage.,One-time,Medium

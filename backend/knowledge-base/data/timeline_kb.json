@@ -1,0 +1,1952 @@
+[
+  {
+    "id": "potato_land_preparation",
+    "metadata": {
+      "crop": "Potato",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Potato | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Potato success."
+  },
+  {
+    "id": "potato_germination__early_growth",
+    "metadata": {
+      "crop": "Potato",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Potato | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Potato success."
+  },
+  {
+    "id": "potato_vegetative_growth",
+    "metadata": {
+      "crop": "Potato",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Potato | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Potato success."
+  },
+  {
+    "id": "potato_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Potato",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Potato | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Potato success."
+  },
+  {
+    "id": "potato_fruit__grain_development",
+    "metadata": {
+      "crop": "Potato",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Potato | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Potato success."
+  },
+  {
+    "id": "potato_harvesting",
+    "metadata": {
+      "crop": "Potato",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Potato | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Potato success."
+  },
+  {
+    "id": "fennel_land_preparation",
+    "metadata": {
+      "crop": "Fennel",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Fennel | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Fennel success."
+  },
+  {
+    "id": "fennel_germination__early_growth",
+    "metadata": {
+      "crop": "Fennel",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Fennel | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Fennel success."
+  },
+  {
+    "id": "fennel_vegetative_growth",
+    "metadata": {
+      "crop": "Fennel",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Fennel | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Fennel success."
+  },
+  {
+    "id": "fennel_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Fennel",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Fennel | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Fennel success."
+  },
+  {
+    "id": "fennel_fruit__grain_development",
+    "metadata": {
+      "crop": "Fennel",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Fennel | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Fennel success."
+  },
+  {
+    "id": "fennel_harvesting",
+    "metadata": {
+      "crop": "Fennel",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Fennel | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Fennel success."
+  },
+  {
+    "id": "chickpea_land_preparation",
+    "metadata": {
+      "crop": "ChickPea",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: ChickPea | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall ChickPea success."
+  },
+  {
+    "id": "chickpea_germination__early_growth",
+    "metadata": {
+      "crop": "ChickPea",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: ChickPea | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall ChickPea success."
+  },
+  {
+    "id": "chickpea_vegetative_growth",
+    "metadata": {
+      "crop": "ChickPea",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: ChickPea | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall ChickPea success."
+  },
+  {
+    "id": "chickpea_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "ChickPea",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: ChickPea | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall ChickPea success."
+  },
+  {
+    "id": "chickpea_fruit__grain_development",
+    "metadata": {
+      "crop": "ChickPea",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: ChickPea | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall ChickPea success."
+  },
+  {
+    "id": "chickpea_harvesting",
+    "metadata": {
+      "crop": "ChickPea",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: ChickPea | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall ChickPea success."
+  },
+  {
+    "id": "tomato_land_preparation",
+    "metadata": {
+      "crop": "Tomato",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Tomato | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Tomato success."
+  },
+  {
+    "id": "tomato_germination__early_growth",
+    "metadata": {
+      "crop": "Tomato",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Tomato | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Tomato success."
+  },
+  {
+    "id": "tomato_vegetative_growth",
+    "metadata": {
+      "crop": "Tomato",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Tomato | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Tomato success."
+  },
+  {
+    "id": "tomato_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Tomato",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Tomato | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Tomato success."
+  },
+  {
+    "id": "tomato_fruit__grain_development",
+    "metadata": {
+      "crop": "Tomato",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Tomato | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Tomato success."
+  },
+  {
+    "id": "tomato_harvesting",
+    "metadata": {
+      "crop": "Tomato",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Tomato | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Tomato success."
+  },
+  {
+    "id": "banana_land_preparation",
+    "metadata": {
+      "crop": "Banana",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Banana | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Banana success."
+  },
+  {
+    "id": "banana_germination__early_growth",
+    "metadata": {
+      "crop": "Banana",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Banana | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Banana success."
+  },
+  {
+    "id": "banana_vegetative_growth",
+    "metadata": {
+      "crop": "Banana",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Banana | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Banana success."
+  },
+  {
+    "id": "banana_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Banana",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Banana | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Banana success."
+  },
+  {
+    "id": "banana_fruit__grain_development",
+    "metadata": {
+      "crop": "Banana",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Banana | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Banana success."
+  },
+  {
+    "id": "banana_harvesting",
+    "metadata": {
+      "crop": "Banana",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Banana | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Banana success."
+  },
+  {
+    "id": "barley_land_preparation",
+    "metadata": {
+      "crop": "Barley",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Barley | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Barley success."
+  },
+  {
+    "id": "barley_germination__early_growth",
+    "metadata": {
+      "crop": "Barley",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Barley | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Barley success."
+  },
+  {
+    "id": "barley_vegetative_growth",
+    "metadata": {
+      "crop": "Barley",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Barley | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Barley success."
+  },
+  {
+    "id": "barley_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Barley",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Barley | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Barley success."
+  },
+  {
+    "id": "barley_fruit__grain_development",
+    "metadata": {
+      "crop": "Barley",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Barley | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Barley success."
+  },
+  {
+    "id": "barley_harvesting",
+    "metadata": {
+      "crop": "Barley",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Barley | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Barley success."
+  },
+  {
+    "id": "maize_land_preparation",
+    "metadata": {
+      "crop": "Maize",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Maize | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Maize success."
+  },
+  {
+    "id": "maize_germination__early_growth",
+    "metadata": {
+      "crop": "Maize",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Maize | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Maize success."
+  },
+  {
+    "id": "maize_vegetative_growth",
+    "metadata": {
+      "crop": "Maize",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Maize | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Maize success."
+  },
+  {
+    "id": "maize_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Maize",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Maize | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Maize success."
+  },
+  {
+    "id": "maize_fruit__grain_development",
+    "metadata": {
+      "crop": "Maize",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Maize | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Maize success."
+  },
+  {
+    "id": "maize_harvesting",
+    "metadata": {
+      "crop": "Maize",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Maize | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Maize success."
+  },
+  {
+    "id": "mustard_land_preparation",
+    "metadata": {
+      "crop": "Mustard",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Mustard | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Mustard success."
+  },
+  {
+    "id": "mustard_germination__early_growth",
+    "metadata": {
+      "crop": "Mustard",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Mustard | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Mustard success."
+  },
+  {
+    "id": "mustard_vegetative_growth",
+    "metadata": {
+      "crop": "Mustard",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Mustard | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Mustard success."
+  },
+  {
+    "id": "mustard_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Mustard",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Mustard | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Mustard success."
+  },
+  {
+    "id": "mustard_fruit__grain_development",
+    "metadata": {
+      "crop": "Mustard",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Mustard | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Mustard success."
+  },
+  {
+    "id": "mustard_harvesting",
+    "metadata": {
+      "crop": "Mustard",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Mustard | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Mustard success."
+  },
+  {
+    "id": "guar_land_preparation",
+    "metadata": {
+      "crop": "Guar",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Guar | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Guar success."
+  },
+  {
+    "id": "guar_germination__early_growth",
+    "metadata": {
+      "crop": "Guar",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Guar | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Guar success."
+  },
+  {
+    "id": "guar_vegetative_growth",
+    "metadata": {
+      "crop": "Guar",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Guar | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Guar success."
+  },
+  {
+    "id": "guar_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Guar",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Guar | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Guar success."
+  },
+  {
+    "id": "guar_fruit__grain_development",
+    "metadata": {
+      "crop": "Guar",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Guar | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Guar success."
+  },
+  {
+    "id": "guar_harvesting",
+    "metadata": {
+      "crop": "Guar",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Guar | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Guar success."
+  },
+  {
+    "id": "castor_land_preparation",
+    "metadata": {
+      "crop": "Castor",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Castor | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Castor success."
+  },
+  {
+    "id": "castor_germination__early_growth",
+    "metadata": {
+      "crop": "Castor",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Castor | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Castor success."
+  },
+  {
+    "id": "castor_vegetative_growth",
+    "metadata": {
+      "crop": "Castor",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Castor | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Castor success."
+  },
+  {
+    "id": "castor_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Castor",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Castor | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Castor success."
+  },
+  {
+    "id": "castor_fruit__grain_development",
+    "metadata": {
+      "crop": "Castor",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Castor | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Castor success."
+  },
+  {
+    "id": "castor_harvesting",
+    "metadata": {
+      "crop": "Castor",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Castor | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Castor success."
+  },
+  {
+    "id": "sunflower_land_preparation",
+    "metadata": {
+      "crop": "Sunflower",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sunflower | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Sunflower success."
+  },
+  {
+    "id": "sunflower_germination__early_growth",
+    "metadata": {
+      "crop": "Sunflower",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sunflower | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Sunflower success."
+  },
+  {
+    "id": "sunflower_vegetative_growth",
+    "metadata": {
+      "crop": "Sunflower",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sunflower | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Sunflower success."
+  },
+  {
+    "id": "sunflower_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Sunflower",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sunflower | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Sunflower success."
+  },
+  {
+    "id": "sunflower_fruit__grain_development",
+    "metadata": {
+      "crop": "Sunflower",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sunflower | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Sunflower success."
+  },
+  {
+    "id": "sunflower_harvesting",
+    "metadata": {
+      "crop": "Sunflower",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sunflower | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Sunflower success."
+  },
+  {
+    "id": "sesame_land_preparation",
+    "metadata": {
+      "crop": "Sesame",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sesame | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Sesame success."
+  },
+  {
+    "id": "sesame_germination__early_growth",
+    "metadata": {
+      "crop": "Sesame",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sesame | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Sesame success."
+  },
+  {
+    "id": "sesame_vegetative_growth",
+    "metadata": {
+      "crop": "Sesame",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sesame | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Sesame success."
+  },
+  {
+    "id": "sesame_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Sesame",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sesame | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Sesame success."
+  },
+  {
+    "id": "sesame_fruit__grain_development",
+    "metadata": {
+      "crop": "Sesame",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sesame | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Sesame success."
+  },
+  {
+    "id": "sesame_harvesting",
+    "metadata": {
+      "crop": "Sesame",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sesame | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Sesame success."
+  },
+  {
+    "id": "cotton_land_preparation",
+    "metadata": {
+      "crop": "Cotton",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Cotton | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Cotton success."
+  },
+  {
+    "id": "cotton_germination__early_growth",
+    "metadata": {
+      "crop": "Cotton",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Cotton | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Cotton success."
+  },
+  {
+    "id": "cotton_vegetative_growth",
+    "metadata": {
+      "crop": "Cotton",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Cotton | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Cotton success."
+  },
+  {
+    "id": "cotton_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Cotton",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Cotton | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Cotton success."
+  },
+  {
+    "id": "cotton_fruit__grain_development",
+    "metadata": {
+      "crop": "Cotton",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Cotton | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Cotton success."
+  },
+  {
+    "id": "cotton_harvesting",
+    "metadata": {
+      "crop": "Cotton",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Cotton | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Cotton success."
+  },
+  {
+    "id": "groundnut_land_preparation",
+    "metadata": {
+      "crop": "Groundnut",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Groundnut | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Groundnut success."
+  },
+  {
+    "id": "groundnut_germination__early_growth",
+    "metadata": {
+      "crop": "Groundnut",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Groundnut | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Groundnut success."
+  },
+  {
+    "id": "groundnut_vegetative_growth",
+    "metadata": {
+      "crop": "Groundnut",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Groundnut | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Groundnut success."
+  },
+  {
+    "id": "groundnut_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Groundnut",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Groundnut | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Groundnut success."
+  },
+  {
+    "id": "groundnut_fruit__grain_development",
+    "metadata": {
+      "crop": "Groundnut",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Groundnut | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Groundnut success."
+  },
+  {
+    "id": "groundnut_harvesting",
+    "metadata": {
+      "crop": "Groundnut",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Groundnut | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Groundnut success."
+  },
+  {
+    "id": "chilli_land_preparation",
+    "metadata": {
+      "crop": "Chilli",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Chilli | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Chilli success."
+  },
+  {
+    "id": "chilli_germination__early_growth",
+    "metadata": {
+      "crop": "Chilli",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Chilli | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Chilli success."
+  },
+  {
+    "id": "chilli_vegetative_growth",
+    "metadata": {
+      "crop": "Chilli",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Chilli | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Chilli success."
+  },
+  {
+    "id": "chilli_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Chilli",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Chilli | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Chilli success."
+  },
+  {
+    "id": "chilli_fruit__grain_development",
+    "metadata": {
+      "crop": "Chilli",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Chilli | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Chilli success."
+  },
+  {
+    "id": "chilli_harvesting",
+    "metadata": {
+      "crop": "Chilli",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Chilli | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Chilli success."
+  },
+  {
+    "id": "wheat_land_preparation",
+    "metadata": {
+      "crop": "Wheat",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Wheat | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Wheat success."
+  },
+  {
+    "id": "wheat_germination__early_growth",
+    "metadata": {
+      "crop": "Wheat",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Wheat | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Wheat success."
+  },
+  {
+    "id": "wheat_vegetative_growth",
+    "metadata": {
+      "crop": "Wheat",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Wheat | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Wheat success."
+  },
+  {
+    "id": "wheat_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Wheat",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Wheat | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Wheat success."
+  },
+  {
+    "id": "wheat_fruit__grain_development",
+    "metadata": {
+      "crop": "Wheat",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Wheat | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Wheat success."
+  },
+  {
+    "id": "wheat_harvesting",
+    "metadata": {
+      "crop": "Wheat",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Wheat | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Wheat success."
+  },
+  {
+    "id": "sugarcane_land_preparation",
+    "metadata": {
+      "crop": "Sugarcane",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sugarcane | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Sugarcane success."
+  },
+  {
+    "id": "sugarcane_germination__early_growth",
+    "metadata": {
+      "crop": "Sugarcane",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sugarcane | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Sugarcane success."
+  },
+  {
+    "id": "sugarcane_vegetative_growth",
+    "metadata": {
+      "crop": "Sugarcane",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sugarcane | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Sugarcane success."
+  },
+  {
+    "id": "sugarcane_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Sugarcane",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sugarcane | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Sugarcane success."
+  },
+  {
+    "id": "sugarcane_fruit__grain_development",
+    "metadata": {
+      "crop": "Sugarcane",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sugarcane | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Sugarcane success."
+  },
+  {
+    "id": "sugarcane_harvesting",
+    "metadata": {
+      "crop": "Sugarcane",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Sugarcane | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Sugarcane success."
+  },
+  {
+    "id": "mungbean_land_preparation",
+    "metadata": {
+      "crop": "MungBean",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: MungBean | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall MungBean success."
+  },
+  {
+    "id": "mungbean_germination__early_growth",
+    "metadata": {
+      "crop": "MungBean",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: MungBean | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall MungBean success."
+  },
+  {
+    "id": "mungbean_vegetative_growth",
+    "metadata": {
+      "crop": "MungBean",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: MungBean | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall MungBean success."
+  },
+  {
+    "id": "mungbean_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "MungBean",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: MungBean | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall MungBean success."
+  },
+  {
+    "id": "mungbean_fruit__grain_development",
+    "metadata": {
+      "crop": "MungBean",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: MungBean | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall MungBean success."
+  },
+  {
+    "id": "mungbean_harvesting",
+    "metadata": {
+      "crop": "MungBean",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: MungBean | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall MungBean success."
+  },
+  {
+    "id": "turmeric_land_preparation",
+    "metadata": {
+      "crop": "Turmeric",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Turmeric | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Turmeric success."
+  },
+  {
+    "id": "turmeric_germination__early_growth",
+    "metadata": {
+      "crop": "Turmeric",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Turmeric | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Turmeric success."
+  },
+  {
+    "id": "turmeric_vegetative_growth",
+    "metadata": {
+      "crop": "Turmeric",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Turmeric | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Turmeric success."
+  },
+  {
+    "id": "turmeric_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Turmeric",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Turmeric | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Turmeric success."
+  },
+  {
+    "id": "turmeric_fruit__grain_development",
+    "metadata": {
+      "crop": "Turmeric",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Turmeric | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Turmeric success."
+  },
+  {
+    "id": "turmeric_harvesting",
+    "metadata": {
+      "crop": "Turmeric",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Turmeric | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Turmeric success."
+  },
+  {
+    "id": "bajra_land_preparation",
+    "metadata": {
+      "crop": "Bajra",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Bajra | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Bajra success."
+  },
+  {
+    "id": "bajra_germination__early_growth",
+    "metadata": {
+      "crop": "Bajra",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Bajra | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Bajra success."
+  },
+  {
+    "id": "bajra_vegetative_growth",
+    "metadata": {
+      "crop": "Bajra",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Bajra | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Bajra success."
+  },
+  {
+    "id": "bajra_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Bajra",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Bajra | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Bajra success."
+  },
+  {
+    "id": "bajra_fruit__grain_development",
+    "metadata": {
+      "crop": "Bajra",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Bajra | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Bajra success."
+  },
+  {
+    "id": "bajra_harvesting",
+    "metadata": {
+      "crop": "Bajra",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Bajra | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Bajra success."
+  },
+  {
+    "id": "soybean_land_preparation",
+    "metadata": {
+      "crop": "Soybean",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Soybean | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Soybean success."
+  },
+  {
+    "id": "soybean_germination__early_growth",
+    "metadata": {
+      "crop": "Soybean",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Soybean | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Soybean success."
+  },
+  {
+    "id": "soybean_vegetative_growth",
+    "metadata": {
+      "crop": "Soybean",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Soybean | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Soybean success."
+  },
+  {
+    "id": "soybean_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Soybean",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Soybean | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Soybean success."
+  },
+  {
+    "id": "soybean_fruit__grain_development",
+    "metadata": {
+      "crop": "Soybean",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Soybean | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Soybean success."
+  },
+  {
+    "id": "soybean_harvesting",
+    "metadata": {
+      "crop": "Soybean",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Soybean | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Soybean success."
+  },
+  {
+    "id": "onion_land_preparation",
+    "metadata": {
+      "crop": "Onion",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Onion | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Onion success."
+  },
+  {
+    "id": "onion_germination__early_growth",
+    "metadata": {
+      "crop": "Onion",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Onion | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Onion success."
+  },
+  {
+    "id": "onion_vegetative_growth",
+    "metadata": {
+      "crop": "Onion",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Onion | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Onion success."
+  },
+  {
+    "id": "onion_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Onion",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Onion | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Onion success."
+  },
+  {
+    "id": "onion_fruit__grain_development",
+    "metadata": {
+      "crop": "Onion",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Onion | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Onion success."
+  },
+  {
+    "id": "onion_harvesting",
+    "metadata": {
+      "crop": "Onion",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Onion | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Onion success."
+  },
+  {
+    "id": "uradbean_land_preparation",
+    "metadata": {
+      "crop": "UradBean",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: UradBean | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall UradBean success."
+  },
+  {
+    "id": "uradbean_germination__early_growth",
+    "metadata": {
+      "crop": "UradBean",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: UradBean | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall UradBean success."
+  },
+  {
+    "id": "uradbean_vegetative_growth",
+    "metadata": {
+      "crop": "UradBean",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: UradBean | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall UradBean success."
+  },
+  {
+    "id": "uradbean_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "UradBean",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: UradBean | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall UradBean success."
+  },
+  {
+    "id": "uradbean_fruit__grain_development",
+    "metadata": {
+      "crop": "UradBean",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: UradBean | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall UradBean success."
+  },
+  {
+    "id": "uradbean_harvesting",
+    "metadata": {
+      "crop": "UradBean",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: UradBean | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall UradBean success."
+  },
+  {
+    "id": "rice_land_preparation",
+    "metadata": {
+      "crop": "Rice",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Rice | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Rice success."
+  },
+  {
+    "id": "rice_germination__early_growth",
+    "metadata": {
+      "crop": "Rice",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Rice | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Rice success."
+  },
+  {
+    "id": "rice_vegetative_growth",
+    "metadata": {
+      "crop": "Rice",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Rice | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Rice success."
+  },
+  {
+    "id": "rice_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Rice",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Rice | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Rice success."
+  },
+  {
+    "id": "rice_fruit__grain_development",
+    "metadata": {
+      "crop": "Rice",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Rice | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Rice success."
+  },
+  {
+    "id": "rice_harvesting",
+    "metadata": {
+      "crop": "Rice",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Rice | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Rice success."
+  },
+  {
+    "id": "pigeonpea_land_preparation",
+    "metadata": {
+      "crop": "Pigeonpea",
+      "stage": "Land Preparation",
+      "stage_day_start": -15,
+      "stage_day_end": 0,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Pigeonpea | Stage: Land Preparation | Days: -15 to 0\nSeason: Kharif/Rabi\n\nKey tasks:\n- Deep plough and prepare fine tilth\n- Apply basal FYM and level field\n- Soil testing and nutrient balancing\n\nFertilizer: Basal dose incorporated into soil (FYM + NPK)\nIrrigation: Pre-sowing irrigation to ensure adequate moisture\nWatch for: Soil-borne pathogens, weed seeds\nWhy it matters: Good land preparation ensures proper root penetration and uniform germination.\n\nCritical: YES - crucial for overall Pigeonpea success."
+  },
+  {
+    "id": "pigeonpea_germination__early_growth",
+    "metadata": {
+      "crop": "Pigeonpea",
+      "stage": "Germination & Early Growth",
+      "stage_day_start": 0,
+      "stage_day_end": 20,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Pigeonpea | Stage: Germination & Early Growth | Days: 0-20\nSeason: Kharif/Rabi\n\nKey tasks:\n- Sow seeds at appropriate depth and spacing\n- Check for uniform emergence and gap-fill if necessary\n- First manual weeding\n\nFertilizer: No additional fertilizer; rely on basal dose\nIrrigation: Light irrigation if soil surface dries out to prevent crusting\nWatch for: Damping-off disease, cutworms, poor emergence\nWhy it matters: A uniform plant stand is critical as gaps directly reduce potential yield.\n\nCritical: YES - crucial for overall Pigeonpea success."
+  },
+  {
+    "id": "pigeonpea_vegetative_growth",
+    "metadata": {
+      "crop": "Pigeonpea",
+      "stage": "Vegetative Growth",
+      "stage_day_start": 21,
+      "stage_day_end": 50,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Pigeonpea | Stage: Vegetative Growth | Days: 21-50\nSeason: Kharif/Rabi\n\nKey tasks:\n- Top-dress fertilizer (Nitrogen split)\n- Second weeding or herbicide application\n- Scout for foliar pests and diseases weekly\n\nFertilizer: Top-dress with Urea/Nitrogen\nIrrigation: Regular irrigation cycle based on crop water requirements\nWatch for: Leaf-eating caterpillars, aphids, early signs of leaf blight\nWhy it matters: Healthy canopy development drives photosynthesis needed for later yield.\n\nCritical: YES - crucial for overall Pigeonpea success."
+  },
+  {
+    "id": "pigeonpea_flowering__reproductive_phase",
+    "metadata": {
+      "crop": "Pigeonpea",
+      "stage": "Flowering / Reproductive Phase",
+      "stage_day_start": 51,
+      "stage_day_end": 80,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Pigeonpea | Stage: Flowering / Reproductive Phase | Days: 51-80\nSeason: Kharif/Rabi\n\nKey tasks:\n- Avoid chemical sprays during peak flowering to protect pollinators\n- Maintain consistent soil moisture\n- Apply micronutrient spray if required\n\nFertilizer: Avoid heavy Nitrogen; focus on Potassium if deficient\nIrrigation: Critical stage: ensure no moisture stress to prevent flower/fruit drop\nWatch for: Flower drop, pod borers, sucking pests\nWhy it matters: Moisture or pest stress during flowering directly reduces the number of fruits/grains formed.\n\nCritical: YES - crucial for overall Pigeonpea success."
+  },
+  {
+    "id": "pigeonpea_fruit__grain_development",
+    "metadata": {
+      "crop": "Pigeonpea",
+      "stage": "Fruit / Grain Development",
+      "stage_day_start": 81,
+      "stage_day_end": 110,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Pigeonpea | Stage: Fruit / Grain Development | Days: 81-110\nSeason: Kharif/Rabi\n\nKey tasks:\n- Monitor for pod/fruit borers\n- Ensure proper drainage if heavy rains occur\n- Final rounds of irrigation before maturity\n\nFertilizer: Foliar application if nutrient deficiency is visible\nIrrigation: Maintain moisture but avoid waterlogging\nWatch for: Fruit rot, pod borers, birds/rodents\nWhy it matters: Proper grain/fruit filling requires sustained water and nutrient transport.\n\nCritical: YES - crucial for overall Pigeonpea success."
+  },
+  {
+    "id": "pigeonpea_harvesting",
+    "metadata": {
+      "crop": "Pigeonpea",
+      "stage": "Harvesting",
+      "stage_day_start": 111,
+      "stage_day_end": 130,
+      "season": "Kharif/Rabi",
+      "source": "timeline_kb",
+      "priority": "high"
+    },
+    "document": "Crop: Pigeonpea | Stage: Harvesting | Days: 111-130\nSeason: Kharif/Rabi\n\nKey tasks:\n- Stop irrigation 10-15 days before harvest\n- Harvest at proper maturity index (color/moisture)\n- Dry produce to safe moisture levels before storage\n\nFertilizer: None\nIrrigation: Stop irrigation to allow drying and maturation\nWatch for: Shattering losses, unseasonal rain damage\nWhy it matters: Timely harvest prevents post-maturity field losses and ensures good market quality.\n\nCritical: YES - crucial for overall Pigeonpea success."
+  }
+]

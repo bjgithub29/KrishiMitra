@@ -1,0 +1,21 @@
+product_id,product_name,generic_name,N_percent,P2O5_percent,K2O_percent,S_percent,Zn_percent,Ca_percent,Mg_percent,Organic_Carbon_percent,Application_Method,Min_Dose_kg_per_ha,Max_Dose_kg_per_ha,Price_INR_per_50kg_bag_or_per_kg_organic,Compatible_Crops,Manufacturer
+1,Urea,Urea (46% N),46.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Broadcast/top-dress,50,200,266,"Wheat, Rice, Maize, Cotton, Sugarcane, Bajra, Barley, Chilli, Tomato, Onion, Potato, Turmeric, Banana","IFFCO/Kribhco/NFL (govt-subsidized, uniform MRP)"
+2,DAP (Di-Ammonium Phosphate),DAP 18-46-0,18.0,46.0,0.0,0.0,0.0,0.0,0.0,0.0,"Basal, placed near root zone",50,150,1350,"Wheat, Rice, Maize, Cotton, Groundnut, ChickPea, Soybean, Sugarcane, Onion, Potato",IFFCO/Coromandel
+3,MOP (Muriate of Potash),Potassium Chloride 0-0-60,0.0,0.0,60.0,0.0,0.0,0.0,0.0,0.0,Basal + split top-dress,30,150,1700,"Banana, Sugarcane, Potato, Tomato, Turmeric, Groundnut, Cotton",IPL/ICL
+4,SSP (Single Super Phosphate),SSP 0-16-0 + S + Ca,0.0,16.0,0.0,11.0,0.0,19.0,0.0,0.0,Basal application,100,300,475,"Groundnut, Soybean, MungBean, UradBean, Pigeonpea, ChickPea, Mustard, Sesame",GSFC/Coromandel
+5,NPK Complex 12:32:16,NPK Complex,12.0,32.0,16.0,0.0,0.0,0.0,0.0,0.0,Basal,100,250,1450,"Cotton, Wheat, Maize, Groundnut, Sugarcane",IFFCO/Coromandel/GSFC
+6,NPK Complex 19:19:19,NPK Complex water soluble,19.0,19.0,19.0,0.0,0.0,0.0,0.0,0.0,Fertigation/foliar,25,75,1600,"Tomato, Chilli, Banana, Onion, Potato, Turmeric",Coromandel/Deepak Fertilisers
+7,Ammonium Sulphate,AS 21-0-0 + 24S,21.0,0.0,0.0,24.0,0.0,0.0,0.0,0.0,"Top-dress, good for sulfur-deficient/oilseed soils",50,150,700,"Groundnut, Mustard, Sesame, Onion, Sugarcane",GSFC/GNFC
+8,Zinc Sulphate,ZnSO4 21%,0.0,0.0,0.0,11.0,21.0,0.0,0.0,0.0,Soil application/foliar spray,10,25,110,"Rice, Wheat, Maize, Groundnut, Onion, Potato, Turmeric, Banana, Tomato",Various regional manufacturers
+9,Ferrous Sulphate,FeSO4 19%,0.0,0.0,0.0,10.0,0.0,0.0,0.0,0.0,Foliar spray (0.5%) for iron chlorosis,5,15,90,"Groundnut, Banana, Turmeric, Rice, Chilli",Various regional manufacturers
+10,Gypsum (Calcium Sulphate),"CaSO4 for S and Ca, and sodic soil reclamation",0.0,0.0,0.0,18.0,0.0,23.0,0.0,0.0,"Soil application, basal",200,500,320,"Groundnut, ChickPea, Mustard, Soybean, Rice",GSFC/local mines
+11,Borax,Sodium Borate 10.5% B,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,"Soil/foliar, for boron-deficient soils",5,10,95,"Cotton, Sunflower, Cauliflower, ChickPea",Various
+12,Vermicompost,Organic manure (worm compost),1.5,1.0,1.5,0.0,0.0,0.0,0.0,18.0,"Basal, soil incorporation",1000,5000,8,"Tomato, Chilli, Onion, Potato, Turmeric, Banana, Sugarcane",Local/cooperative producers
+13,FYM (Farm Yard Manure),Well-rotted cattle manure,0.5,0.2,0.5,0.0,0.0,0.0,0.0,25.0,"Basal, ploughed in before sowing",5000,12000,2,"Wheat, Rice, Cotton, Sugarcane, Banana, Turmeric, Groundnut, Maize, Tomato",Local farm produced
+14,Neem Cake,Organic manure + natural pest deterrent,2.5,0.5,1.0,0.0,0.0,0.0,0.0,40.0,"Basal, also repels soil pests/nematodes",200,500,25,"Cotton, Groundnut, Sugarcane, Banana, Tomato, Chilli",Various oil mills
+15,Potassium Nitrate (13:0:45),KNO3 water soluble,13.0,0.0,45.0,0.0,0.0,0.0,0.0,0.0,"Fertigation/foliar, flowering-fruiting stage",15,50,950,"Tomato, Chilli, Onion, Banana, Sugarcane",Haifa/Deepak Fertilisers
+16,Mono Ammonium Phosphate (MAP 12:61:0),MAP water soluble,12.0,61.0,0.0,0.0,0.0,0.0,0.0,0.0,"Fertigation, early growth stage",10,30,1500,"Tomato, Chilli, Onion, Potato, Banana, Cotton",Deepak Fertilisers/ICL
+17,Magnesium Sulphate,MgSO4 (Epsom salt) 9.5% Mg + 13% S,0.0,0.0,0.0,13.0,0.0,0.0,9.5,0.0,"Foliar/soil, for Mg-deficient sandy soils",10,25,75,"Cotton, Banana, Sugarcane, Tomato, Chilli",Various
+18,Calcium Nitrate,CaNO3 15.5% N + 19% Ca,15.5,0.0,0.0,0.0,0.0,19.0,0.0,0.0,"Fertigation/foliar, fruiting stage to prevent blossom-end rot",10,30,800,"Tomato, Chilli, Onion, Potato",Yara/Deepak Fertilisers
+19,Sulphur (Bentonite/Elemental 90%),Elemental S for oilseed/pulses,0.0,0.0,0.0,90.0,0.0,0.0,0.0,0.0,"Soil application, basal",10,25,60,"Groundnut, Mustard, Sesame, Soybean, ChickPea",Coromandel/Tiger brand
+20,Ammonium Chloride (fertigation grade),NH4Cl 25% N,25.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Fertigation/top-dress,40,100,600,"Rice, Sugarcane, Banana",GNFC

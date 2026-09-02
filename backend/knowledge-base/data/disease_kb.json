@@ -1,0 +1,184 @@
+[
+  {
+    "id": "Apple___Apple_scab",
+    "metadata": {
+      "disease": "Apple - Apple scab"
+    },
+    "document": "Treatment for Apple - Apple scab: Remove infected parts. Ensure balanced fertilization (avoid excess nitrogen). Improve drainage and spacing. Apply broad-spectrum organic fungicide or bactericide. Monitor daily for spread."
+  },
+  {
+    "id": "Apple___Black_rot",
+    "metadata": {
+      "disease": "Apple - Black rot"
+    },
+    "document": "Treatment for Apple - Black rot: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Apple___Cedar_apple_rust",
+    "metadata": {
+      "disease": "Apple - Cedar apple rust"
+    },
+    "document": "Treatment for Apple - Cedar apple rust: Remove infected parts. Ensure balanced fertilization (avoid excess nitrogen). Improve drainage and spacing. Apply broad-spectrum organic fungicide or bactericide. Monitor daily for spread."
+  },
+  {
+    "id": "Cherry_(including_sour)___Powdery_mildew",
+    "metadata": {
+      "disease": "Cherry (including sour) - Powdery mildew"
+    },
+    "document": "Treatment for Cherry (including sour) - Powdery mildew: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+    "metadata": {
+      "disease": "Corn (maize) - Cercospora leaf spot Gray leaf spot"
+    },
+    "document": "Treatment for Corn (maize) - Cercospora leaf spot Gray leaf spot: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Corn_(maize)___Common_rust_",
+    "metadata": {
+      "disease": "Corn (maize) - Common rust "
+    },
+    "document": "Treatment for Corn (maize) - Common rust : Remove infected parts. Ensure balanced fertilization (avoid excess nitrogen). Improve drainage and spacing. Apply broad-spectrum organic fungicide or bactericide. Monitor daily for spread."
+  },
+  {
+    "id": "Corn_(maize)___Northern_Leaf_Blight",
+    "metadata": {
+      "disease": "Corn (maize) - Northern Leaf Blight"
+    },
+    "document": "Treatment for Corn (maize) - Northern Leaf Blight: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Grape___Black_rot",
+    "metadata": {
+      "disease": "Grape - Black rot"
+    },
+    "document": "Treatment for Grape - Black rot: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Grape___Esca_(Black_Measles)",
+    "metadata": {
+      "disease": "Grape - Esca (Black Measles)"
+    },
+    "document": "Treatment for Grape - Esca (Black Measles): Remove infected parts. Ensure balanced fertilization (avoid excess nitrogen). Improve drainage and spacing. Apply broad-spectrum organic fungicide or bactericide. Monitor daily for spread."
+  },
+  {
+    "id": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+    "metadata": {
+      "disease": "Grape - Leaf blight (Isariopsis Leaf Spot)"
+    },
+    "document": "Treatment for Grape - Leaf blight (Isariopsis Leaf Spot): This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Orange___Haunglongbing_(Citrus_greening)",
+    "metadata": {
+      "disease": "Orange - Haunglongbing (Citrus greening)"
+    },
+    "document": "Treatment for Orange - Haunglongbing (Citrus greening): Viral infections cannot be cured once established. Immediately pull up and destroy (do not compost) the infected plants to prevent spread. Control insect vectors like aphids or whiteflies using neem oil or insecticidal soap. Use resistant varieties in the future."
+  },
+  {
+    "id": "Peach___Bacterial_spot",
+    "metadata": {
+      "disease": "Peach - Bacterial spot"
+    },
+    "document": "Treatment for Peach - Bacterial spot: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Pepper,_bell___Bacterial_spot",
+    "metadata": {
+      "disease": "Pepper, bell - Bacterial spot"
+    },
+    "document": "Treatment for Pepper, bell - Bacterial spot: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Potato___Early_blight",
+    "metadata": {
+      "disease": "Potato - Early blight"
+    },
+    "document": "Treatment for Potato - Early blight: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Potato___Late_blight",
+    "metadata": {
+      "disease": "Potato - Late blight"
+    },
+    "document": "Treatment for Potato - Late blight: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Squash___Powdery_mildew",
+    "metadata": {
+      "disease": "Squash - Powdery mildew"
+    },
+    "document": "Treatment for Squash - Powdery mildew: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Strawberry___Leaf_scorch",
+    "metadata": {
+      "disease": "Strawberry - Leaf scorch"
+    },
+    "document": "Treatment for Strawberry - Leaf scorch: Remove infected parts. Ensure balanced fertilization (avoid excess nitrogen). Improve drainage and spacing. Apply broad-spectrum organic fungicide or bactericide. Monitor daily for spread."
+  },
+  {
+    "id": "Tomato___Bacterial_spot",
+    "metadata": {
+      "disease": "Tomato - Bacterial spot"
+    },
+    "document": "Treatment for Tomato - Bacterial spot: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Tomato___Early_blight",
+    "metadata": {
+      "disease": "Tomato - Early blight"
+    },
+    "document": "Treatment for Tomato - Early blight: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Tomato___Late_blight",
+    "metadata": {
+      "disease": "Tomato - Late blight"
+    },
+    "document": "Treatment for Tomato - Late blight: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Tomato___Leaf_Mold",
+    "metadata": {
+      "disease": "Tomato - Leaf Mold"
+    },
+    "document": "Treatment for Tomato - Leaf Mold: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Tomato___Septoria_leaf_spot",
+    "metadata": {
+      "disease": "Tomato - Septoria leaf spot"
+    },
+    "document": "Treatment for Tomato - Septoria leaf spot: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Tomato___Spider_mites Two-spotted_spider_mite",
+    "metadata": {
+      "disease": "Tomato - Spider mites Two-spotted spider mite"
+    },
+    "document": "Treatment for Tomato - Spider mites Two-spotted spider mite: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Tomato___Target_Spot",
+    "metadata": {
+      "disease": "Tomato - Target Spot"
+    },
+    "document": "Treatment for Tomato - Target Spot: This is a fungal or bacterial infection. Remove and destroy infected leaves/fruit. Improve air circulation by pruning. Avoid overhead watering. Apply copper-based fungicide or neem oil. Ensure proper crop rotation next season."
+  },
+  {
+    "id": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+    "metadata": {
+      "disease": "Tomato - Tomato Yellow Leaf Curl Virus"
+    },
+    "document": "Treatment for Tomato - Tomato Yellow Leaf Curl Virus: Viral infections cannot be cured once established. Immediately pull up and destroy (do not compost) the infected plants to prevent spread. Control insect vectors like aphids or whiteflies using neem oil or insecticidal soap. Use resistant varieties in the future."
+  },
+  {
+    "id": "Tomato___Tomato_mosaic_virus",
+    "metadata": {
+      "disease": "Tomato - Tomato mosaic virus"
+    },
+    "document": "Treatment for Tomato - Tomato mosaic virus: Viral infections cannot be cured once established. Immediately pull up and destroy (do not compost) the infected plants to prevent spread. Control insect vectors like aphids or whiteflies using neem oil or insecticidal soap. Use resistant varieties in the future."
+  }
+]

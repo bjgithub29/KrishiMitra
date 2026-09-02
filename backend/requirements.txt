@@ -1,0 +1,17 @@
+django<5.1
+djangorestframework
+djangorestframework-simplejwt
+django-cors-headers
+django-apscheduler
+apscheduler<4.0
+python-dotenv
+chromadb
+sentence-transformers
+Pillow
+numpy
+pandas
+
+requests
+google-auth
+scikit-learn==1.6.1
+joblib

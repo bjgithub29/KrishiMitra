@@ -1,0 +1,90 @@
+{
+  "cropName": "MungBean",
+  "stages": [
+    {
+      "stage_name": "Land Preparation",
+      "start_day": -15,
+      "end_day": 0,
+      "duration_days": 15,
+      "key_tasks": [
+        "Deep plough and prepare fine tilth",
+        "Apply basal FYM and level field",
+        "Soil testing and nutrient balancing"
+      ],
+      "fertilizer": "Basal dose incorporated into soil (FYM + NPK)",
+      "irrigation": "Pre-sowing irrigation to ensure adequate moisture",
+      "pest_disease_monitoring": "Soil-borne pathogens, weed seeds"
+    },
+    {
+      "stage_name": "Germination & Early Growth",
+      "start_day": 0,
+      "end_day": 20,
+      "duration_days": 21,
+      "key_tasks": [
+        "Sow seeds at appropriate depth and spacing",
+        "Check for uniform emergence and gap-fill if necessary",
+        "First manual weeding"
+      ],
+      "fertilizer": "No additional fertilizer; rely on basal dose",
+      "irrigation": "Light irrigation if soil surface dries out to prevent crusting",
+      "pest_disease_monitoring": "Damping-off disease, cutworms, poor emergence"
+    },
+    {
+      "stage_name": "Vegetative Growth",
+      "start_day": 21,
+      "end_day": 50,
+      "duration_days": 30,
+      "key_tasks": [
+        "Top-dress fertilizer (Nitrogen split)",
+        "Second weeding or herbicide application",
+        "Scout for foliar pests and diseases weekly"
+      ],
+      "fertilizer": "Top-dress with Urea/Nitrogen",
+      "irrigation": "Regular irrigation cycle based on crop water requirements",
+      "pest_disease_monitoring": "Leaf-eating caterpillars, aphids, early signs of leaf blight"
+    },
+    {
+      "stage_name": "Flowering / Reproductive Phase",
+      "start_day": 51,
+      "end_day": 80,
+      "duration_days": 30,
+      "key_tasks": [
+        "Avoid chemical sprays during peak flowering to protect pollinators",
+        "Maintain consistent soil moisture",
+        "Apply micronutrient spray if required"
+      ],
+      "fertilizer": "Avoid heavy Nitrogen; focus on Potassium if deficient",
+      "irrigation": "Critical stage: ensure no moisture stress to prevent flower/fruit drop",
+      "pest_disease_monitoring": "Flower drop, pod borers, sucking pests"
+    },
+    {
+      "stage_name": "Fruit / Grain Development",
+      "start_day": 81,
+      "end_day": 110,
+      "duration_days": 30,
+      "key_tasks": [
+        "Monitor for pod/fruit borers",
+        "Ensure proper drainage if heavy rains occur",
+        "Final rounds of irrigation before maturity"
+      ],
+      "fertilizer": "Foliar application if nutrient deficiency is visible",
+      "irrigation": "Maintain moisture but avoid waterlogging",
+      "pest_disease_monitoring": "Fruit rot, pod borers, birds/rodents"
+    },
+    {
+      "stage_name": "Harvesting",
+      "start_day": 111,
+      "end_day": 130,
+      "duration_days": 20,
+      "key_tasks": [
+        "Stop irrigation 10-15 days before harvest",
+        "Harvest at proper maturity index (color/moisture)",
+        "Dry produce to safe moisture levels before storage"
+      ],
+      "fertilizer": "None",
+      "irrigation": "Stop irrigation to allow drying and maturation",
+      "pest_disease_monitoring": "Shattering losses, unseasonal rain damage"
+    }
+  ],
+  "duration_days": 130
+}

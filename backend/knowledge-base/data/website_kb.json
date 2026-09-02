@@ -1,0 +1,27 @@
+[
+  {
+    "id": "kb_web_1",
+    "document": "How to create a crop plan: To create a crop plan on the KrishiMitra platform, go to the 'Crop Plan' section on the dashboard and click the 'Generate Plan with AI' button. You will need to enter your farm details like Crop Name, Season, Area, and Irrigation type to generate the plan.",
+    "metadata": { "topic": "website", "feature": "Crop Plan" }
+  },
+  {
+    "id": "kb_web_2",
+    "document": "How to detect plant diseases: Navigate to the 'Disease Detection' section of the KrishiMitra website. Click the upload button to upload an image of a diseased leaf. Our AI model will analyze the image and provide the disease name along with recommended treatments.",
+    "metadata": { "topic": "website", "feature": "Disease Detection" }
+  },
+  {
+    "id": "kb_web_3",
+    "document": "How to view your daily schedule: The 'Daily Schedule' section in KrishiMitra shows tasks generated from your active crop plan. It organizes tasks by date, showing what you need to do today, such as irrigation or applying fertilizer. Click 'Mark Done' when a task is completed.",
+    "metadata": { "topic": "website", "feature": "Daily Schedule" }
+  },
+  {
+    "id": "kb_web_4",
+    "document": "How to update farm profile: You can update your farm's details, such as area, soil type, and water resources, by navigating to the 'Profile' or 'Dashboard' settings. This information is saved and used to personalize advice without asking you repeatedly.",
+    "metadata": { "topic": "website", "feature": "Profile" }
+  },
+  {
+    "id": "kb_web_5",
+    "document": "What is KrishiMitra: KrishiMitra is an AI-powered agricultural advisory platform designed to help farmers in India with crop planning, disease detection, daily scheduling, and personalized farming advice.",
+    "metadata": { "topic": "website", "feature": "About" }
+  }
+]

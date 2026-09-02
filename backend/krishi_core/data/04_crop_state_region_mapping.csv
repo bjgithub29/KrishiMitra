@@ -1,0 +1,98 @@
+region_id,crop_name,state,major_districts,regional_variety
+1,Potato,Uttar Pradesh,"Agra, Farrukhabad, Kannauj",Kufri Bahar
+2,Potato,West Bengal,"Hooghly, Bardhaman",Kufri Jyoti
+3,Potato,Bihar,"Nalanda, Patna",Kufri Pukhraj
+4,Potato,Punjab,"Jalandhar, Ludhiana",Kufri Chipsona
+5,Potato,Gujarat,"Banaskantha, Deesa",Kufri Pukhraj
+6,Fennel,Gujarat,"Banaskantha, Mehsana",GF-2
+7,Fennel,Rajasthan,"Sirohi, Jalore",RF-125
+8,Fennel,Madhya Pradesh,"Neemuch, Mandsaur",GF-2
+9,ChickPea,Madhya Pradesh,"Vidisha, Sehore",JG-11
+10,ChickPea,Maharashtra,"Latur, Akola",Vijay
+11,ChickPea,Rajasthan,"Kota, Bundi",GNG-1581
+12,ChickPea,Uttar Pradesh,"Kanpur, Jhansi",KWR-108
+13,ChickPea,Gujarat,"Banaskantha, Amreli",GG-2
+14,Tomato,Andhra Pradesh,"Madanapalle, Kadapa",Arka Rakshak
+15,Tomato,Karnataka,"Kolar, Chikkaballapur",Arka Vikas
+16,Tomato,Maharashtra,"Nashik, Pune",Bhima Shakti
+17,Tomato,Gujarat,"Sabarkantha, Anand",GT-2
+18,Banana,Maharashtra,"Jalgaon, Solapur",Grand Naine
+19,Banana,Tamil Nadu,"Trichy, Theni","Poovan, Grand Naine"
+20,Banana,Gujarat,"Surat, Bharuch",Grand Naine
+21,Banana,Andhra Pradesh,East Godavari,Grand Naine
+22,Barley,Rajasthan,"Ganganagar, Bikaner",RD-2552
+23,Barley,Uttar Pradesh,"Etawah, Agra",K-551
+24,Barley,Madhya Pradesh,"Morena, Bhind",RD-2035
+25,Barley,Gujarat,Banaskantha,GAUB-1
+26,Maize,Karnataka,"Davangere, Belagavi",NK-6240
+27,Maize,Madhya Pradesh,"Chhindwara, Betul",DKC-9108
+28,Maize,Bihar,"Katihar, Purnia",local hybrids
+29,Maize,Gujarat,"Panchmahal, Dahod",GM-6
+30,Mustard,Rajasthan,"Bharatpur, Alwar",RH-749
+31,Mustard,Haryana,"Hisar, Sirsa",RH-30
+32,Mustard,Uttar Pradesh,"Mathura, Agra",Varuna
+33,Mustard,Gujarat,"Sabarkantha, Banaskantha",GM-3
+34,Guar,Rajasthan,"Jodhpur, Barmer, Bikaner",RGC-1066
+35,Guar,Haryana,"Hisar, Sirsa",HG-365
+36,Guar,Gujarat,"Banaskantha, Patan",GG-1
+37,Castor,Gujarat,"Mehsana, Banaskantha, Sabarkantha",GCH-7
+38,Castor,Andhra Pradesh,"Anantapur, Kurnool",DCH-519
+39,Castor,Rajasthan,Sri Ganganagar,GCH-7
+40,Sunflower,Karnataka,"Raichur, Bidar",KBSH-44
+41,Sunflower,Andhra Pradesh,"Kurnool, Mahbubnagar",MSFH-17
+42,Sunflower,Gujarat,"Surendranagar, Rajkot",GAUSFH-1
+43,Sesame,Rajasthan,"Jaipur, Alwar",RT-346
+44,Sesame,Madhya Pradesh,"Guna, Vidisha",JT-7
+45,Sesame,Gujarat,"Banaskantha, Mehsana",GT-2
+46,Sesame,West Bengal,Murshidabad,local
+47,Cotton,Gujarat,"Rajkot, Bhavnagar, Amreli",Bt RCH-2
+48,Cotton,Maharashtra,"Yavatmal, Jalgaon",Bt hybrids
+49,Cotton,Telangana,"Adilabad, Warangal",Bt hybrids
+50,Cotton,Punjab,"Bathinda, Muktsar",Bt hybrids
+51,Groundnut,Gujarat,"Junagadh, Rajkot, Amreli",GG-20
+52,Groundnut,Andhra Pradesh,"Anantapur, Kurnool",K-6
+53,Groundnut,Tamil Nadu,"Villupuram, Cuddalore",TMV-7
+54,Groundnut,Rajasthan,"Bikaner, Sri Ganganagar",HNG-10
+55,Chilli,Andhra Pradesh,"Guntur, Khammam",Guntur Sannam
+56,Chilli,Karnataka,"Byadagi, Haveri",Byadagi
+57,Chilli,Telangana,"Warangal, Khammam",local hybrids
+58,Chilli,Gujarat,"Kheda, Anand",GVC-101
+59,Wheat,Uttar Pradesh,"Meerut, Aligarh, Kanpur",HD-2967
+60,Wheat,Punjab,"Ludhiana, Patiala",PBW-725
+61,Wheat,Madhya Pradesh,"Hoshangabad, Indore",GW-322
+62,Wheat,Gujarat,"Anand, Kheda",GW-496
+63,Sugarcane,Uttar Pradesh,"Muzaffarnagar, Meerut",CoS-8436
+64,Sugarcane,Maharashtra,"Kolhapur, Pune",Co-86032
+65,Sugarcane,Karnataka,"Belagavi, Mandya",Co-86032
+66,Sugarcane,Gujarat,"Surat, Bharuch",CoN-05071
+67,MungBean,Rajasthan,"Merta, Nagaur",RMG-268
+68,MungBean,Madhya Pradesh,Narsinghpur,K-851
+69,MungBean,Maharashtra,"Akola, Amravati",BM-4
+70,MungBean,Gujarat,"Rajkot, Junagadh",GM-4
+71,Turmeric,Telangana,Nizamabad,Duggirala
+72,Turmeric,Andhra Pradesh,East Godavari,Kesari
+73,Turmeric,Tamil Nadu,Erode,Salem
+74,Turmeric,Gujarat,"Surat, Valsad",Salem
+75,Bajra,Rajasthan,"Jodhpur, Nagaur, Barmer",HHB-67
+76,Bajra,Gujarat,"Banaskantha, Mehsana",GHB-538
+77,Bajra,Haryana,"Bhiwani, Mahendragarh",HHB-197
+78,Bajra,Uttar Pradesh,"Agra, Mathura",local hybrids
+79,Soybean,Madhya Pradesh,"Indore, Dewas, Ujjain",JS-335
+80,Soybean,Maharashtra,"Latur, Amravati",JS-9560
+81,Soybean,Rajasthan,"Kota, Baran",JS-335
+82,Onion,Maharashtra,"Nashik, Pune, Ahmednagar",Bhima Super
+83,Onion,Karnataka,"Bagalkot, Gadag",Bellary Red
+84,Onion,Gujarat,"Bhavnagar, Mahesana",Bhima Super
+85,Onion,Madhya Pradesh,"Mandsaur, Ratlam",N-53
+86,UradBean,Madhya Pradesh,"Vidisha, Raisen",T-9
+87,UradBean,Maharashtra,"Akola, Buldhana",TAU-1
+88,UradBean,Uttar Pradesh,"Kanpur, Jalaun",Pant U-31
+89,UradBean,Gujarat,"Vadodara, Anand",GU-1
+90,Rice,West Bengal,"Bardhaman, Hooghly",IR-36
+91,Rice,Punjab,"Amritsar, Patiala",PR-126
+92,Rice,Uttar Pradesh,"Gorakhpur, Basti",Sarju-52
+93,Rice,Gujarat,"Kheda, Anand",GR-11
+94,Pigeonpea,Maharashtra,"Latur, Akola, Solapur",BSMR-736
+95,Pigeonpea,Karnataka,"Gulbarga, Bidar",TS-3R
+96,Pigeonpea,Madhya Pradesh,"Narsinghpur, Chhindwara",local
+97,Pigeonpea,Gujarat,"Vadodara, Panchmahal",GT-1

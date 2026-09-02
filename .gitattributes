@@ -1,0 +1,71 @@
+# ============================================================================
+# .gitattributes - line-ending normalization for a Python + JavaScript repo.
+# Added during the Windows migration to prevent LF<->CRLF working-tree churn.
+#
+# Text files are stored as LF in the repository and checked out as LF on every
+# platform (including Windows), so Windows no longer produces CRLF churn.
+# Binary files are marked explicitly so Git never rewrites their bytes.
+# ============================================================================
+
+# Default: auto-detect text, store as LF, and check out as LF everywhere.
+* text=auto eol=lf
+
+# ---- Windows-native scripts: keep CRLF (run by cmd.exe / PowerShell) ----
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# ---- Unix shell scripts: must stay LF ----
+*.sh text eol=lf
+
+# ---- Explicit text types (kept LF) ----
+*.py   text
+*.js   text
+*.jsx  text
+*.ts   text
+*.tsx  text
+*.json text
+*.css  text
+*.html text
+*.md   text
+*.yml  text
+*.yaml text
+*.svg  text
+
+# ---- Databases & ML artifacts: BINARY (db.sqlite3 is tracked - protect it) ----
+*.sqlite3 binary
+*.sqlite  binary
+*.db      binary
+*.pkl     binary
+*.joblib  binary
+*.pickle  binary
+*.pt      binary
+*.pth     binary
+*.h5      binary
+*.keras   binary
+*.onnx    binary
+*.npy     binary
+*.npz     binary
+
+# ---- Images: BINARY ----
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.bmp  binary
+
+# ---- Documents & archives: BINARY ----
+*.pdf binary
+*.zip binary
+*.gz  binary
+*.tar binary
+*.7z  binary
+
+# ---- Fonts: BINARY ----
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary
+*.otf   binary

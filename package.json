@@ -1,0 +1,13 @@
+{
+  "name": "krishimitra-monorepo",
+  "version": "1.0.0",
+  "description": "Root workspace to start all KrishiMitra services",
+  "scripts": {
+    "dev:backend": "cd backend && python manage.py runserver 0.0.0.0:5001 --noreload",
+    "dev:ui": "cd frontend && npm run dev",
+    "dev": "concurrently --names \"BACKEND,UI\" --prefix-colors \"green,cyan\" \"npm run dev:backend\" \"npm run dev:ui\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

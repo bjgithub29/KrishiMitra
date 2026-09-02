@@ -1,0 +1,1315 @@
+[
+  {
+    "name": "Potato",
+    "season": "rabi",
+    "soilPhRange": [
+      5.5,
+      6.5
+    ],
+    "waterNeedCategory": "medium",
+    "durationDays": 100,
+    "costPerAcreRs": 45000,
+    "expectedYieldKgPerAcre": 8000,
+    "marketPriceRsPerKg": 15,
+    "marketDemand": "high",
+    "riskNotes": "Late blight risk in high humidity; needs well-drained soil to avoid tuber rot.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 7
+      },
+      {
+        "stage": "Sprout Emergence",
+        "dayOffset": 15
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 30
+      },
+      {
+        "stage": "Tuber Initiation",
+        "dayOffset": 55
+      },
+      {
+        "stage": "Tuber Bulking",
+        "dayOffset": 75
+      },
+      {
+        "stage": "Maturation",
+        "dayOffset": 90
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 100
+      }
+    ]
+  },
+  {
+    "name": "Fennel",
+    "season": "rabi",
+    "soilPhRange": [
+      6.5,
+      8
+    ],
+    "waterNeedCategory": "medium",
+    "durationDays": 160,
+    "costPerAcreRs": 15000,
+    "expectedYieldKgPerAcre": 800,
+    "marketPriceRsPerKg": 120,
+    "marketDemand": "medium",
+    "riskNotes": "Ramularia blight risk in cloudy weather; sensitive to frost.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 5
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 12
+      },
+      {
+        "stage": "Seedling Establishment",
+        "dayOffset": 25
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 45
+      },
+      {
+        "stage": "Umbel Formation",
+        "dayOffset": 95
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 115
+      },
+      {
+        "stage": "Seed Formation",
+        "dayOffset": 130
+      },
+      {
+        "stage": "Seed Maturation",
+        "dayOffset": 148
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 160
+      }
+    ]
+  },
+  {
+    "name": "ChickPea",
+    "season": "rabi",
+    "soilPhRange": [
+      6,
+      7.5
+    ],
+    "waterNeedCategory": "low",
+    "durationDays": 100,
+    "costPerAcreRs": 11000,
+    "expectedYieldKgPerAcre": 500,
+    "marketPriceRsPerKg": 58,
+    "marketDemand": "high",
+    "riskNotes": "Pod borer risk; generally low water and low input crop.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 5
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 13
+      },
+      {
+        "stage": "Seedling Growth",
+        "dayOffset": 25
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 40
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 60
+      },
+      {
+        "stage": "Pod Filling",
+        "dayOffset": 80
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 100
+      }
+    ]
+  },
+  {
+    "name": "Tomato",
+    "season": "rabi",
+    "soilPhRange": [
+      6,
+      7
+    ],
+    "waterNeedCategory": "medium",
+    "durationDays": 130,
+    "costPerAcreRs": 30000,
+    "expectedYieldKgPerAcre": 10000,
+    "marketPriceRsPerKg": 20,
+    "marketDemand": "high",
+    "riskNotes": "Early and late blight risk; fruit borer requires monitoring.",
+    "growthStages": [
+      {
+        "stage": "Nursery",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 20
+      },
+      {
+        "stage": "Transplanting",
+        "dayOffset": 25
+      },
+      {
+        "stage": "Crop Establishment",
+        "dayOffset": 30
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 45
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 62
+      },
+      {
+        "stage": "Fruiting",
+        "dayOffset": 80
+      },
+      {
+        "stage": "First Harvest",
+        "dayOffset": 100
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 130
+      }
+    ]
+  },
+  {
+    "name": "Banana",
+    "season": "year-round",
+    "soilPhRange": [
+      6.5,
+      7.5
+    ],
+    "waterNeedCategory": "high",
+    "durationDays": 330,
+    "costPerAcreRs": 60000,
+    "expectedYieldKgPerAcre": 25000,
+    "marketPriceRsPerKg": 15,
+    "marketDemand": "high",
+    "riskNotes": "Sigatoka leaf spot and Panama wilt; sensitive to wind and drought.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Pit Preparation",
+        "dayOffset": 5
+      },
+      {
+        "stage": "Planting",
+        "dayOffset": 12
+      },
+      {
+        "stage": "Crop Establishment",
+        "dayOffset": 17
+      },
+      {
+        "stage": "Early Vegetative Growth",
+        "dayOffset": 37
+      },
+      {
+        "stage": "Active Vegetative Growth",
+        "dayOffset": 117
+      },
+      {
+        "stage": "Shooting / Flowering",
+        "dayOffset": 207
+      },
+      {
+        "stage": "Bunch Development",
+        "dayOffset": 262
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 322
+      }
+    ]
+  },
+  {
+    "name": "Barley",
+    "season": "rabi",
+    "soilPhRange": [
+      6,
+      8
+    ],
+    "waterNeedCategory": "low",
+    "durationDays": 120,
+    "costPerAcreRs": 12000,
+    "expectedYieldKgPerAcre": 1400,
+    "marketPriceRsPerKg": 22,
+    "marketDemand": "medium",
+    "riskNotes": "Tolerant to salinity and drought; aphid risk during grain fill.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 5
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 12
+      },
+      {
+        "stage": "Tillering",
+        "dayOffset": 28
+      },
+      {
+        "stage": "Jointing",
+        "dayOffset": 50
+      },
+      {
+        "stage": "Heading",
+        "dayOffset": 70
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 82
+      },
+      {
+        "stage": "Grain Filling",
+        "dayOffset": 95
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 120
+      }
+    ]
+  },
+  {
+    "name": "Maize",
+    "season": "kharif",
+    "soilPhRange": [
+      6,
+      8
+    ],
+    "waterNeedCategory": "medium",
+    "durationDays": 100,
+    "costPerAcreRs": 14000,
+    "expectedYieldKgPerAcre": 1200,
+    "marketPriceRsPerKg": 18,
+    "marketDemand": "medium",
+    "riskNotes": "Fall armyworm risk; moderate water need, tolerant of mixed conditions.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 5
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 11
+      },
+      {
+        "stage": "Seedling Stage",
+        "dayOffset": 20
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 30
+      },
+      {
+        "stage": "Tasseling / Silking",
+        "dayOffset": 55
+      },
+      {
+        "stage": "Grain Filling",
+        "dayOffset": 78
+      },
+      {
+        "stage": "Maturity / Drying",
+        "dayOffset": 92
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 100
+      }
+    ]
+  },
+  {
+    "name": "Mustard",
+    "season": "rabi",
+    "soilPhRange": [
+      6,
+      7.5
+    ],
+    "waterNeedCategory": "low",
+    "durationDays": 110,
+    "costPerAcreRs": 9000,
+    "expectedYieldKgPerAcre": 600,
+    "marketPriceRsPerKg": 52,
+    "marketDemand": "medium",
+    "riskNotes": "Aphid risk during flowering; low water need makes it drought-tolerant.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 4
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 10
+      },
+      {
+        "stage": "Seedling Establishment",
+        "dayOffset": 20
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 32
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 55
+      },
+      {
+        "stage": "Pod (Siliqua) Development",
+        "dayOffset": 78
+      },
+      {
+        "stage": "Siliqua Maturation",
+        "dayOffset": 98
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 110
+      }
+    ]
+  },
+  {
+    "name": "Guar",
+    "season": "kharif",
+    "soilPhRange": [
+      7,
+      8.5
+    ],
+    "waterNeedCategory": "low",
+    "durationDays": 90,
+    "costPerAcreRs": 8000,
+    "expectedYieldKgPerAcre": 400,
+    "marketPriceRsPerKg": 45,
+    "marketDemand": "medium",
+    "riskNotes": "Extremely drought-tolerant; susceptible to bacterial blight in heavy rains.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 4
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 10
+      },
+      {
+        "stage": "Seedling Growth",
+        "dayOffset": 20
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 32
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 48
+      },
+      {
+        "stage": "Pod Formation",
+        "dayOffset": 65
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 90
+      }
+    ]
+  },
+  {
+    "name": "Castor",
+    "season": "kharif",
+    "soilPhRange": [
+      5,
+      8
+    ],
+    "waterNeedCategory": "low",
+    "durationDays": 180,
+    "costPerAcreRs": 12000,
+    "expectedYieldKgPerAcre": 800,
+    "marketPriceRsPerKg": 60,
+    "marketDemand": "high",
+    "riskNotes": "Drought-hardy; watch for semi-looper and capsule borer.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 6
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 14
+      },
+      {
+        "stage": "Seedling Establishment",
+        "dayOffset": 28
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 45
+      },
+      {
+        "stage": "Primary Spike Initiation",
+        "dayOffset": 72
+      },
+      {
+        "stage": "Primary Spike Flowering",
+        "dayOffset": 90
+      },
+      {
+        "stage": "Secondary Spike Development",
+        "dayOffset": 115
+      },
+      {
+        "stage": "Capsule Maturation",
+        "dayOffset": 155
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 180
+      }
+    ]
+  },
+  {
+    "name": "Sunflower",
+    "season": "zaid",
+    "soilPhRange": [
+      6.5,
+      8
+    ],
+    "waterNeedCategory": "medium",
+    "durationDays": 100,
+    "costPerAcreRs": 14000,
+    "expectedYieldKgPerAcre": 600,
+    "marketPriceRsPerKg": 45,
+    "marketDemand": "high",
+    "riskNotes": "Bird damage risk during grain fill; susceptible to Alternaria blight.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 5
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 12
+      },
+      {
+        "stage": "Seedling Growth",
+        "dayOffset": 22
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 35
+      },
+      {
+        "stage": "Button Stage (Bud)",
+        "dayOffset": 50
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 65
+      },
+      {
+        "stage": "Seed Development",
+        "dayOffset": 82
+      },
+      {
+        "stage": "Maturity / Harvest",
+        "dayOffset": 100
+      }
+    ]
+  },
+  {
+    "name": "Sesame",
+    "season": "kharif",
+    "soilPhRange": [
+      5.5,
+      8
+    ],
+    "waterNeedCategory": "low",
+    "durationDays": 90,
+    "costPerAcreRs": 9000,
+    "expectedYieldKgPerAcre": 250,
+    "marketPriceRsPerKg": 120,
+    "marketDemand": "high",
+    "riskNotes": "Very sensitive to waterlogging; phyllody disease risk.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 4
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 10
+      },
+      {
+        "stage": "Seedling Establishment",
+        "dayOffset": 20
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 32
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 48
+      },
+      {
+        "stage": "Capsule Formation",
+        "dayOffset": 65
+      },
+      {
+        "stage": "Maturation",
+        "dayOffset": 82
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 90
+      }
+    ]
+  },
+  {
+    "name": "Cotton",
+    "season": "kharif",
+    "soilPhRange": [
+      6,
+      8
+    ],
+    "waterNeedCategory": "medium",
+    "durationDays": 180,
+    "costPerAcreRs": 28000,
+    "expectedYieldKgPerAcre": 500,
+    "marketPriceRsPerKg": 65,
+    "marketDemand": "high",
+    "riskNotes": "Bollworm and whitefly risk in humid conditions; needs monitoring.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 8
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 16
+      },
+      {
+        "stage": "Seedling Stage",
+        "dayOffset": 28
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 45
+      },
+      {
+        "stage": "Squaring",
+        "dayOffset": 65
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 90
+      },
+      {
+        "stage": "Boll Development",
+        "dayOffset": 120
+      },
+      {
+        "stage": "Boll Opening",
+        "dayOffset": 155
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 180
+      }
+    ]
+  },
+  {
+    "name": "Groundnut",
+    "season": "kharif",
+    "soilPhRange": [
+      6,
+      7
+    ],
+    "waterNeedCategory": "medium",
+    "durationDays": 110,
+    "costPerAcreRs": 18000,
+    "expectedYieldKgPerAcre": 700,
+    "marketPriceRsPerKg": 55,
+    "marketDemand": "high",
+    "riskNotes": "Sensitive to waterlogging; leaf spot risk in high humidity.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 6
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 14
+      },
+      {
+        "stage": "Seedling Growth",
+        "dayOffset": 25
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 38
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 50
+      },
+      {
+        "stage": "Pegging",
+        "dayOffset": 62
+      },
+      {
+        "stage": "Pod Development",
+        "dayOffset": 80
+      },
+      {
+        "stage": "Maturation",
+        "dayOffset": 98
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 110
+      }
+    ]
+  },
+  {
+    "name": "Chilli",
+    "season": "kharif",
+    "soilPhRange": [
+      6,
+      7
+    ],
+    "waterNeedCategory": "medium",
+    "durationDays": 150,
+    "costPerAcreRs": 35000,
+    "expectedYieldKgPerAcre": 2000,
+    "marketPriceRsPerKg": 100,
+    "marketDemand": "high",
+    "riskNotes": "Thrips and leaf curl virus are major threats; needs well-drained soil.",
+    "growthStages": [
+      {
+        "stage": "Nursery",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 25
+      },
+      {
+        "stage": "Transplanting",
+        "dayOffset": 35
+      },
+      {
+        "stage": "Crop Establishment",
+        "dayOffset": 40
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 60
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 85
+      },
+      {
+        "stage": "Fruiting",
+        "dayOffset": 108
+      },
+      {
+        "stage": "Multiple Pickings",
+        "dayOffset": 125
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 150
+      }
+    ]
+  },
+  {
+    "name": "Wheat",
+    "season": "rabi",
+    "soilPhRange": [
+      6,
+      7.5
+    ],
+    "waterNeedCategory": "medium",
+    "durationDays": 120,
+    "costPerAcreRs": 16000,
+    "expectedYieldKgPerAcre": 1600,
+    "marketPriceRsPerKg": 23,
+    "marketDemand": "high",
+    "riskNotes": "Rust disease risk if humidity spikes during grain fill.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 5
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 12
+      },
+      {
+        "stage": "Seedling Stage",
+        "dayOffset": 22
+      },
+      {
+        "stage": "Tillering",
+        "dayOffset": 30
+      },
+      {
+        "stage": "Jointing",
+        "dayOffset": 52
+      },
+      {
+        "stage": "Heading / Ear Emergence",
+        "dayOffset": 72
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 83
+      },
+      {
+        "stage": "Grain Filling",
+        "dayOffset": 98
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 120
+      }
+    ]
+  },
+  {
+    "name": "Sugarcane",
+    "season": "year-round",
+    "soilPhRange": [
+      6.5,
+      7.5
+    ],
+    "waterNeedCategory": "high",
+    "durationDays": 360,
+    "costPerAcreRs": 45000,
+    "expectedYieldKgPerAcre": 35000,
+    "marketPriceRsPerKg": 3,
+    "marketDemand": "high",
+    "riskNotes": "Requires massive water input; red rot disease and early shoot borer risks.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sett Planting",
+        "dayOffset": 10
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 25
+      },
+      {
+        "stage": "Seedling Establishment",
+        "dayOffset": 45
+      },
+      {
+        "stage": "Tillering",
+        "dayOffset": 85
+      },
+      {
+        "stage": "Grand Growth",
+        "dayOffset": 160
+      },
+      {
+        "stage": "Maturation / Ripening",
+        "dayOffset": 310
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 360
+      }
+    ]
+  },
+  {
+    "name": "MungBean",
+    "season": "zaid",
+    "soilPhRange": [
+      6,
+      7.5
+    ],
+    "waterNeedCategory": "low",
+    "durationDays": 65,
+    "costPerAcreRs": 8000,
+    "expectedYieldKgPerAcre": 350,
+    "marketPriceRsPerKg": 75,
+    "marketDemand": "high",
+    "riskNotes": "Yellow Mosaic Virus risk; extremely sensitive to waterlogging.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 4
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 10
+      },
+      {
+        "stage": "Seedling Growth",
+        "dayOffset": 20
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 30
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 40
+      },
+      {
+        "stage": "Pod Development",
+        "dayOffset": 52
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 65
+      }
+    ]
+  },
+  {
+    "name": "Turmeric",
+    "season": "kharif",
+    "soilPhRange": [
+      5.5,
+      7.5
+    ],
+    "waterNeedCategory": "high",
+    "durationDays": 270,
+    "costPerAcreRs": 50000,
+    "expectedYieldKgPerAcre": 8000,
+    "marketPriceRsPerKg": 90,
+    "marketDemand": "high",
+    "riskNotes": "Rhizome rot in poorly drained soil; needs shaded or mixed cropping early on.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Rhizome Planting",
+        "dayOffset": 10
+      },
+      {
+        "stage": "Sprouting",
+        "dayOffset": 30
+      },
+      {
+        "stage": "Crop Establishment",
+        "dayOffset": 55
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 90
+      },
+      {
+        "stage": "Rhizome Initiation",
+        "dayOffset": 180
+      },
+      {
+        "stage": "Rhizome Maturation",
+        "dayOffset": 240
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 270
+      }
+    ]
+  },
+  {
+    "name": "Bajra",
+    "season": "kharif",
+    "soilPhRange": [
+      6.5,
+      7.5
+    ],
+    "waterNeedCategory": "low",
+    "durationDays": 90,
+    "costPerAcreRs": 12000,
+    "expectedYieldKgPerAcre": 900,
+    "marketPriceRsPerKg": 24,
+    "marketDemand": "high",
+    "riskNotes": "Low disease risk; vulnerable to shoot fly in early stage.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 4
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 10
+      },
+      {
+        "stage": "Seedling Stage",
+        "dayOffset": 20
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 30
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 50
+      },
+      {
+        "stage": "Grain Filling",
+        "dayOffset": 68
+      },
+      {
+        "stage": "Maturity",
+        "dayOffset": 82
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 90
+      }
+    ]
+  },
+  {
+    "name": "Soybean",
+    "season": "kharif",
+    "soilPhRange": [
+      6.5,
+      7.5
+    ],
+    "waterNeedCategory": "medium",
+    "durationDays": 100,
+    "costPerAcreRs": 18000,
+    "expectedYieldKgPerAcre": 450,
+    "marketPriceRsPerKg": 45,
+    "marketDemand": "high",
+    "riskNotes": "Yellow Mosaic Virus (YMV) via whitefly; stem borer; pod borer at pod fill.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 6
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 14
+      },
+      {
+        "stage": "Seedling Growth",
+        "dayOffset": 25
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 38
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 58
+      },
+      {
+        "stage": "Pod Development",
+        "dayOffset": 74
+      },
+      {
+        "stage": "Maturation",
+        "dayOffset": 90
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 100
+      }
+    ]
+  },
+  {
+    "name": "Onion",
+    "season": "rabi",
+    "soilPhRange": [
+      6,
+      7.5
+    ],
+    "waterNeedCategory": "medium",
+    "durationDays": 120,
+    "costPerAcreRs": 35000,
+    "expectedYieldKgPerAcre": 8000,
+    "marketPriceRsPerKg": 20,
+    "marketDemand": "high",
+    "riskNotes": "Thrips and purple blotch risk; highly sensitive to excess soil moisture.",
+    "growthStages": [
+      {
+        "stage": "Nursery",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 35
+      },
+      {
+        "stage": "Transplanting",
+        "dayOffset": 45
+      },
+      {
+        "stage": "Crop Establishment",
+        "dayOffset": 50
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 70
+      },
+      {
+        "stage": "Bulb Initiation",
+        "dayOffset": 88
+      },
+      {
+        "stage": "Bulb Development",
+        "dayOffset": 105
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 120
+      }
+    ]
+  },
+  {
+    "name": "UradBean",
+    "season": "kharif",
+    "soilPhRange": [
+      6,
+      7.5
+    ],
+    "waterNeedCategory": "low",
+    "durationDays": 75,
+    "costPerAcreRs": 9000,
+    "expectedYieldKgPerAcre": 350,
+    "marketPriceRsPerKg": 70,
+    "marketDemand": "high",
+    "riskNotes": "Yellow Mosaic Virus risk; extremely sensitive to waterlogging.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 4
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 10
+      },
+      {
+        "stage": "Seedling Growth",
+        "dayOffset": 20
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 32
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 45
+      },
+      {
+        "stage": "Pod Development",
+        "dayOffset": 60
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 75
+      }
+    ]
+  },
+  {
+    "name": "Rice",
+    "season": "kharif",
+    "soilPhRange": [
+      6,
+      7.5
+    ],
+    "waterNeedCategory": "high",
+    "durationDays": 130,
+    "costPerAcreRs": 22000,
+    "expectedYieldKgPerAcre": 1800,
+    "marketPriceRsPerKg": 21,
+    "marketDemand": "high",
+    "riskNotes": "Needs standing water/high irrigation; blast disease risk in humid weather.",
+    "growthStages": [
+      {
+        "stage": "Nursery",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 18
+      },
+      {
+        "stage": "Transplanting",
+        "dayOffset": 25
+      },
+      {
+        "stage": "Crop Establishment",
+        "dayOffset": 30
+      },
+      {
+        "stage": "Tillering",
+        "dayOffset": 45
+      },
+      {
+        "stage": "Panicle Initiation",
+        "dayOffset": 75
+      },
+      {
+        "stage": "Heading / Flowering",
+        "dayOffset": 90
+      },
+      {
+        "stage": "Grain Filling",
+        "dayOffset": 105
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 130
+      }
+    ]
+  },
+  {
+    "name": "Pigeonpea",
+    "season": "kharif",
+    "soilPhRange": [
+      6,
+      7.5
+    ],
+    "waterNeedCategory": "low",
+    "durationDays": 160,
+    "costPerAcreRs": 12000,
+    "expectedYieldKgPerAcre": 600,
+    "marketPriceRsPerKg": 65,
+    "marketDemand": "high",
+    "riskNotes": "Pod borer and wilt risk; deep-rooted, highly drought-tolerant.",
+    "growthStages": [
+      {
+        "stage": "Land Preparation",
+        "dayOffset": 0
+      },
+      {
+        "stage": "Sowing",
+        "dayOffset": 5
+      },
+      {
+        "stage": "Germination",
+        "dayOffset": 13
+      },
+      {
+        "stage": "Seedling Stage",
+        "dayOffset": 25
+      },
+      {
+        "stage": "Vegetative Growth",
+        "dayOffset": 50
+      },
+      {
+        "stage": "Branching",
+        "dayOffset": 88
+      },
+      {
+        "stage": "Flowering",
+        "dayOffset": 118
+      },
+      {
+        "stage": "Pod Development",
+        "dayOffset": 140
+      },
+      {
+        "stage": "Harvest",
+        "dayOffset": 160
+      }
+    ]
+  }
+]

@@ -1,0 +1,76 @@
+fertilizer_plan_id,crop_name,stage,products_and_dose,purpose
+1,Potato,Basal (at sowing / land prep),"DAP: 173.9 kg/ha, MOP: 166.7 kg/ha, Urea (top-up): 127.6 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+2,Potato,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 97.8 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+3,Potato,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 97.8 kg/ha, Zinc Sulphate: 20 kg/ha (if High Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+4,Fennel,Basal (at sowing / land prep),"DAP: 65.2 kg/ha, MOP: 50.0 kg/ha, Urea (top-up): 28.8 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+5,Fennel,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 27.2 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+6,Fennel,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)",Urea: 27.2 kg/ha,Supports flowering/grain-fill; most yield-critical nitrogen application
+7,ChickPea,Basal (at sowing / land prep),"DAP: 108.7 kg/ha, MOP: 33.3 kg/ha, Urea (top-up): 0.0 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+8,ChickPea,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 10.9 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+9,ChickPea,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 10.9 kg/ha, Zinc Sulphate: 20 kg/ha (if Medium Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+10,Tomato,Basal (at sowing / land prep),"DAP: 173.9 kg/ha, MOP: 250.0 kg/ha, Urea (top-up): 95.0 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+11,Tomato,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 81.5 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+12,Tomato,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 81.5 kg/ha, Zinc Sulphate: 20 kg/ha (if High Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+13,Banana,Basal (at sowing / land prep),"DAP: 130.4 kg/ha, MOP: 500.0 kg/ha, Urea (top-up): 166.4 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+14,Banana,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 108.7 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+15,Banana,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 108.7 kg/ha, Zinc Sulphate: 20 kg/ha (if High Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+16,Barley,Basal (at sowing / land prep),"DAP: 87.0 kg/ha, MOP: 33.3 kg/ha, Urea (top-up): 52.9 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+17,Barley,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 43.5 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+18,Barley,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)",Urea: 43.5 kg/ha,Supports flowering/grain-fill; most yield-critical nitrogen application
+19,Maize,Basal (at sowing / land prep),"DAP: 130.4 kg/ha, MOP: 66.7 kg/ha, Urea (top-up): 79.4 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+20,Maize,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 65.2 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+21,Maize,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 65.2 kg/ha, Zinc Sulphate: 20 kg/ha (if High Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+22,Mustard,Basal (at sowing / land prep),"DAP: 87.0 kg/ha, MOP: 66.7 kg/ha, Urea (top-up): 52.9 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+23,Mustard,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 43.5 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+24,Mustard,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 43.5 kg/ha, Zinc Sulphate: 20 kg/ha (if Medium Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+25,Guar,Basal (at sowing / land prep),"DAP: 87.0 kg/ha, MOP: 33.3 kg/ha, Urea (top-up): 0.0 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+26,Guar,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 10.9 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+27,Guar,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)",Urea: 10.9 kg/ha,Supports flowering/grain-fill; most yield-critical nitrogen application
+28,Castor,Basal (at sowing / land prep),"DAP: 108.7 kg/ha, MOP: 50.0 kg/ha, Urea (top-up): 66.2 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+29,Castor,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 54.3 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+30,Castor,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 54.3 kg/ha, Zinc Sulphate: 20 kg/ha (if Medium Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+31,Sunflower,Basal (at sowing / land prep),"DAP: 87.0 kg/ha, MOP: 66.7 kg/ha, Urea (top-up): 31.2 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+32,Sunflower,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 32.6 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+33,Sunflower,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 32.6 kg/ha, Zinc Sulphate: 20 kg/ha (if Medium Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+34,Sesame,Basal (at sowing / land prep),"DAP: 43.5 kg/ha, MOP: 33.3 kg/ha, Urea (top-up): 26.5 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+35,Sesame,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 21.7 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+36,Sesame,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)",Urea: 21.7 kg/ha,Supports flowering/grain-fill; most yield-critical nitrogen application
+37,Cotton,Basal (at sowing / land prep),"DAP: 130.4 kg/ha, MOP: 100.0 kg/ha, Urea (top-up): 79.4 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+38,Cotton,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 65.2 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+39,Cotton,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 65.2 kg/ha, Zinc Sulphate: 20 kg/ha (if Medium Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+40,Groundnut,Basal (at sowing / land prep),"DAP: 108.7 kg/ha, MOP: 125.0 kg/ha, Urea (top-up): 0.0 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+41,Groundnut,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 13.6 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+42,Groundnut,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 13.6 kg/ha, Zinc Sulphate: 20 kg/ha (if High Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+43,Chilli,Basal (at sowing / land prep),"DAP: 173.9 kg/ha, MOP: 166.7 kg/ha, Urea (top-up): 95.0 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+44,Chilli,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 81.5 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+45,Chilli,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 81.5 kg/ha, Zinc Sulphate: 20 kg/ha (if High Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+46,Wheat,Basal (at sowing / land prep),"DAP: 130.4 kg/ha, MOP: 66.7 kg/ha, Urea (top-up): 79.4 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+47,Wheat,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 65.2 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+48,Wheat,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 65.2 kg/ha, Zinc Sulphate: 20 kg/ha (if Medium Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+49,Sugarcane,Basal (at sowing / land prep),"DAP: 217.4 kg/ha, MOP: 200.0 kg/ha, Urea (top-up): 186.7 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+50,Sugarcane,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 135.9 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+51,Sugarcane,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 135.9 kg/ha, Zinc Sulphate: 20 kg/ha (if High Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+52,MungBean,Basal (at sowing / land prep),"DAP: 87.0 kg/ha, MOP: 33.3 kg/ha, Urea (top-up): 0.0 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+53,MungBean,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 10.9 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+54,MungBean,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 10.9 kg/ha, Zinc Sulphate: 20 kg/ha (if Medium Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+55,Turmeric,Basal (at sowing / land prep),"DAP: 130.4 kg/ha, MOP: 200.0 kg/ha, Urea (top-up): 79.4 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+56,Turmeric,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 65.2 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+57,Turmeric,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 65.2 kg/ha, Zinc Sulphate: 20 kg/ha (if High Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+58,Bajra,Basal (at sowing / land prep),"DAP: 65.2 kg/ha, MOP: 33.3 kg/ha, Urea (top-up): 39.7 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+59,Bajra,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 32.6 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+60,Bajra,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)",Urea: 32.6 kg/ha,Supports flowering/grain-fill; most yield-critical nitrogen application
+61,Soybean,Basal (at sowing / land prep),"DAP: 130.4 kg/ha, MOP: 66.7 kg/ha, Urea (top-up): 0.0 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+62,Soybean,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 16.3 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+63,Soybean,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 16.3 kg/ha, Zinc Sulphate: 20 kg/ha (if Medium Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+64,Onion,Basal (at sowing / land prep),"DAP: 108.7 kg/ha, MOP: 83.3 kg/ha, Urea (top-up): 66.2 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+65,Onion,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 54.3 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+66,Onion,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 54.3 kg/ha, Zinc Sulphate: 20 kg/ha (if High Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+67,UradBean,Basal (at sowing / land prep),"DAP: 87.0 kg/ha, MOP: 33.3 kg/ha, Urea (top-up): 0.0 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+68,UradBean,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 10.9 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+69,UradBean,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 10.9 kg/ha, Zinc Sulphate: 20 kg/ha (if Medium Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+70,Rice,Basal (at sowing / land prep),"DAP: 108.7 kg/ha, MOP: 83.3 kg/ha, Urea (top-up): 66.2 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+71,Rice,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 54.3 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+72,Rice,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 54.3 kg/ha, Zinc Sulphate: 20 kg/ha (if High Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
+73,Pigeonpea,Basal (at sowing / land prep),"DAP: 108.7 kg/ha, MOP: 41.7 kg/ha, Urea (top-up): 0.0 kg/ha, + FYM 5-10 t/ha during land prep","Supplies full P, full K, half of N; FYM improves soil structure and micronutrient availability"
+74,Pigeonpea,"Top-dress 1 (~30-40% crop duration, vegetative)",Urea: 13.6 kg/ha,"Boosts vegetative growth; apply after weeding, with soil moisture present"
+75,Pigeonpea,"Top-dress 2 (~55-65% crop duration, flowering/reproductive)","Urea: 13.6 kg/ha, Zinc Sulphate: 20 kg/ha (if Medium Zn deficiency indicated by soil test)",Supports flowering/grain-fill; most yield-critical nitrogen application
