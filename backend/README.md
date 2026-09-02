@@ -77,6 +77,7 @@ The ML predictors load scikit-learn artifacts with `joblib` from
 - **Artifact:** `backend/krishi_core/ml_models/artifacts/best_model.joblib`
 - **Size:** `35,561,866 bytes` (~35.56 MB)
 - **MD5:** `ffd5def7a346704d44790a3b6067cf19`
+- **Download:** [Download `best_model.joblib` from v1.0.0 Release](https://github.com/bjgithub29/KrishiMitra/releases/download/v1.0.0/best_model.joblib)
 - **Architecture:** Complete scikit-learn Pipeline with `ColumnTransformer` (numeric passthrough on `N, P, K, temperature_C, humidity_pct, ph, rainfall_mm` + `OneHotEncoder` on `season, state`) feeding a `RandomForestClassifier` (25 crop classes).
 - **Environment:** Requires `scikit-learn==1.6.1`.
 - **Distribution:** Distributed as a GitHub Release asset. When absent, `soil_recommend` automatically falls back to `engine: "heuristic"`.
@@ -85,6 +86,7 @@ The ML predictors load scikit-learn artifacts with `joblib` from
 - **Artifact:** `backend/krishi_core/ml_models/artifacts/crop_yield_model.pkl`
 - **Size:** `1,475,337 bytes` (~1.41 MB)
 - **MD5:** `7c47105d8f39cfd87acc73f3ea9b3edc`
+- **Download:** [Download `crop_yield_model.pkl` from v1.0.0 Release](https://github.com/bjgithub29/KrishiMitra/releases/download/v1.0.0/crop_yield_model.pkl)
 - **Metrics:** `R² = 0.9557`, `MAE = 12.5050`, `RMSE = 179.8106` (evaluated on temporal holdout dataset).
 - **Architecture:** `TransformedTargetRegressor(func=np.log1p, inverse_func=np.expm1)` wrapping `HistGradientBoostingRegressor(random_state=42)`.
 - **Training Pipeline:** Run `python scripts/train_yield.py --csv <path_to_crop_yield.csv>` to regenerate the artifact. Expects 10 columns: `Crop, Crop_Year, Season, State, Area, Production, Annual_Rainfall, Fertilizer, Pesticide, Yield`. (Note: `Production` is excluded during training to prevent target leakage).

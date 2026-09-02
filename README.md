@@ -143,18 +143,17 @@ crashing:
 
 ### ML Models & Artifacts
 
-The machine learning engine uses artifacts stored in `backend/krishi_core/ml_models/artifacts/`:
+The machine learning engine uses binary artifacts stored in `backend/krishi_core/ml_models/artifacts/`.
+These models are excluded from Git history and distributed via [**GitHub Release v1.0.0**](https://github.com/bjgithub29/KrishiMitra/releases/tag/v1.0.0):
 
-```
-best_model.joblib          # Crop recommendation pipeline (35.56 MB, scikit-learn==1.6.1)
-crop_yield_model.pkl       # Crop yield regression model (1.41 MB, scikit-learn==1.6.1)
-crop_yield_metrics.json    # Yield model validation metrics (R²=0.9557, MAE=12.5050)
-```
+| Artifact | Size | MD5 Checksum | Download Link | Description |
+|---|---|---|---|---|
+| **`best_model.joblib`** | 35.56 MB | `ffd5def7a346704d44790a3b6067cf19` | [Download](https://github.com/bjgithub29/KrishiMitra/releases/download/v1.0.0/best_model.joblib) | 25-class Random Forest Crop Recommendation pipeline (`engine="model"`) |
+| **`crop_yield_model.pkl`** | 1.41 MB | `7c47105d8f39cfd87acc73f3ea9b3edc` | [Download](https://github.com/bjgithub29/KrishiMitra/releases/download/v1.0.0/crop_yield_model.pkl) | HistGradientBoosting Crop Yield Regressor (`R²=0.9557, MAE=12.5050`) |
 
-- **Training Yield Model:** Run `python scripts/train_yield.py` inside `backend/`
-  with `phase8_data/crop_yield.csv` to regenerate `crop_yield_model.pkl`.
-- **Requirements:** Must use `scikit-learn==1.6.1` to maintain binary compatibility
-  with pipeline transformer definitions.
+- **Automatic Fallback:** If `best_model.joblib` is absent, `/api/soil_recommend` seamlessly serves rule-based agronomic recommendations (`engine="heuristic"`).
+- **Training Yield Model:** Run `python scripts/train_yield.py --csv <path_to_crop_yield.csv>` inside `backend/` to regenerate `crop_yield_model.pkl`.
+- **Environment Requirement:** Must use `scikit-learn==1.6.1` to maintain pipeline binary compatibility.
 
 ### Knowledge Base / RAG
 
