@@ -87,7 +87,7 @@ The ML predictors load scikit-learn artifacts with `joblib` from
 - **MD5:** `7c47105d8f39cfd87acc73f3ea9b3edc`
 - **Metrics:** `R² = 0.9557`, `MAE = 12.5050`, `RMSE = 179.8106` (evaluated on temporal holdout dataset).
 - **Architecture:** `TransformedTargetRegressor(func=np.log1p, inverse_func=np.expm1)` wrapping `HistGradientBoostingRegressor(random_state=42)`.
-- **Training Script:** Included at `backend/scripts/train_yield.py`.
+- **Training Pipeline:** Run `python scripts/train_yield.py --csv <path_to_crop_yield.csv>` to regenerate the artifact. Expects 10 columns: `Crop, Crop_Year, Season, State, Area, Production, Annual_Rainfall, Fertilizer, Pesticide, Yield`. (Note: `Production` is excluded during training to prevent target leakage).
 
 ## Knowledge Base / RAG (ChromaDB)
 
