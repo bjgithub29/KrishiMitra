@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
-import { Search, MapPin, Wind, Droplets, Eye, Gauge, Thermometer, Sun, CloudRain, Cloud, CloudSun, Navigation, Plus, X, Sparkles, Clock, Calendar } from "lucide-react";
+import { Search, MapPin, Wind, Droplets, Eye, Gauge, Thermometer, Sun, CloudRain, Cloud, CloudSun, Navigation, Plus, X, Sparkles, Clock, Calendar, AlertCircle, RefreshCw } from "lucide-react";
 import { useAppData } from "@/lib/AppDataContext";
 import { PageHeader } from "@/components/app/AppShell";
 
@@ -99,26 +99,31 @@ async function fetchWeatherForLocation(locationQuery, inputLat, inputLon) {
   let lon = inputLon;
   let cityName = locationQuery;
 
+  const baseUrl = import.meta.env.VITE_API_URL || (typeof window !== "undefined" ? `http://${window.location.hostname}:5001/api` : "http://localhost:5001/api");
+
   if (lat == null || lon == null) {
-    const geoRes = await fetch(
-      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(locationQuery)}&limit=1`
-    );
+    const geoRes = await fetch(`${baseUrl}/geocode?q=${encodeURIComponent(locationQuery)}&limit=1`);
+    if (!geoRes.ok) {
+      throw new Error(`Could not find coordinates for "${locationQuery}"`);
+    }
     const geoData = await geoRes.json();
-    if (geoData && geoData.length > 0) {
-      lat = parseFloat(geoData[0].lat);
-      lon = parseFloat(geoData[0].lon);
-      const addr = geoData[0].address || {};
-      cityName = addr.city || addr.town || addr.village || addr.county || locationQuery;
+    if (geoData && geoData.lat != null && geoData.lon != null) {
+      lat = geoData.lat;
+      lon = geoData.lon;
+      cityName = geoData.city || geoData.district || geoData.address || locationQuery;
+    } else if (geoData && Array.isArray(geoData.results) && geoData.results.length > 0) {
+      lat = geoData.results[0].lat;
+      lon = geoData.results[0].lon;
+      cityName = geoData.results[0].city || geoData.results[0].district || geoData.results[0].address || locationQuery;
     } else {
-      throw new Error(`Could not find coordinates for ${locationQuery}`);
+      throw new Error(`Could not find coordinates for "${locationQuery}"`);
     }
   }
 
-  const baseUrl = import.meta.env.VITE_API_URL || (typeof window !== "undefined" ? `http://${window.location.hostname}:5001/api` : "http://localhost:5001/api");
   const weatherRes = await fetch(`${baseUrl}/weather?latitude=${lat}&longitude=${lon}`);
   
   if (!weatherRes.ok) {
-    throw new Error("Failed to fetch weather from ML backend");
+    throw new Error(`Weather service unavailable (HTTP ${weatherRes.status})`);
   }
   
   const data = await weatherRes.json();
@@ -132,7 +137,7 @@ async function fetchWeatherForLocation(locationQuery, inputLat, inputLon) {
     rainChance: data.daily_forecast?.[0]?.precipitation_probability_max ?? 10,
     precipitation: data.current?.precipitation ?? 0,
     uv: data.daily_forecast?.[0]?.uv_index_max ?? 5,
-    visibility: 15,
+    visibility: data.current?.visibility != null ? Math.round(data.current.visibility > 100 ? data.current.visibility / 1000 : data.current.visibility) : 15,
     pressure: data.current?.pressure ?? 1007,
     sunrise: data.daily_forecast?.[0]?.sunrise?.split("T")[1]?.slice(0,5) ?? "06:05",
     sunset: data.daily_forecast?.[0]?.sunset?.split("T")[1]?.slice(0,5) ?? "19:23",
@@ -148,17 +153,18 @@ async function fetchWeatherForLocation(locationQuery, inputLat, inputLon) {
 
   // Next 12 hours from current time
   const nowHour = new Date().getHours();
-  // We need to find the correct starting index in hourly_forecast that matches nowHour, 
-  // since the backend slice might start at 00:00.
-  const hourlyStartIdx = (data.hourly_forecast || []).findIndex(h => new Date(h.time).getHours() === nowHour) || 0;
+  const idx = (data.hourly_forecast || []).findIndex(h => new Date(h.time).getHours() === nowHour);
+  const hourlyStartIdx = idx === -1 ? 0 : idx;
   
   const hourly = (data.hourly_forecast || [])
     .slice(hourlyStartIdx, hourlyStartIdx + 13)
     .map((h, i) => {
       const date = new Date(h.time);
       const hr = date.getHours();
+      const hr12 = hr % 12 || 12;
+      const ampm = hr < 12 ? "AM" : "PM";
       return {
-        label: i === 0 ? "Now" : `${hr}${hr < 12 ? "AM" : "PM"}`,
+        label: i === 0 ? "Now" : `${hr12} ${ampm}`,
         temp: Math.round(h.temperature),
         rain: h.precipitation_probability ?? 0,
       };
@@ -212,6 +218,7 @@ function WeatherPage() {
   const [locations, setLocations] = useState([]);
   const [locationData, setLocationData] = useState({});
   const [locationMeta, setLocationMeta] = useState({}); // { [id]: { source, ageMinutes, cachedAt } }
+  const [locationErrors, setLocationErrors] = useState({}); // { [id]: errorString }
   const [activeId, setActiveId] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -225,7 +232,7 @@ function WeatherPage() {
 
   /** Convert a location query to a stable cache key (mirrors backend logic) */
   const toLocationKey = (q) =>
-    q.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    (q || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
   /** Save freshly-fetched live data to the backend DB cache */
   const persistToCache = async (locationKey, cityName, lat, lon, data) => {
@@ -245,7 +252,13 @@ function WeatherPage() {
    * 3. When live data arrives → update UI + persist to cache
    */
   const loadLocationSWR = async (loc) => {
+    if (!loc || !loc.query) return;
     const key = toLocationKey(loc.query);
+    setLocationErrors(prev => {
+      const copy = { ...prev };
+      delete copy[loc.id];
+      return copy;
+    });
 
     // --- Phase 1: Try cache first (instant) ---
     try {
@@ -282,36 +295,48 @@ function WeatherPage() {
         hourly: liveData.hourly,
         alerts: liveData.alerts,
       });
-    } catch (e) { console.error("Live weather fetch failed for", loc.query, e); }
+    } catch (e) {
+      console.error("Live weather fetch failed for", loc.query, e);
+      setLocationErrors(prev => ({ ...prev, [loc.id]: e.message || "Failed to fetch weather data" }));
+    }
   };
 
   // Load data for all locations using SWR
   useEffect(() => {
     for (const loc of locations) {
-      if (!locationData[loc.id]) {
+      if (!locationData[loc.id] && !locationErrors[loc.id]) {
         loadLocationSWR(loc);
       }
     }
   }, [locations, token]);
 
-  // Auto-add the user's saved location as first entry on mount
+  // Auto-add saved location on mount (prefer whichever source has valid coordinates)
   useEffect(() => {
-    if (userLocation?.query) {
-      const id = "user-home";
+    const userQuery = userLocation?.query || userLocation?.address || (typeof userLocation === "string" ? userLocation : null);
+    const userHasCoords = userLocation?.lat != null && userLocation?.lon != null;
+
+    const farmQuery = typeof activeFarm?.location === "string"
+      ? activeFarm.location
+      : (activeFarm?.location?.address || activeFarm?.location?.query || null);
+    const farmHasCoords = typeof activeFarm?.location === "object" && activeFarm?.location?.lat != null && activeFarm?.location?.lon != null;
+
+    let chosen = null;
+    if (farmHasCoords) {
+      chosen = { id: "farm-main", query: farmQuery, lat: activeFarm.location.lat, lon: activeFarm.location.lon };
+    } else if (userHasCoords) {
+      chosen = { id: "user-home", query: userQuery, lat: userLocation.lat, lon: userLocation.lon };
+    } else if (farmQuery) {
+      chosen = { id: "farm-main", query: farmQuery, lat: null, lon: null };
+    } else if (userQuery) {
+      chosen = { id: "user-home", query: userQuery, lat: null, lon: null };
+    }
+
+    if (chosen) {
       setLocations(prev => {
-        if (prev.find(l => l.id === id)) return prev;
-        return [{ id, query: userLocation.query, lat: userLocation.lat, lon: userLocation.lon }, ...prev];
+        if (prev.find(l => l.id === chosen.id)) return prev;
+        return [chosen, ...prev];
       });
-      setActiveId(id);
-    } else if (activeFarm?.location?.address) {
-      // fallback: use active farm location
-      const farmQuery = activeFarm.location.address;
-      const id = "farm-main";
-      setLocations(prev => {
-        if (prev.find(l => l.id === id)) return prev;
-        return [{ id, query: farmQuery, lat: activeFarm.location.lat, lon: activeFarm.location.lon }, ...prev];
-      });
-      setActiveId(id);
+      setActiveId(prev => prev || chosen.id);
     }
   }, [userLocation, activeFarm]);
 
@@ -322,21 +347,24 @@ function WeatherPage() {
     searchTimeout.current = setTimeout(async () => {
       setIsSearching(true);
       try {
-        const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}&limit=5`);
-        const data = await res.json();
-        setSearchResults(data);
+        const res = await fetch(`${API_URL}/geocode?q=${encodeURIComponent(searchQuery)}&limit=5`);
+        if (res.ok) {
+          const data = await res.json();
+          setSearchResults(Array.isArray(data.results) ? data.results : []);
+        } else {
+          setSearchResults([]);
+        }
+      } catch (e) {
+        setSearchResults([]);
       } finally { setIsSearching(false); }
     }, 500);
   }, [searchQuery]);
 
   const addLocation = async (item) => {
-    const addr = item.address || {};
-    const name = addr.city || addr.town || addr.village || addr.county || item.display_name.split(",")[0];
-    const state = addr.state || "";
-    const query = state ? `${name}, ${state}` : name;
+    const query = item.address || item.display_name || item.query;
     const id = Date.now();
-    const lat = parseFloat(item.lat);
-    const lon = parseFloat(item.lon);
+    const lat = item.lat != null ? parseFloat(item.lat) : null;
+    const lon = item.lon != null ? parseFloat(item.lon) : null;
     
     setLocations(prev => [...prev, { id, query, lat, lon }]);
     setActiveId(id);
@@ -353,6 +381,7 @@ function WeatherPage() {
   };
 
   const active = locationData[activeId];
+  const activeError = locationErrors[activeId];
   const hour = new Date().getHours();
 
   // Push the currently viewed conditions into shared app state so the
@@ -399,7 +428,7 @@ function WeatherPage() {
 
     const alreadyRaised = alerts?.some(
       (a) => a.category === "weather" && a.status === "active" && a.title === title &&
-        new Date(a.createdAt).toDateString() === new Date().toDateString()
+        new Date(a.createdAt || a.created_at).toDateString() === new Date().toDateString()
     );
     if (alreadyRaised) return;
 
@@ -512,7 +541,53 @@ function WeatherPage() {
         </div>
       </section>
 
-      {!active ? (
+      {locations.length === 0 ? (
+        <div className="glass flex flex-col items-center justify-center rounded-2xl p-12 text-center">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary mb-4">
+            <MapPin className="h-7 w-7" />
+          </div>
+          <h3 className="text-lg font-semibold text-foreground">No Location Configured</h3>
+          <p className="mt-1.5 max-w-md text-sm text-muted-foreground">
+            Search for a city or taluka above, or add a farm in your profile to view hyperlocal weather forecasts and spraying advisories.
+          </p>
+          <div className="mt-6 flex items-center gap-3">
+            <button
+              onClick={() => { setShowSearch(true); setTimeout(() => searchRef.current?.focus(), 50); }}
+              className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90"
+            >
+              <Search className="h-4 w-4" />
+              Search Location
+            </button>
+            <button
+              onClick={() => navigate({ to: "/farms" })}
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-background/50 px-4 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-accent"
+            >
+              <Plus className="h-4 w-4" />
+              Add Farm
+            </button>
+          </div>
+        </div>
+      ) : activeError ? (
+        <div className="glass flex flex-col items-center justify-center rounded-2xl p-10 text-center border border-destructive/30 bg-destructive/5">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-destructive/10 text-destructive mb-3">
+            <AlertCircle className="h-6 w-6" />
+          </div>
+          <h3 className="text-base font-semibold text-foreground">Weather Data Unavailable</h3>
+          <p className="mt-1 max-w-md text-sm text-muted-foreground">
+            {activeError}
+          </p>
+          <button
+            onClick={() => {
+              const loc = locations.find(l => l.id === activeId);
+              if (loc) loadLocationSWR(loc);
+            }}
+            className="mt-4 inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+          >
+            <RefreshCw className="h-4 w-4" />
+            Retry
+          </button>
+        </div>
+      ) : !active ? (
         <div className="space-y-4">
           {/* Skeleton hero */}
           <div className="glass h-44 animate-pulse rounded-2xl" />

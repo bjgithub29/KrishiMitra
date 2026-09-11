@@ -604,7 +604,7 @@ function DiseaseScanner({ token }) {
         method: "POST", headers: { Authorization: `Bearer ${token}` }, body: form,
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Analysis failed");
+      if (!res.ok) throw new Error(data.error || data.message || "Analysis failed");
       setResult(data?.data ?? data);
     } catch (err) { setError(err.message); } finally { setLoading(false); }
   };

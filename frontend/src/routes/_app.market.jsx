@@ -57,13 +57,15 @@ function MarketPage() {
       // Fallback geocode only if userLocation isn't set yet
       (async () => {
         try {
-          const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(activeFarm.location.address)}&addressdetails=1`);
-          const geoData = await geoRes.json();
-          if (geoData && geoData.length > 0 && geoData[0].address) {
-            const { state, state_district, county } = geoData[0].address;
-            if (state) setStateFilter(state);
-            const district = state_district || county || "";
-            if (district) setDistrictFilter(district.replace(/ District/i, ""));
+          const API_URL = import.meta.env.VITE_API_URL || (typeof window !== "undefined" ? `http://${window.location.hostname}:5001/api` : "http://localhost:5001/api");
+          const geoRes = await fetch(`${API_URL}/geocode?q=${encodeURIComponent(activeFarm.location.address)}&limit=1`);
+          if (geoRes.ok) {
+            const geoData = await geoRes.json();
+            if (geoData && (geoData.state || geoData.district)) {
+              if (geoData.state) setStateFilter(geoData.state);
+              const district = geoData.district || "";
+              if (district) setDistrictFilter(district.replace(/ District/i, ""));
+            }
           }
         } catch (err) {
           console.error("Geocoding failed", err);
@@ -161,17 +163,22 @@ function MarketPage() {
         // Group history by date (average modal price across markets for the chart)
         const grouped = (data.records || []).reduce((acc, curr) => {
           const date = curr.arrival_date; // DD/MM/YYYY
-          if (!acc[date]) acc[date] = { date, sum: 0, count: 0, parsedObj: new Date(curr.parsedDate) };
-          acc[date].sum += curr.modal_price;
-          acc[date].count += 1;
+          if (!date) return acc;
+          if (!acc[date]) acc[date] = { date, sum: 0, count: 0, parsedObj: new Date(curr.parsedDate || 0) };
+          if (curr.modal_price != null && !isNaN(curr.modal_price)) {
+            acc[date].sum += Number(curr.modal_price);
+            acc[date].count += 1;
+          }
           return acc;
         }, {});
         
-        const chartArr = Object.values(grouped).map(g => ({
-          date: g.date.substring(0, 5), // DD/MM
-          price: Math.round(g.sum / g.count),
-          parsedObj: g.parsedObj
-        })).sort((a, b) => a.parsedObj - b.parsedObj); // Ensure chronological order
+        const chartArr = Object.values(grouped)
+          .filter(g => g.count > 0)
+          .map(g => ({
+            date: g.date.substring(0, 5), // DD/MM
+            price: Math.round(g.sum / g.count),
+            parsedObj: g.parsedObj
+          })).sort((a, b) => a.parsedObj - b.parsedObj); // Ensure chronological order
         
         setChartData(chartArr);
       }
@@ -203,8 +210,8 @@ function MarketPage() {
 
   // Sorting
   tableData.sort((a, b) => {
-    if (sortOrder === "priceDesc") return b.modal_price - a.modal_price;
-    if (sortOrder === "priceAsc") return a.modal_price - b.modal_price;
+    if (sortOrder === "priceDesc") return (b.modal_price ?? -Infinity) - (a.modal_price ?? -Infinity);
+    if (sortOrder === "priceAsc") return (a.modal_price ?? Infinity) - (b.modal_price ?? Infinity);
     // default dateDesc
     return new Date(b.parsedDate || 0) - new Date(a.parsedDate || 0);
   });
@@ -215,7 +222,7 @@ function MarketPage() {
   // gives an at-a-glance read before scanning the full table.
   const cropStats = (() => {
     if (!commoditySearch || tableData.length === 0) return null;
-    const prices_ = tableData.map(p => p.modal_price).filter(n => typeof n === "number");
+    const prices_ = tableData.map(p => p.modal_price).filter(n => typeof n === "number" && !isNaN(n));
     if (prices_.length === 0) return null;
     const high = Math.max(...prices_);
     const low = Math.min(...prices_);
@@ -534,10 +541,20 @@ function MarketPage() {
                           </td>
                         )}
                         <td className="py-3 px-2 text-right font-display font-bold text-primary">
-                          ₹{p.modal_price.toLocaleString()} <span className="text-[10px] font-normal text-muted-foreground">/ Qtl</span>
+                          {p.modal_price != null && !isNaN(p.modal_price) ? (
+                            <>₹{Number(p.modal_price).toLocaleString()} <span className="text-[10px] font-normal text-muted-foreground">/ Qtl</span></>
+                          ) : (
+                            <span className="text-muted-foreground font-normal">—</span>
+                          )}
                         </td>
                         <td className="py-3 px-2 text-right text-xs text-muted-foreground">
-                          ₹{p.min_price} - ₹{p.max_price} <span className="text-[9px]">/ Qtl</span>
+                          {p.min_price != null && p.max_price != null && !isNaN(p.min_price) && !isNaN(p.max_price) ? (
+                            <>₹{Number(p.min_price).toLocaleString()} - ₹{Number(p.max_price).toLocaleString()} <span className="text-[9px]">/ Qtl</span></>
+                          ) : p.min_price != null && !isNaN(p.min_price) ? (
+                            <>₹{Number(p.min_price).toLocaleString()} <span className="text-[9px]">/ Qtl</span></>
+                          ) : (
+                            <span>—</span>
+                          )}
                         </td>
                         <td className="py-3 px-2 text-right text-[11px] text-muted-foreground">
                           {p.arrival_date}

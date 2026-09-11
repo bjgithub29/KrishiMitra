@@ -84,19 +84,19 @@ function FarmsPage() {
       async (pos) => {
         try {
           const res = await fetch(
-            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`
+            `${API_URL}/geocode/reverse?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`
           );
           if (!res.ok) throw new Error("Geocoding failed");
           const data = await res.json();
-          if (data && data.address) {
-            const city = data.address.city || data.address.town || data.address.village || data.address.county || "";
-            const state = data.address.state || "";
-            const district = data.address.state_district || data.address.county || "";
-            const locString = [city, state].filter(Boolean).join(", ");
+          if (data && (data.address || data.city)) {
+            const city = data.city || "";
+            const state = data.state || "";
+            const district = data.district || "";
+            const locString = data.address || [city, state].filter(Boolean).join(", ");
             if (locString) {
               setFormData((prev) => ({ ...prev, location: locString }));
               setUserLocation({
-                query: locString, city, state, district,
+                query: locString, address: locString, city, state, district,
                 lat: pos.coords.latitude, lon: pos.coords.longitude,
               });
               toast.success("Location detected and saved!");
@@ -220,15 +220,11 @@ function FarmsPage() {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         try {
-          const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}&addressdetails=1`);
+          const res = await fetch(`${API_URL}/geocode/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}`);
+          if (!res.ok) throw new Error("Geocoding failed");
           const data = await res.json();
-          if (data && data.address) {
-            const addr = data.address;
-            let parts = [];
-            if (addr.village || addr.town || addr.city) parts.push(addr.village || addr.town || addr.city);
-            if (addr.state_district) parts.push(addr.state_district);
-            if (addr.state) parts.push(addr.state);
-            const addressString = parts.join(", ") || data.display_name;
+          if (data && (data.address || data.city)) {
+            const addressString = data.address || [data.city, data.state].filter(Boolean).join(", ");
             setEditFormData((prev) => ({ ...prev, location: addressString }));
           } else {
             toast.error("Could not determine address from coordinates");
@@ -455,21 +451,22 @@ function FarmsPage() {
         
         if (formData.location) {
           try {
-            const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(formData.location)}&addressdetails=1&limit=1`);
-            const geoData = await geoRes.json();
-            if (geoData && geoData.length > 0) {
-              const addr = geoData[0].address || {};
-              const city = addr.city || addr.town || addr.village || addr.county || formData.location.split(",")[0]?.trim() || "";
-              const state = addr.state || "";
-              const district = addr.state_district || addr.county || "";
-              const lat = parseFloat(geoData[0].lat);
-              const lon = parseFloat(geoData[0].lon);
-              
-              setUserLocation({ query: formData.location, city, state, district, lat, lon });
-              
-              await patchRecord(`/farms/${savedFarm._id || savedFarm.id}`, {
-                location: { address: formData.location, city, state, district, lat, lon }
-              });
+            const geoRes = await fetch(`${API_URL}/geocode?q=${encodeURIComponent(formData.location)}&limit=1`);
+            if (geoRes.ok) {
+              const geoData = await geoRes.json();
+              if (geoData && geoData.lat != null && geoData.lon != null) {
+                const city = geoData.city || "";
+                const state = geoData.state || "";
+                const district = geoData.district || "";
+                const lat = geoData.lat;
+                const lon = geoData.lon;
+                
+                setUserLocation({ query: formData.location, address: formData.location, city, state, district, lat, lon });
+                
+                await patchRecord(`/farms/${savedFarm._id || savedFarm.id}`, {
+                  location: { address: formData.location, city, state, district, lat, lon }
+                });
+              }
             }
           } catch (e) {
             console.error("Geocoding during save failed", e);

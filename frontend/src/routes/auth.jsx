@@ -1,4 +1,4 @@
-import { Link, createFileRoute, useNavigate } from "@tanstack/react-router";
+import { Link, createFileRoute, useNavigate, redirect } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, Lock, Mail, Phone, UserRound, ShieldCheck, BarChart3, MapPin, CheckCircle2, AlertCircle, Eye, EyeOff } from "lucide-react";
 
@@ -6,6 +6,14 @@ import { BrandMark, ThemeToggle } from "@/components/app/AppShell";
 import { useAppData } from "@/lib/AppDataContext";
 
 export const Route = createFileRoute("/auth")({
+  beforeLoad: () => {
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("krishimitra_token");
+      if (token) {
+        throw redirect({ to: "/dashboard" });
+      }
+    }
+  },
   head: () => ({
     meta: [
       { title: "Sign in — KrishiMitra" },
@@ -138,14 +146,15 @@ function AuthPage() {
       async (position) => {
         try {
           const { latitude, longitude } = position.coords;
+          const API_URL = import.meta.env.VITE_API_URL || (typeof window !== "undefined" ? `http://${window.location.hostname}:5001/api` : "http://localhost:5001/api");
           const res = await fetch(
-            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+            `${API_URL}/geocode/reverse?lat=${latitude}&lon=${longitude}`
           );
+          if (!res.ok) throw new Error("Geocoding failed");
           const data = await res.json();
-          if (data && data.address) {
-            const city = data.address.city || data.address.town || data.address.village || "";
-            const state = data.address.state || "";
-            setFormData((prev) => ({ ...prev, location: [city, state].filter(Boolean).join(", ") }));
+          if (data && (data.address || data.city)) {
+            const locString = data.address || [data.city, data.state].filter(Boolean).join(", ");
+            setFormData((prev) => ({ ...prev, location: locString }));
             clearFieldError("location");
           }
         } catch {
@@ -179,7 +188,24 @@ function AuthPage() {
           body: JSON.stringify({ email: formData.email, password: formData.password }),
         });
         const data = await res.json();
-        if (!res.ok) throw new Error(data.message || "Login failed");
+        if (!res.ok) {
+          if (res.status === 403 && data.requiresVerification) {
+            const userEmail = data.email || formData.email;
+            setOtpLoginEmail(userEmail);
+            try {
+              await fetch(`${API_URL}/auth/otp/request`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email: userEmail, purpose: "login" }),
+              });
+            } catch (e) {}
+            setMode("otp-login");
+            setOtpLoginStep("verify");
+            setApiError("Your account requires email verification. We've sent a 6-digit OTP to your email.");
+            return;
+          }
+          throw new Error(data.message || "Login failed");
+        }
         login(data.token);
         navigate({ to: "/dashboard" });
       } catch (err) {
@@ -209,7 +235,7 @@ function AuthPage() {
         const otpRes = await fetch(`${API_URL}/auth/otp/request`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: formData.email }),
+          body: JSON.stringify({ email: formData.email, purpose: "register" }),
         });
         const otpData = await otpRes.json();
         if (!otpRes.ok) throw new Error(otpData.message || "Failed to send OTP");
@@ -299,7 +325,7 @@ function AuthPage() {
       const res = await fetch(`${API_URL}/auth/otp/request`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: otpLoginEmail }),
+        body: JSON.stringify({ email: otpLoginEmail, purpose: "login" }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Failed to send OTP");
@@ -320,12 +346,21 @@ function AuthPage() {
       const res = await fetch(`${API_URL}/auth/otp/verify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: otpLoginEmail, otp: otpLoginCode }),
+        body: JSON.stringify({ email: otpLoginEmail, otp: otpLoginCode, purpose: "login" }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Invalid OTP");
-      login(data.token);
-      navigate({ to: "/farms" });
+      if (data.requiresRegistration) {
+        setMode("register");
+        setFormData(prev => ({ ...prev, email: otpLoginEmail }));
+        setStep(1);
+        setApiError(data.message || "Email verified. Please complete registration details.");
+        return;
+      }
+      if (data.token) {
+        login(data.token);
+        navigate({ to: "/dashboard" });
+      }
     } catch (err) {
       setApiError(err.message);
     }
@@ -508,6 +543,15 @@ function AuthPage() {
                   className="w-full rounded-xl border border-input bg-background/50 px-3.5 py-3 text-sm text-foreground outline-none tracking-widest focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
                 />
               </div>
+              <div className="text-center mt-2">
+                <button
+                  type="button"
+                  onClick={handleOtpLoginRequest}
+                  className="text-xs font-medium text-primary hover:underline"
+                >
+                  Resend OTP
+                </button>
+              </div>
               <div className="mt-4 flex gap-3">
                 <button type="button" onClick={() => setOtpLoginStep("email")} className="flex-1 rounded-xl border border-border py-2.5 text-sm font-medium hover:bg-secondary/20">Back</button>
                 <button type="button" onClick={handleOtpLoginVerify} className="flex-1 rounded-xl bg-primary py-2.5 text-sm font-bold text-primary-foreground hover:opacity-90">Verify & Sign In</button>
@@ -591,7 +635,7 @@ function AuthPage() {
                   const res = await fetch(`${API_URL}/auth/otp/request`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email: formData.email }),
+                    body: JSON.stringify({ email: formData.email, purpose: "register" }),
                   });
                   if (res.ok) {
                     setResendTimer(60);

@@ -37,6 +37,10 @@ urlpatterns = [
     path('weather/cache/<str:key>', views.weather_cache_get, name='weather_cache_get'),
     path('weather/cache', views.weather_cache_set, name='weather_cache_set'),
     
+    # Geocoding endpoints
+    path('geocode', views.geocode, name='geocode'),
+    path('geocode/reverse', views.geocode_reverse, name='geocode_reverse'),
+    
     # Chat AI endpoints
     path('chat/sessions', views.chat_sessions, name='chat_sessions'),
     path('chat/sync-plan', views.chat_sync_plan, name='chat_sync_plan'),
@@ -45,6 +49,7 @@ urlpatterns = [
     
     # Market endpoints
     path('market/locations', views.market_locations, name='market_locations'),
+    path('market/history', views.market_history, name='market_history'),
     
     # ML & Weather endpoints
     path("retrieve", views_ml.RetrieveView.as_view()),

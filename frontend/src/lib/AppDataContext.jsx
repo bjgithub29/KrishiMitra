@@ -45,9 +45,15 @@ export function AppDataProvider({ children }) {
   const logout = () => {
     setToken(null);
     setUserProfile({ name: "Guest User", role: "farmer" });
+    setUserLocationState(null);
     setFarms([]);
     setActiveFarmId(null);
+    setWeatherSnapshot(null);
+    setAlerts([]);
+    setNotifications([]);
 
+    localStorage.removeItem("krishimitra_token");
+    localStorage.removeItem("user_location");
     localStorage.removeItem("active_farm_id");
     router.navigate({ to: "/auth" });
   };
@@ -95,9 +101,19 @@ export function AppDataProvider({ children }) {
           role: meData.user.role,
         });
         if (meData.user.location && typeof meData.user.location === "string") {
-          setUserLocation({ address: meData.user.location, source: "profile" });
-        } else if (meData.user.location && meData.user.location.address) {
-          setUserLocation(meData.user.location);
+          setUserLocation(prev => ({
+            ...(typeof prev === "object" ? prev : {}),
+            query: meData.user.location,
+            address: meData.user.location,
+            source: "profile",
+          }));
+        } else if (meData.user.location && (meData.user.location.address || meData.user.location.query)) {
+          setUserLocation(prev => ({
+            ...(typeof prev === "object" ? prev : {}),
+            ...(typeof meData.user.location === "object" ? meData.user.location : {}),
+            query: meData.user.location.query || meData.user.location.address,
+            address: meData.user.location.address || meData.user.location.query,
+          }));
         }
       }
 

@@ -26,8 +26,21 @@ On Windows you can instead run `start-backend.bat` from the project root, which
 auto-detects active Conda environments (`krishi_train`), installs requirements,
 migrates, and runs the server on port 5001.
 
-Copy `.env.example` to `.env` and fill in what you need. Every variable is optional
-for the server to boot — a missing value only disables the feature that needs it.
+### Environment Configuration
+
+The backend boots without `.env` using safe local development defaults. However, **credential-dependent integrations remain disabled until configured.**
+
+Create `backend/.env` from the example template:
+```bash
+cp .env.example .env    # Windows cmd: copy .env.example .env
+```
+
+| Variable | Integration Unlocked | Fallback Behavior if Absent |
+|---|---|---|
+| `GEMINI_API_KEY` | Leaf Pathology Vision (`/api/disease/predict`) & Cloud Gemini LLM | Returns unconfigured error on disease predict; AI Mitra uses local ChromaDB. |
+| `EMAIL_HOST_USER` / `PASSWORD` | Password reset OTP delivery via Gmail SMTP | OTPs are printed to server terminal output. |
+| `DATAGOV_API_KEY` | Real-time APMC Mandi commodity price synchronization | Serves 3,937 pre-seeded commodity prices from SQLite. |
+| `OLLAMA_BASE_URL` / `MODEL` | Local Ollama LLM chat streaming (`llama3.2:1b`) | Cascades automatically to Gemini or ChromaDB if offline. |
 
 ## Endpoints
 
@@ -61,7 +74,7 @@ Function endpoints:
 | `predict_yield` | `views_predictions.CropYieldPredictionView` | Crop yield regression powered by `crop_yield_model.pkl` (`R²=0.9557, MAE=12.5050`). |
 | `retrieve` | `views_ml.RetrieveView` | RAG semantic search across ChromaDB collections via `rag_retriever`. |
 | `crop_stage_tips` | `views_ml.CropStageTipsView` | Stage-specific agronomic notes and tasks from `timeline_kb`. |
-| `disease/predict` | `views_ml.PredictDiseaseView` | Plant leaf disease pathology scanner using Google Gemini 2.5 Flash Vision. |
+| `disease/predict` | `views_ml.PredictDiseaseView` | Plant leaf disease pathology scanner using Google Gemini Vision (gemini-flash-latest). |
 | `ai_recommendation` | `views_ml.DecisionEngineView` | Decision-engine orchestrator synthesizing ML predictions and RAG context. |
 | `health` | `views_ml.HealthView` | Backend health check. |
 | `weather` | `views_ml.WeatherView` | Open-Meteo 7-day live weather and alerts (no key needed). |
@@ -108,10 +121,10 @@ python knowledge-base/scripts/init_website_chroma.py    # -> website_kb (5 items
 
 - **AI Mitra Chat (`/api/chat`):** Implements a resilient 4-tier hybrid streaming architecture:
   1. **Tier 1 (Primary):** Local Ollama (`settings.OLLAMA_MODEL`, default `llama3.2:1b`, 1.5s fast connect timeout).
-  2. **Tier 2 (Cloud):** Google Gemini 2.5 Flash Cloud REST API (`GEMINI_API_KEY`).
+  2. **Tier 2 (Cloud):** Google Gemini REST API (`GEMINI_MODEL`, default `gemini-flash-latest`, requires `GEMINI_API_KEY`).
   3. **Tier 3 (Offline Knowledge):** Direct ChromaDB verified knowledge base response with verified attribution.
   4. **Tier 4 (Guidance):** Clean insufficient information notice if no matching records exist.
-- **Disease Pathology Scanner (`/api/disease/predict`):** Google Gemini 2.5 Flash Multimodal Vision API.
+- **Disease Pathology Scanner (`/api/disease/predict`):** Google Gemini Vision API (`gemini-flash-latest`, requires `GEMINI_API_KEY`).
 
 ## Notes & Database
 

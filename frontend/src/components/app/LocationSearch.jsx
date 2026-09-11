@@ -30,11 +30,17 @@ export function LocationSearch({ value, onChange, placeholder = "Search location
       }
       setIsLoading(true);
       try {
-        const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&addressdetails=1&limit=5`);
-        const data = await res.json();
-        setResults(data);
+        const API_URL = import.meta.env.VITE_API_URL || (typeof window !== "undefined" ? `http://${window.location.hostname}:5001/api` : "http://localhost:5001/api");
+        const res = await fetch(`${API_URL}/geocode?q=${encodeURIComponent(query)}&limit=5`);
+        if (res.ok) {
+          const data = await res.json();
+          setResults(Array.isArray(data.results) ? data.results : []);
+        } else {
+          setResults([]);
+        }
       } catch (err) {
         console.error("Location search failed", err);
+        setResults([]);
       } finally {
         setIsLoading(false);
       }
@@ -50,13 +56,7 @@ export function LocationSearch({ value, onChange, placeholder = "Search location
   }, [query, value, isOpen]);
 
   const handleSelect = (item) => {
-    const { address } = item;
-    const area = address?.neighbourhood || address?.suburb || address?.village || address?.town || address?.city || "";
-    const district = address?.county || address?.state_district || "";
-    const state = address?.state || "";
-    const formatted = [area, district, state].filter((v, i, a) => v && a.indexOf(v) === i).join(", ");
-    const displayName = formatted || item.display_name;
-
+    const displayName = item.address || item.display_name || item.query;
     onChange(displayName);
     setQuery(displayName);
     setIsOpen(false);
@@ -83,17 +83,11 @@ export function LocationSearch({ value, onChange, placeholder = "Search location
       {isOpen && results.length > 0 && (
         <div className="absolute z-50 mt-1 w-full rounded-xl border border-border bg-popover text-popover-foreground shadow-md outline-none animate-in fade-in zoom-in-95">
           <ul className="max-h-60 overflow-auto p-1">
-            {results.map((item) => {
-               const { address } = item;
-               const area = address?.neighbourhood || address?.suburb || address?.village || address?.town || address?.city || "";
-               const district = address?.county || address?.state_district || "";
-               const state = address?.state || "";
-               const formatted = [area, district, state].filter((v, i, a) => v && a.indexOf(v) === i).join(", ");
-               const display = formatted || item.display_name;
-               
-               return (
+            {results.map((item, idx) => {
+              const display = item.address || item.display_name || item.query;
+              return (
                 <li
-                  key={item.place_id}
+                  key={item.place_id || idx}
                   onClick={() => handleSelect(item)}
                   className="relative flex cursor-pointer select-none items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground"
                 >

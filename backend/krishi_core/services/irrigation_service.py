@@ -44,35 +44,37 @@ class IrrigationPredictionService:
         if not self._loaded or self.model is None:
             return "N/A (Model unavailable)"
 
-        features = pd.DataFrame([{
-            "Soil_Type": data["Soil_Type"],
-            "Soil_pH": data["Soil_pH"],
-            "Soil_Moisture": data["Soil_Moisture"],
-            "Organic_Carbon": data["Organic_Carbon"],
-            "Electrical_Conductivity": data["Electrical_Conductivity"],
-            "Temperature_C": data["Temperature_C"],
-            "Humidity": data["Humidity"],
-            "Rainfall_mm": data["Rainfall_mm"],
-            "Sunlight_Hours": data["Sunlight_Hours"],
-            "Wind_Speed_kmh": data["Wind_Speed_kmh"],
-            "Crop_Type": data["Crop_Type"],
-            "Crop_Growth_Stage": data["Crop_Growth_Stage"],
-            "Season": data["Season"],
-            "Irrigation_Type": data["Irrigation_Type"],
-            "Water_Source": data["Water_Source"],
-            "Field_Area_hectare": data["Field_Area_hectare"],
-            "Mulching_Used": data["Mulching_Used"],
-            "Previous_Irrigation_mm": data["Previous_Irrigation_mm"],
-            "Forecast_Rainfall_7Days_mm": data["Forecast_Rainfall_7Days_mm"],
-            "Forecast_Temp_7Days_Avg": data["Forecast_Temp_7Days_Avg"],
-            "Region": data["Region"],
-        }])
+        try:
+            features = pd.DataFrame([{
+                "Soil_Type": data.get("Soil_Type", "Black"),
+                "Soil_pH": float(data.get("Soil_pH", 6.5)),
+                "Soil_Moisture": float(data.get("Soil_Moisture", 40.0)),
+                "Organic_Carbon": float(data.get("Organic_Carbon", 0.5)),
+                "Electrical_Conductivity": float(data.get("Electrical_Conductivity", 0.4)),
+                "Temperature_C": float(data.get("Temperature_C", data.get("Temperature", 25.0))),
+                "Humidity": float(data.get("Humidity", 60.0)),
+                "Rainfall_mm": float(data.get("Rainfall_mm", data.get("Rainfall", 100.0))),
+                "Sunlight_Hours": float(data.get("Sunlight_Hours", 7.0)),
+                "Wind_Speed_kmh": float(data.get("Wind_Speed_kmh", 10.0)),
+                "Crop_Type": data.get("Crop_Type", "Wheat"),
+                "Crop_Growth_Stage": data.get("Crop_Growth_Stage", "Pre-emergence"),
+                "Season": data.get("Season", "Kharif"),
+                "Irrigation_Type": data.get("Irrigation_Type", "Drip"),
+                "Water_Source": data.get("Water_Source", "Borewell"),
+                "Field_Area_hectare": float(data.get("Field_Area_hectare", 1.0)),
+                "Mulching_Used": data.get("Mulching_Used", "No"),
+                "Previous_Irrigation_mm": float(data.get("Previous_Irrigation_mm", 20.0)),
+                "Forecast_Rainfall_7Days_mm": float(data.get("Forecast_Rainfall_7Days_mm", 15.0)),
+                "Forecast_Temp_7Days_Avg": float(data.get("Forecast_Temp_7Days_Avg", 26.0)),
+                "Region": data.get("Region", "Maharashtra"),
+            }])
 
-        prediction = self.model.predict(features)[0]
-
-        irrigation = self.encoder.inverse_transform([prediction])[0]
-
-        return irrigation
+            prediction = self.model.predict(features)[0]
+            irrigation = self.encoder.inverse_transform([prediction])[0]
+            return irrigation
+        except Exception as e:
+            logger.error("Irrigation prediction failed: %s", e)
+            return "N/A (Model unavailable)"
 
 
 irrigation_service = IrrigationPredictionService()

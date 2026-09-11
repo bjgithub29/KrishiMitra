@@ -182,13 +182,17 @@ export function RecommendationsView() {
                     {primary.suggestedFertilizer && (
                       <div className="rounded-xl border border-border/50 bg-secondary/20 p-3">
                         <div className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-1 flex items-center gap-1"><Sprout className="h-3 w-3"/> Suggested Fertilizer</div>
-                        <div className="text-sm font-semibold">{primary.suggestedFertilizer}</div>
+                        <div className={`text-sm font-semibold ${primary.suggestedFertilizer.includes('unavailable') || primary.suggestedFertilizer.startsWith('N/A') ? 'text-muted-foreground italic' : ''}`}>
+                          {primary.suggestedFertilizer.includes('unavailable') || primary.suggestedFertilizer.startsWith('N/A') ? 'Unavailable' : primary.suggestedFertilizer}
+                        </div>
                       </div>
                     )}
                     {primary.irrigationPrediction && (
                       <div className="rounded-xl border border-border/50 bg-secondary/20 p-3">
                         <div className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-1 flex items-center gap-1"><Droplets className="h-3 w-3"/> AI Irrigation Pattern</div>
-                        <div className="text-sm font-semibold">{primary.irrigationPrediction}</div>
+                        <div className={`text-sm font-semibold ${primary.irrigationPrediction.includes('unavailable') || primary.irrigationPrediction.startsWith('N/A') ? 'text-muted-foreground italic' : ''}`}>
+                          {primary.irrigationPrediction.includes('unavailable') || primary.irrigationPrediction.startsWith('N/A') ? 'Unavailable' : primary.irrigationPrediction}
+                        </div>
                       </div>
                     )}
                   </div>
@@ -277,13 +281,17 @@ export function RecommendationsView() {
                         {crop.suggestedFertilizer && (
                           <div className="text-[10px] text-muted-foreground flex items-center justify-between">
                             <span className="flex items-center gap-1 font-semibold"><Sprout className="h-3 w-3"/> Fertilizer</span>
-                            <span className="font-semibold text-foreground truncate pl-2 max-w-[120px] text-right" title={crop.suggestedFertilizer}>{crop.suggestedFertilizer}</span>
+                            <span className={`font-semibold truncate pl-2 max-w-[120px] text-right ${crop.suggestedFertilizer.includes('unavailable') || crop.suggestedFertilizer.startsWith('N/A') ? 'text-muted-foreground italic' : 'text-foreground'}`} title={crop.suggestedFertilizer}>
+                              {crop.suggestedFertilizer.includes('unavailable') || crop.suggestedFertilizer.startsWith('N/A') ? 'Unavailable' : crop.suggestedFertilizer}
+                            </span>
                           </div>
                         )}
                         {crop.irrigationPrediction && (
                           <div className="text-[10px] text-muted-foreground flex items-center justify-between">
                             <span className="flex items-center gap-1 font-semibold"><Droplets className="h-3 w-3"/> Irrigation</span>
-                            <span className="font-semibold text-foreground truncate pl-2 max-w-[120px] text-right" title={crop.irrigationPrediction}>{crop.irrigationPrediction}</span>
+                            <span className={`font-semibold truncate pl-2 max-w-[120px] text-right ${crop.irrigationPrediction.includes('unavailable') || crop.irrigationPrediction.startsWith('N/A') ? 'text-muted-foreground italic' : 'text-foreground'}`} title={crop.irrigationPrediction}>
+                              {crop.irrigationPrediction.includes('unavailable') || crop.irrigationPrediction.startsWith('N/A') ? 'Unavailable' : crop.irrigationPrediction}
+                            </span>
                           </div>
                         )}
                       </div>

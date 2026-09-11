@@ -151,11 +151,18 @@ function CropPlanPage() {
       if (!activePlan || !token) return;
       try {
         const headers = { "Content-Type": "application/json", Authorization: `Bearer ${token}` };
+        const planSeason = activePlan.season
+          ? (activePlan.season.charAt(0).toUpperCase() + activePlan.season.slice(1).toLowerCase())
+          : "Kharif";
+        const farmState = activeFarm?.location?.state || "Gujarat";
+
         const basePayload = { 
           Crop: activePlan.cropName || "Cotton", 
           Crop_Type: activePlan.cropName || "Cotton",
           Area: activePlan.areaAcres || 1.0,
-          Field_Area_hectare: activePlan.areaAcres ? activePlan.areaAcres * 0.404 : 1.0
+          Field_Area_hectare: activePlan.areaAcres ? activePlan.areaAcres * 0.404 : 1.0,
+          Season: planSeason,
+          State: farmState,
         };
 
         const [yieldRes, fertRes, irrigRes] = await Promise.all([
@@ -198,10 +205,16 @@ function CropPlanPage() {
 
   useEffect(() => {
     if (aiForm.cropName) {
-      fetch(`${API_URL}/crop-plans/companion-suggestions/?crop=${aiForm.cropName}`)
-        .then(r => r.json())
+      fetch(`${API_URL}/crop-plans/companion-suggestions?crop=${encodeURIComponent(aiForm.cropName)}`)
+        .then(async (r) => {
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          return r.json();
+        })
         .then(data => setCompanionSuggestions(Array.isArray(data) ? data : []))
-        .catch(err => console.error("Failed to load companion suggestions:", err));
+        .catch(err => {
+          console.error("Failed to load companion suggestions:", err);
+          setCompanionSuggestions([]);
+        });
     } else {
       setCompanionSuggestions([]);
     }

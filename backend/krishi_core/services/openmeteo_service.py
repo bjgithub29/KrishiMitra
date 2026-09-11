@@ -123,6 +123,30 @@ def _fetch_seasonal_climatology(lat_r, lon_r, season, years, timeout):
     return agg
 
 
+@functools.lru_cache(maxsize=128)
+def _fetch_forecast_cached(lat_r: float, lon_r: float, forecast_days: int, timezone: str, timeout: int) -> Optional[dict]:
+    params = {
+        "latitude": lat_r,
+        "longitude": lon_r,
+        "current": ",".join(OpenMeteoService.CURRENT_PARAMS),
+        "hourly": ",".join(OpenMeteoService.HOURLY_PARAMS),
+        "daily": ",".join(OpenMeteoService.DAILY_PARAMS),
+        "forecast_days": forecast_days,
+        "timezone": timezone,
+    }
+
+    try:
+        resp = requests.get(OpenMeteoService.BASE_URL, params=params, timeout=timeout)
+        resp.raise_for_status()
+        return resp.json()
+    except requests.exceptions.RequestException as e:
+        print(f"[OpenMeteoService] Request failed: {e}")
+        return None
+    except ValueError as e:
+        print(f"[OpenMeteoService] Invalid JSON response: {e}")
+        return None
+
+
 class OpenMeteoService:
     BASE_URL = "https://api.open-meteo.com/v1/forecast"
 
@@ -130,7 +154,7 @@ class OpenMeteoService:
         "temperature_2m", "relative_humidity_2m", "apparent_temperature",
         "is_day", "precipitation", "rain", "showers", "snowfall",
         "weather_code", "cloud_cover", "pressure_msl", "surface_pressure",
-        "wind_speed_10m", "wind_direction_10m", "wind_gusts_10m",
+        "wind_speed_10m", "wind_direction_10m", "wind_gusts_10m", "visibility",
     ]
 
     HOURLY_PARAMS = [
@@ -174,7 +198,6 @@ class OpenMeteoService:
     def __init__(self, timeout: int = 10):
         self.timeout = timeout
 
-    @functools.lru_cache(maxsize=128)
     def get_forecast(
         self,
         latitude: float,
@@ -187,25 +210,14 @@ class OpenMeteoService:
         Cached up to 128 unique lat/lon combinations to save bandwidth.
         Returns parsed dict, or None on failure.
         """
-        params = {
-            "latitude": latitude,
-            "longitude": longitude,
-            "current": ",".join(self.CURRENT_PARAMS),
-            "hourly": ",".join(self.HOURLY_PARAMS),
-            "daily": ",".join(self.DAILY_PARAMS),
-            "forecast_days": forecast_days,
-            "timezone": timezone,
-        }
-
         try:
-            resp = requests.get(self.BASE_URL, params=params, timeout=self.timeout)
-            resp.raise_for_status()
-            data = resp.json()
-        except requests.exceptions.RequestException as e:
-            print(f"[OpenMeteoService] Request failed: {e}")
+            lat_r = round(float(latitude), 4)
+            lon_r = round(float(longitude), 4)
+        except (TypeError, ValueError):
             return None
-        except ValueError as e:
-            print(f"[OpenMeteoService] Invalid JSON response: {e}")
+
+        data = _fetch_forecast_cached(lat_r, lon_r, int(forecast_days), str(timezone), self.timeout)
+        if not data:
             return None
 
         return self._parse_response(data)
@@ -265,6 +277,7 @@ class OpenMeteoService:
                 "wind_speed": current.get("wind_speed_10m"),
                 "wind_direction": current.get("wind_direction_10m"),
                 "wind_gusts": current.get("wind_gusts_10m"),
+                "visibility": current.get("visibility") if current.get("visibility") is not None else (hourly.get("visibility", [None])[0] if hourly.get("visibility") else None),
             },
             "daily_forecast": self._parse_daily(daily),
             "hourly_forecast": self._parse_hourly(hourly),

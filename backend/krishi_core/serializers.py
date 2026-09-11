@@ -90,22 +90,22 @@ class RetrieveRequestSerializer(serializers.Serializer):
 
 
 class SoilRecommendRequestSerializer(serializers.Serializer):
-    ph = serializers.FloatField(default=7.0)
-    nitrogen = serializers.FloatField(default=180)
-    phosphorus = serializers.FloatField(default=20)
-    potassium = serializers.FloatField(default=250)
-    organicCarbon = serializers.FloatField(default=0.5)
-    ec = serializers.FloatField(default=0.4)
-    season = serializers.CharField(default="kharif")
-    areaAcres = serializers.FloatField(default=1)
-    waterAvailability = serializers.CharField(default="medium")
-    temperature = serializers.FloatField(required=False, default=25.0)
-    humidity = serializers.FloatField(required=False, default=60.0)
-    rainfall = serializers.FloatField(required=False, default=100.0)
-    state = serializers.CharField(required=False, default="Maharashtra")
+    ph = serializers.FloatField(required=True, min_value=0.0, max_value=14.0)
+    nitrogen = serializers.FloatField(required=True, min_value=0.0)
+    phosphorus = serializers.FloatField(required=True, min_value=0.0)
+    potassium = serializers.FloatField(required=True, min_value=0.0)
+    organicCarbon = serializers.FloatField(required=False, default=0.5)
+    ec = serializers.FloatField(required=False, default=0.4)
+    season = serializers.CharField(required=False, default="kharif")
+    areaAcres = serializers.FloatField(required=False, default=1.0, min_value=0.01)
+    waterAvailability = serializers.CharField(required=False, default="medium")
+    temperature = serializers.FloatField(required=False, allow_null=True, default=25.0)
+    humidity = serializers.FloatField(required=False, allow_null=True, default=60.0)
+    rainfall = serializers.FloatField(required=False, allow_null=True, default=100.0)
+    state = serializers.CharField(required=False, allow_null=True, default="Maharashtra")
     soilType = serializers.CharField(required=False, default="Black")
-    startPreparationDate = serializers.CharField(required=False, default="")
-    irrigationType = serializers.CharField(required=False, default="Drip")
+    startPreparationDate = serializers.CharField(required=False, allow_null=True, default="")
+    irrigationType = serializers.CharField(required=False, allow_null=True, default="Drip")
 
 
 class CropStageTipsRequestSerializer(serializers.Serializer):

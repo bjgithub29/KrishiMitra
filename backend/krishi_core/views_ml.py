@@ -16,6 +16,8 @@ service) needs zero changes.
 import io
 import json
 import logging
+import re
+import time
 import traceback
 
 import numpy as np
@@ -132,6 +134,7 @@ class SoilRecommendView(APIView):
                     "Crop_Growth_Stage": "Pre-emergence",
                     "Season": season_in.capitalize(),
                     "Irrigation_Type": d.get("irrigationType", "Drip"),
+                    "Previous_Crop": d.get("previousCrop", "Fallow"),
                     "Region": d.get("state", "Maharashtra"),
                     "Soil_pH": ph,
                     "Soil_Moisture": 40.0,
@@ -145,7 +148,16 @@ class SoilRecommendView(APIView):
                     "Humidity": d.get("humidity", 60.0),
                     "Rainfall_mm": d.get("rainfall", 100.0),
                     "Rainfall": d.get("rainfall", 100.0),
+                    "Sunlight_Hours": 7.0,
+                    "Wind_Speed_kmh": 10.0,
+                    "Water_Source": d.get("waterSource", "Borewell"),
                     "Field_Area_hectare": area_acres * 0.404686,  # convert acres to hectares
+                    "Mulching_Used": d.get("mulchingUsed", "No"),
+                    "Previous_Irrigation_mm": 20.0,
+                    "Forecast_Rainfall_7Days_mm": 15.0,
+                    "Forecast_Temp_7Days_Avg": d.get("temperature", 25.0),
+                    "Fertilizer_Used_Last_Season": d.get("fertilizerUsedLastSeason", "Urea"),
+                    "Yield_Last_Season": 2.5,
                 }
                 r["suggestedFertilizer"] = fertilizer_service.predict(ml_data)
                 r["irrigationPrediction"] = irrigation_service.predict(ml_data)
@@ -162,13 +174,26 @@ The top crops recommended by our engine are:
 Write a short, engaging 2-paragraph summary directly to the farmer. Explain why the top pick ({results[0]['cropName']}) is the best choice based on their soil, and briefly mention the alternatives.
 Keep it conversational, encouraging, and formatted in plain text (no markdown formatting needed).
 """
-            llm_summary_resp = llm_service.generate_response(prompt, force_json=False)
+            # Strict short timeout (1.0s connect, 2.5s read) to ensure fast endpoint response
+            llm_summary_resp = llm_service.generate_response(prompt, force_json=False, timeout=(1.0, 2.5))
             if isinstance(llm_summary_resp, dict) and 'error' not in llm_summary_resp:
                 llm_summary = llm_summary_resp.get('answer', llm_summary_resp.get('text', str(llm_summary_resp)))
-            elif isinstance(llm_summary_resp, str):
-                llm_summary = llm_summary_resp
+            elif isinstance(llm_summary_resp, str) and llm_summary_resp.strip() and "AI service is currently unavailable" not in llm_summary_resp:
+                llm_summary = llm_summary_resp.strip()
         except Exception as e:
-            logger.error(f"Error generating LLM summary: {e}")
+            logger.warning(f"Fast LLM summary unavailable: {e}")
+
+        # Deterministic agronomic explanation if LLM is offline, timed out, or unavailable
+        if not llm_summary and results:
+            top_crop = results[0]["cropName"]
+            top_score = results[0].get("suitabilityScore", 85)
+            alt_crops = ", ".join([r["cropName"] for r in results[1:4]]) if len(results) > 1 else "other seasonal crops"
+            llm_summary = (
+                f"Based on your soil analysis (pH {ph}, Nitrogen {nitrogen} kg/ha, Phosphorus {phosphorus} kg/ha, Potassium {potassium} kg/ha), "
+                f"{top_crop} is your optimal crop recommendation with an estimated suitability score of {top_score}%. "
+                f"Your soil's nutrient balance and moisture profile provide favorable growing conditions for {top_crop}. "
+                f"Viable alternatives for this season include {alt_crops}."
+            )
 
         return Response({
             "recommendations": results,
@@ -324,6 +349,24 @@ Keep it conversational, encouraging, and formatted in plain text (no markdown fo
         return results
 
 
+TASK_CALENDAR_TO_KB_STAGE_MAP = {
+    "land preparation": "Land Preparation",
+    "sowing": "Germination & Early Growth",
+    "germination & establishment": "Germination & Early Growth",
+    "planting/establishment": "Germination & Early Growth",
+    "germination & early growth": "Germination & Early Growth",
+    "vegetative growth": "Vegetative Growth",
+    "flowering / reproductive": "Flowering / Reproductive Phase",
+    "flowering/fruiting": "Flowering / Reproductive Phase",
+    "flowering / reproductive phase": "Flowering / Reproductive Phase",
+    "maturity & pre-harvest": "Fruit / Grain Development",
+    "fruit / grain development": "Fruit / Grain Development",
+    "harvest & post-harvest": "Harvesting",
+    "harvesting": "Harvesting",
+    "maturity & harvest": "Harvesting",
+}
+
+
 class CropStageTipsView(APIView):
     """RAG-powered field tips for a crop + growth stage (Crop Plan timeline)."""
     parser_classes = [JSONParser]
@@ -335,23 +378,44 @@ class CropStageTipsView(APIView):
 
         serializer = CropStageTipsRequestSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        crop = serializer.validated_data["crop"]
-        stage = serializer.validated_data["stage"]
+        crop = serializer.validated_data["crop"].strip()
+        stage = serializer.validated_data["stage"].strip()
+
+        mapped_stage = TASK_CALENDAR_TO_KB_STAGE_MAP.get(stage.lower())
+        if not mapped_stage:
+            return Response({"found": False, "crop": crop, "stage": stage, "tips": {}})
 
         try:
-            query_text = f"{crop} {stage} field notes tasks irrigation fertilizer watch for"
-            results = collection.query(query_texts=[query_text], n_results=3, where={"source": "timeline_kb"})
-            documents = results.get("documents", [[]])[0]
+            crop_name = crop.capitalize()
+            where_filter = {
+                "$and": [
+                    {"source": {"$eq": "timeline_kb"}},
+                    {"crop": {"$eq": crop_name}},
+                    {"stage": {"$eq": mapped_stage}}
+                ]
+            }
+            results = collection.get(where=where_filter)
+            documents = results.get("documents", [])
 
             if not documents:
-                results = collection.query(query_texts=[query_text], n_results=2)
-                documents = results.get("documents", [[]])[0]
+                for alt_crop in [crop.title(), crop]:
+                    if alt_crop != crop_name:
+                        alt_filter = {
+                            "$and": [
+                                {"source": {"$eq": "timeline_kb"}},
+                                {"crop": {"$eq": alt_crop}},
+                                {"stage": {"$eq": mapped_stage}}
+                            ]
+                        }
+                        alt_res = collection.get(where=alt_filter)
+                        if alt_res.get("documents"):
+                            documents = alt_res.get("documents")
+                            break
 
             if not documents:
                 return Response({"found": False, "crop": crop, "stage": stage, "tips": {}})
 
             raw_text = documents[0]
-            import re
             tasks_block = re.search(r"Key tasks:\n((?:- .+\n?)+)", raw_text)
             key_tasks = []
             if tasks_block:
@@ -380,26 +444,37 @@ class CropStageTipsView(APIView):
 
 class PredictDiseaseView(APIView):
     """
-    Multimodal disease classification (Unit 6): Uses Gemini 1.5 Flash to analyze
+    Multimodal disease classification (Unit 6): Uses Google Gemini Vision to analyze
     the uploaded image directly, avoiding heavy local CNN/YOLO models.
     """
     parser_classes = [MultiPartParser, FormParser]
 
     def post(self, request):
         gemini_key = settings.GEMINI_API_KEY
-        fallback_payload = {
-            "error": "Gemini API key is not configured. Disease inference is unavailable.",
-            "fallback": True, "disease": "Unknown", "confidence": 0.0, "top3": [],
-            "quality_passed": True, "quality_issues": [],
-            "treatment": "Please configure GEMINI_API_KEY in the backend .env file.",
-        }
-
         if not gemini_key:
-            return Response(fallback_payload, status=200)
+            return Response({
+                "error": "Disease inference is not configured on this server.",
+                "fallback": True,
+                "disease": "Unknown",
+                "confidence": 0.0,
+                "top3": [],
+                "quality_passed": True,
+                "quality_issues": [],
+                "treatment": "Please configure GEMINI_API_KEY in the backend .env file to enable disease diagnosis.",
+            }, status=200)
 
         image_file = request.FILES.get("image")
         if not image_file:
-            return Response({**fallback_payload, "error": "No image uploaded in form-data field 'image'."}, status=200)
+            return Response({
+                "error": "No image uploaded in form-data field 'image'.",
+                "fallback": True,
+                "disease": "Unknown",
+                "confidence": 0.0,
+                "top3": [],
+                "quality_passed": False,
+                "quality_issues": ["No image file provided"],
+                "treatment": "Please upload a clear photograph of the affected crop leaf to perform disease diagnosis.",
+            }, status=200)
 
         try:
             import base64
@@ -408,8 +483,6 @@ class PredictDiseaseView(APIView):
             mime_type = image_file.content_type or "image/jpeg"
             b64_image = base64.b64encode(image_data).decode('utf-8')
 
-            # Optional: We can still check image quality locally if needed,
-            # but for now we rely on Gemini to understand the image.
             quality_passed = True
             quality_issues = []
 
@@ -423,7 +496,8 @@ class PredictDiseaseView(APIView):
                 "'treatment' (string, a concise 3-sentence treatment plan if diseased, or a maintenance tip if healthy)."
             )
 
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}"
+            gemini_model = getattr(settings, "GEMINI_MODEL", "gemini-flash-latest")
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{gemini_model}:generateContent?key={gemini_key}"
             
             payload = {
                 "contents": [{
@@ -436,46 +510,180 @@ class PredictDiseaseView(APIView):
                             }
                         }
                     ]
-                }]
+                }],
+                "generationConfig": {
+                    "responseMimeType": "application/json"
+                }
             }
 
-            res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=15)
-            if res.status_code != 200:
-                logger.error("Gemini API error: %s", res.text)
-                return Response({**fallback_payload, "error": "Failed to get response from Gemini API."}, status=200)
-            
-            text_resp = res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-            
-            # Gemini might wrap JSON in markdown block
-            if text_resp.startswith("```json"):
-                text_resp = text_resp[7:]
-            if text_resp.endswith("```"):
-                text_resp = text_resp[:-3]
-            text_resp = text_resp.strip()
-            
             try:
-                parsed = json.loads(text_resp)
-                pretty_class = parsed.get("disease", "Unknown")
-                confidence = parsed.get("confidence", 0.0)
-                treatment = parsed.get("treatment", "No treatment recommendation available.")
-            except json.JSONDecodeError:
-                # Fallback if Gemini didn't return perfect JSON
-                pretty_class = "Unknown (Parsing Error)"
-                confidence = 0.5
-                treatment = text_resp
+                res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=(5.0, 60.0))
+            except requests.Timeout:
+                logger.error("Gemini API request timed out for model %s", gemini_model)
+                return Response({
+                    "error": "Upstream Gemini API request timed out. Please check your internet connection and try again.",
+                    "fallback": True,
+                    "disease": "Unknown",
+                    "confidence": 0.0,
+                    "top3": [],
+                    "quality_passed": True,
+                    "quality_issues": [],
+                    "treatment": "The request to the vision model timed out. Please ensure network connectivity and retry.",
+                }, status=200)
+            except requests.RequestException as req_err:
+                logger.error("Gemini API network error: %s", req_err)
+                return Response({
+                    "error": "Upstream Gemini API network error. Please try again later.",
+                    "fallback": True,
+                    "disease": "Unknown",
+                    "confidence": 0.0,
+                    "top3": [],
+                    "quality_passed": True,
+                    "quality_issues": [],
+                    "treatment": "The vision service could not be reached over the network. Please retry in a few moments.",
+                }, status=200)
+
+            if res.status_code != 200:
+                logger.error("Gemini API error (%s): %s", res.status_code, res.text)
+                if res.status_code == 429:
+                    err_msg = "Gemini API quota or rate limit exceeded. This is temporary — please retry your scan in a few minutes."
+                    treatment_msg = "The AI vision service is currently experiencing high demand. Please wait a few minutes and try scanning your crop leaf again."
+                elif res.status_code == 503:
+                    err_msg = "The Gemini Vision model is currently experiencing high demand. This is temporary — please try again in a moment."
+                    treatment_msg = "The AI vision service is temporarily busy. Please wait a few seconds and try scanning your crop leaf again."
+                elif res.status_code in (401, 403):
+                    err_msg = "Gemini API credentials were rejected by the provider. Please verify your GEMINI_API_KEY."
+                    treatment_msg = "The configured Gemini API key is invalid or unauthorized. Please verify the credentials in the backend environment."
+                elif res.status_code == 404:
+                    err_msg = f"The configured Gemini model '{gemini_model}' is unavailable or not found."
+                    treatment_msg = "Please check the model configuration in the backend settings."
+                else:
+                    err_msg = f"Upstream Gemini API service unavailable (HTTP {res.status_code}). Please try again later."
+                    treatment_msg = "The AI diagnosis service is temporarily unreachable. Please try again in a few moments."
+
+                return Response({
+                    "error": err_msg,
+                    "fallback": True,
+                    "disease": "Unknown",
+                    "confidence": 0.0,
+                    "top3": [],
+                    "quality_passed": True,
+                    "quality_issues": [],
+                    "treatment": treatment_msg,
+                }, status=200)
+            
+            candidates = res.json().get("candidates", [])
+            if not candidates or not candidates[0].get("content", {}).get("parts"):
+                logger.error("Gemini API returned empty candidate parts: %s", res.text)
+                return Response({
+                    "error": "Gemini API returned an empty response.",
+                    "fallback": True,
+                    "disease": "Unknown",
+                    "confidence": 0.0,
+                    "top3": [],
+                    "quality_passed": True,
+                    "quality_issues": [],
+                    "treatment": "Could not extract diagnosis from image. Please try scanning a different photo.",
+                }, status=200)
+
+            text_resp = candidates[0]["content"]["parts"][0].get("text", "").strip()
+            
+            # Robust markdown code fence stripping
+            clean_text = text_resp
+            if clean_text.startswith("```"):
+                clean_text = re.sub(r"^```(?:json|JSON)?\s*\n?", "", clean_text, flags=re.IGNORECASE)
+            if clean_text.endswith("```"):
+                clean_text = re.sub(r"\n?```\s*$", "", clean_text)
+            clean_text = clean_text.strip()
+
+            # Locate substring from first '{' to last '}' if present
+            first_brace = clean_text.find("{")
+            last_brace = clean_text.rfind("}")
+            if first_brace != -1 and last_brace != -1 and last_brace > first_brace:
+                json_str = clean_text[first_brace:last_brace + 1]
+            elif first_brace != -1:
+                json_str = clean_text[first_brace:]
+            else:
+                json_str = clean_text
+
+            pretty_class = "Unknown"
+            confidence = 0.0
+            treatment = ""
+
+            try:
+                parsed = json.loads(json_str)
+                pretty_class = str(parsed.get("disease", "Unknown")).strip()
+                confidence = float(parsed.get("confidence", 0.85))
+                treatment = str(parsed.get("treatment", "")).strip()
+            except (json.JSONDecodeError, ValueError, TypeError) as parse_err:
+                logger.warning("JSON decode failed for Gemini response (%s); attempting regex salvage: %s", parse_err, text_resp)
+                # Attempt regex salvage of disease, confidence, and treatment from truncated/malformed JSON
+                disease_match = re.search(r'"disease"\s*:\s*"([^"\\]*(?:\\.[^"\\]*)*)"?', clean_text)
+                conf_match = re.search(r'"confidence"\s*:\s*([0-9]*\.?[0-9]+)', clean_text)
+                treatment_match = re.search(r'"treatment"\s*:\s*"([^"\\]*(?:\\.[^"\\]*)*)"?', clean_text)
+
+                if disease_match and disease_match.group(1).strip():
+                    pretty_class = disease_match.group(1).strip()
+                    if conf_match:
+                        try:
+                            confidence = float(conf_match.group(1))
+                        except ValueError:
+                            confidence = 0.85
+                    else:
+                        confidence = 0.85
+
+                    if treatment_match and len(treatment_match.group(1).strip()) > 10:
+                        treatment = treatment_match.group(1).strip()
+                    else:
+                        treatment = (
+                            f"Inspect affected foliage for symptoms of {pretty_class}. "
+                            "Isolate or remove infected plant parts, ensure good aeration and dry foliage, "
+                            "and consult local agronomic guidelines for targeted treatment."
+                        )
+                else:
+                    logger.error("Failed to salvage disease diagnosis from Gemini output: %s", text_resp)
+                    return Response({
+                        "error": "The AI model response could not be parsed into a structured diagnosis.",
+                        "fallback": True,
+                        "disease": "Unknown",
+                        "confidence": 0.0,
+                        "top3": [],
+                        "quality_passed": True,
+                        "quality_issues": [],
+                        "treatment": "Could not complete diagnosis. Please ensure the leaf is clearly visible and try scanning again.",
+                    }, status=200)
+
+            if not treatment:
+                treatment = (
+                    f"Maintain regular monitoring for {pretty_class}. "
+                    "Ensure adequate soil drainage, appropriate nutrient supply, and avoid water stagnation on foliage."
+                )
 
             top3 = [
                 {"label": pretty_class, "prob": confidence}
             ]
 
             return Response({
-                "disease": pretty_class, "confidence": confidence, "raw_class": pretty_class,
-                "top3": top3, "quality_passed": quality_passed, "quality_issues": quality_issues,
+                "disease": pretty_class,
+                "confidence": confidence,
+                "raw_class": pretty_class,
+                "top3": top3,
+                "quality_passed": quality_passed,
+                "quality_issues": quality_issues,
                 "treatment": treatment,
             })
         except Exception as e:
             logger.error("Error during disease prediction with Gemini: %s", traceback.format_exc())
-            return Response({**fallback_payload, "error": f"Prediction failed: {str(e)}"}, status=200)
+            return Response({
+                "error": f"Disease diagnosis failed due to an unexpected error: {str(e)}",
+                "fallback": True,
+                "disease": "Unknown",
+                "confidence": 0.0,
+                "top3": [],
+                "quality_passed": True,
+                "quality_issues": [],
+                "treatment": "An unexpected error occurred during diagnosis. Please try again.",
+            }, status=200)
 
 
 class HealthView(APIView):
@@ -497,6 +705,9 @@ class WeatherView(APIView):
             lat, lon = float(lat_str), float(lon_str)
         except ValueError:
             return Response({"error": "Latitude and longitude must be valid numbers"}, status=400)
+
+        if not (-90.0 <= lat <= 90.0) or not (-180.0 <= lon <= 180.0):
+            return Response({"error": "Latitude must be between -90 and 90, and longitude between -180 and 180."}, status=400)
 
         from krishi_core.services.openmeteo_service import OpenMeteoService
         from krishi_core.services.alert_engine import alert_engine

@@ -43,6 +43,12 @@ class PasswordResetOTP(models.Model):
 class AuthOTP(models.Model):
     email = models.EmailField()
     otp = models.CharField(max_length=6)
+    # Note: Password resets use the dedicated PasswordResetOTP model.
+    purpose = models.CharField(
+        max_length=32,
+        default='login',
+        choices=[('login', 'Login'), ('register', 'Register')]
+    )
     expires_at = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
     
@@ -97,6 +103,7 @@ class CropPlan(models.Model):
     irrigationCycles = models.JSONField(default=list, blank=True)
     fertilizerEvents = models.JSONField(default=list, blank=True)
     milestones = models.JSONField(default=list, blank=True)
+    tasks = models.JSONField(default=list, blank=True)
     estimatedCost = models.FloatField(default=0)
     targetYieldKg = models.FloatField(default=0)
     seasonProgressPct = models.FloatField(default=0)

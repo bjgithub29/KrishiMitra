@@ -44,33 +44,35 @@ class FertilizerRecommendationService:
         if not self._loaded or self.model is None:
             return "N/A (Model unavailable)"
 
-        features = pd.DataFrame([{
-            "Soil_Type": data["Soil_Type"],
-            "Crop_Type": data["Crop_Type"],
-            "Crop_Growth_Stage": data["Crop_Growth_Stage"],
-            "Season": data["Season"],
-            "Irrigation_Type": data["Irrigation_Type"],
-            "Previous_Crop": data["Previous_Crop"],
-            "Region": data["Region"],
-            "Soil_pH": data["Soil_pH"],
-            "Soil_Moisture": data["Soil_Moisture"],
-            "Organic_Carbon": data["Organic_Carbon"],
-            "Electrical_Conductivity": data["Electrical_Conductivity"],
-            "Nitrogen_Level": data["Nitrogen_Level"],
-            "Phosphorus_Level": data["Phosphorus_Level"],
-            "Potassium_Level": data["Potassium_Level"],
-            "Temperature": data["Temperature"],
-            "Humidity": data["Humidity"],
-            "Rainfall": data["Rainfall"],
-            "Fertilizer_Used_Last_Season": data["Fertilizer_Used_Last_Season"],
-            "Yield_Last_Season": data["Yield_Last_Season"],
-        }])
+        try:
+            features = pd.DataFrame([{
+                "Soil_Type": data.get("Soil_Type", "Black"),
+                "Crop_Type": data.get("Crop_Type", "Wheat"),
+                "Crop_Growth_Stage": data.get("Crop_Growth_Stage", "Pre-emergence"),
+                "Season": data.get("Season", "Kharif"),
+                "Irrigation_Type": data.get("Irrigation_Type", "Drip"),
+                "Previous_Crop": data.get("Previous_Crop", "Fallow"),
+                "Region": data.get("Region", "Maharashtra"),
+                "Soil_pH": float(data.get("Soil_pH", 6.5)),
+                "Soil_Moisture": float(data.get("Soil_Moisture", 40.0)),
+                "Organic_Carbon": float(data.get("Organic_Carbon", 0.5)),
+                "Electrical_Conductivity": float(data.get("Electrical_Conductivity", 0.4)),
+                "Nitrogen_Level": float(data.get("Nitrogen_Level", 50.0)),
+                "Phosphorus_Level": float(data.get("Phosphorus_Level", 30.0)),
+                "Potassium_Level": float(data.get("Potassium_Level", 40.0)),
+                "Temperature": float(data.get("Temperature", data.get("Temperature_C", 25.0))),
+                "Humidity": float(data.get("Humidity", 60.0)),
+                "Rainfall": float(data.get("Rainfall", data.get("Rainfall_mm", 100.0))),
+                "Fertilizer_Used_Last_Season": data.get("Fertilizer_Used_Last_Season", "Urea"),
+                "Yield_Last_Season": float(data.get("Yield_Last_Season", 2.5)),
+            }])
 
-        prediction = self.model.predict(features)[0]
-
-        fertilizer = self.encoder.inverse_transform([prediction])[0]
-
-        return fertilizer
+            prediction = self.model.predict(features)[0]
+            fertilizer = self.encoder.inverse_transform([prediction])[0]
+            return fertilizer
+        except Exception as e:
+            logger.error("Fertilizer prediction failed: %s", e)
+            return "N/A (Model unavailable)"
 
 
 fertilizer_service = FertilizerRecommendationService()

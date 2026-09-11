@@ -1,7 +1,13 @@
 import json
+import logging
+import os
+import uuid
+from datetime import datetime, timedelta
 from django.conf import settings
 from django.http import StreamingHttpResponse
+from django.utils import timezone
 import requests
+import pandas as pd
 from rest_framework import viewsets, permissions
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes, action
@@ -22,8 +28,8 @@ from .serializers import (
     WeatherCacheSerializer, ChatMessageSerializer
 )
 from . import ml_loader
-import pandas as pd
-import os
+
+logger = logging.getLogger(__name__)
 
 # ─── Helpers ────────────────────────────────────────────────────────────
 
@@ -54,23 +60,31 @@ class OwnerViewSet(viewsets.ModelViewSet):
 @permission_classes([permissions.AllowAny])
 def auth_register(request):
     """Register a new user. Returns { token, user }."""
+    from django.contrib.auth.password_validation import validate_password
+    from django.core.exceptions import ValidationError
+    from .models import AuthOTP
+
     data = request.data
-    email = data.get('email', '').lower().strip()
-    phone = data.get('phone', '').strip()
+    email = (data.get('email') or '').strip().lower()
+    phone = (data.get('phone') or '').strip()
     password = data.get('password', '')
-    first_name = data.get('firstName', '').strip()
-    last_name = data.get('lastName', '').strip()
+    first_name = (data.get('firstName') or '').strip()
+    last_name = (data.get('lastName') or '').strip()
 
     if not email or not password:
         return Response(
             {'message': 'Email and password are required.'}, status=400)
             
-    otp_code = data.get('otp', '').strip()
+    try:
+        validate_password(password)
+    except ValidationError as e:
+        return Response({'message': 'Password does not meet requirements: ' + '; '.join(e.messages), 'errors': list(e.messages)}, status=400)
+
+    otp_code = (data.get('otp') or '').strip()
     if not otp_code:
         return Response({'message': 'OTP is required for registration.'}, status=400)
         
-    from .models import AuthOTP
-    otp_record = AuthOTP.objects.filter(email=email).last()
+    otp_record = AuthOTP.objects.filter(email=email, purpose='register').last()
     
     if not otp_record or not otp_record.is_valid():
         return Response({'message': 'OTP has expired or does not exist.'}, status=400)
@@ -91,6 +105,9 @@ def auth_register(request):
         import string
         phone = ''.join(random.choices(string.digits, k=10))
 
+    raw_loc = data.get('location', {})
+    loc_dict = raw_loc if isinstance(raw_loc, dict) else {'address': str(raw_loc)} if raw_loc else {}
+
     user = User.objects.create(
         username=email,
         email=email,
@@ -99,8 +116,9 @@ def auth_register(request):
         phone=phone,
         password=make_password(password),
         role=data.get('role', 'farmer'),
-        location=data.get('location', {}),
+        location=loc_dict,
         farmingMode=data.get('farmingMode', 'moderate'),
+        isVerified=True,
     )
 
     token = get_tokens_for_user(user)
@@ -113,7 +131,7 @@ def auth_register(request):
 @permission_classes([permissions.AllowAny])
 def auth_login(request):
     """Login with email + password. Returns { token, user }."""
-    email = request.data.get('email', '').lower().strip()
+    email = (request.data.get('email') or '').strip().lower()
     password = request.data.get('password', '')
 
     try:
@@ -124,6 +142,13 @@ def auth_login(request):
     user = authenticate(request, username=user_obj.username, password=password)
     if not user:
         return Response({'message': 'Invalid email or password.'}, status=401)
+
+    if not user.isVerified:
+        return Response({
+            'message': 'Your account email is not verified. Please verify your email before logging in.',
+            'requiresVerification': True,
+            'email': user.email
+        }, status=403)
 
     token = get_tokens_for_user(user)
     serializer = UserSerializer(user)
@@ -159,7 +184,15 @@ def auth_update_profile(request):
     if 'avatarUrl' in data:
         user.avatarUrl = data['avatarUrl']
     if 'location' in data:
-        user.location = data['location']
+        loc = data['location']
+        if isinstance(loc, dict):
+            user.location = loc
+        elif isinstance(loc, str) and loc.strip():
+            user.location = {'address': loc.strip()}
+        elif loc is None or loc == '':
+            user.location = {}
+        else:
+            user.location = {'address': str(loc)}
     if 'settings' in data:
         user.settings = data['settings']
 
@@ -199,15 +232,20 @@ def auth_request_otp(request):
     import random
     from .models import AuthOTP
 
-    email = request.data.get('email')
+    email = (request.data.get('email') or '').strip().lower()
+    purpose = request.data.get('purpose')
+    if not purpose or purpose not in ['login', 'register']:
+        return Response({'message': 'A valid purpose (login or register) is required.'}, status=400)
+
     if not email:
         return Response({'message': 'Email is required'}, status=400)
 
     otp_code = str(random.randint(100000, 999999))
     
-    AuthOTP.objects.filter(email=email).delete()
+    AuthOTP.objects.filter(email=email, purpose=purpose).delete()
     AuthOTP.objects.create(
         email=email,
+        purpose=purpose,
         otp=otp_code,
         expires_at=timezone.now() + timedelta(minutes=15)
     )
@@ -221,7 +259,7 @@ def auth_request_otp(request):
             <h2 style="color: #111827; font-size: 20px; margin-top: 0;">Verify your email address</h2>
             <p style="color: #4b5563; font-size: 16px; line-height: 1.5;">
                 Hello, <br/><br/>
-                Please use the following One-Time Password (OTP) to verify your email address and securely log in to your KrishiMitra account.
+                Please use the following One-Time Password (OTP) to verify your email address and securely access your KrishiMitra account.
             </p>
             <div style="background-color: #f3f4f6; border-radius: 8px; padding: 16px; text-align: center; margin: 24px 0;">
                 <span style="font-size: 32px; font-weight: bold; letter-spacing: 4px; color: #111827;">{otp_code}</span>
@@ -242,7 +280,7 @@ def auth_request_otp(request):
     try:
         send_mail(
             'KrishiMitra - Your Verification Code',
-            f'Your login OTP is: {otp_code}. It will expire in 15 minutes.',
+            f'Your verification OTP is: {otp_code}. It will expire in 15 minutes.',
             getattr(settings, 'EMAIL_HOST_USER', 'noreply@krishimitra.com'),
             [email],
             fail_silently=False,
@@ -260,13 +298,16 @@ def auth_request_otp(request):
 def auth_verify_otp(request):
     from .models import AuthOTP
     
-    email = request.data.get('email')
-    otp_code = request.data.get('otp')
+    email = (request.data.get('email') or '').strip().lower()
+    otp_code = (request.data.get('otp') or '').strip()
+    purpose = request.data.get('purpose')
+    if not purpose or purpose not in ['login', 'register']:
+        return Response({'message': 'A valid purpose (login or register) is required.'}, status=400)
     
     if not email or not otp_code:
         return Response({'message': 'Email and OTP are required'}, status=400)
         
-    otp_record = AuthOTP.objects.filter(email=email).last()
+    otp_record = AuthOTP.objects.filter(email=email, purpose=purpose).last()
     
     if not otp_record or not otp_record.is_valid():
         return Response({'message': 'OTP has expired or does not exist.'}, status=400)
@@ -278,18 +319,15 @@ def auth_verify_otp(request):
     
     user = User.objects.filter(email=email).first()
     if not user:
-        # Create a new user with random string for phone to avoid unique constraint issues initially
-        import uuid
-        user = User.objects.create(
-            username=email,
-            email=email,
-            first_name="Farmer",
-            isVerified=True,
-            phone=str(uuid.uuid4())[:15]
-        )
-        user.set_unusable_password()
-        user.save()
+        return Response({
+            'verified': True,
+            'email': email,
+            'requiresRegistration': True,
+            'message': 'Email verified. Please complete your registration.'
+        })
         
+    user.isVerified = True
+    user.save()
     refresh = RefreshToken.for_user(user)
     return Response({
         'token': str(refresh.access_token),
@@ -300,9 +338,8 @@ def auth_verify_otp(request):
 @api_view(['POST'])
 @permission_classes([permissions.AllowAny])
 def auth_check_exists(request):
-    from django.db.models import Q
-    email = request.data.get('email')
-    phone = request.data.get('phone')
+    email = (request.data.get('email') or '').strip().lower()
+    phone = (request.data.get('phone') or '').strip()
     
     if email and User.objects.filter(email=email).exists():
         return Response({'message': 'An account with this email already exists.', 'field': 'email'}, status=400)
@@ -322,7 +359,10 @@ def auth_forgot_password(request):
     from datetime import timedelta
     import random
     
-    email = request.data.get('email')
+    email = (request.data.get('email') or '').strip().lower()
+    if not email:
+        return Response({'message': 'Email is required.'}, status=400)
+
     user = User.objects.filter(email=email).first()
     
     if user:
@@ -373,17 +413,21 @@ def auth_forgot_password(request):
             logging.getLogger("krishi_core").error("Failed to send email: %s", e)
             return Response({'message': 'Failed to send email. Check SMTP settings.'}, status=500)
             
-        return Response({'message': 'If this email is registered, a reset OTP has been sent.'})
-    else:
-        return Response({'message': 'This email is not registered. Please create an account first.'}, status=404)
+    return Response({'message': 'If an account exists with this email, a password reset OTP has been sent.'})
 
 @api_view(['POST'])
 @permission_classes([permissions.AllowAny])
 def auth_reset_password(request):
-    email = request.data.get('email')
-    otp_code = request.data.get('otp')
-    new_password = request.data.get('newPassword')
+    from django.contrib.auth.password_validation import validate_password
+    from django.core.exceptions import ValidationError
+
+    email = (request.data.get('email') or '').strip().lower()
+    otp_code = (request.data.get('otp') or '').strip()
+    new_password = request.data.get('newPassword', '')
     
+    if not email or not otp_code or not new_password:
+        return Response({'message': 'Email, OTP, and new password are required.'}, status=400)
+
     user = User.objects.filter(email=email).first()
     if not user:
         return Response({'message': 'Invalid request.'}, status=400)
@@ -395,6 +439,11 @@ def auth_reset_password(request):
         
     if otp_record.otp != otp_code:
         return Response({'message': 'Invalid OTP.'}, status=400)
+
+    try:
+        validate_password(new_password, user=user)
+    except ValidationError as e:
+        return Response({'message': 'Password does not meet requirements: ' + '; '.join(e.messages), 'errors': list(e.messages)}, status=400)
         
     user.set_password(new_password)
     user.save()
@@ -445,6 +494,70 @@ class CropPlanViewSet(OwnerViewSet):
         plan = serializer.save(owner=self.request.user)
         # Note: We now only generate crop plan timelines via /api/recommendations 
         # and do not pre-generate daily schedules automatically here.
+
+    @action(detail=True, methods=['post'], url_path='start-daily-schedule')
+    def start_daily_schedule(self, request, pk=None):
+        plan = self.get_object()
+        raw_percent = request.data.get('startPercent')
+        if raw_percent is None:
+            return Response({'message': 'startPercent is required.'}, status=400)
+        try:
+            start_percent = float(raw_percent)
+        except (ValueError, TypeError):
+            return Response({'message': 'startPercent must be a valid number between 0 and 100.'}, status=400)
+
+        if start_percent < 0 or start_percent > 100:
+            return Response({'message': 'startPercent must be between 0 and 100.'}, status=400)
+
+        # Derive duration in days
+        if plan.sowingDate and plan.expectedHarvestDate:
+            duration_days = max(1, (plan.expectedHarvestDate.date() - plan.sowingDate.date()).days)
+        else:
+            duration_days = 100
+
+        start_day = int(round((start_percent / 100.0) * duration_days))
+
+        # Base date for calculating task calendar dates
+        base_date = plan.sowingDate if plan.sowingDate else timezone.now()
+
+        # Generate daily tasks from 02_crop_task_calendar.csv
+        tasks_csv = os.path.join(settings.BASE_DIR, 'krishi_core', 'data', '02_crop_task_calendar.csv')
+        generated_tasks = []
+        try:
+            df_tasks = pd.read_csv(tasks_csv)
+            crop_name = (plan.cropName or '').strip().lower()
+            crop_tasks = df_tasks[df_tasks['crop_name'].str.lower() == crop_name]
+            if crop_tasks.empty and crop_name:
+                crop_tasks = df_tasks[df_tasks['crop_name'].str.lower().str.contains(crop_name.split()[0])]
+            
+            if not crop_tasks.empty:
+                eligible_tasks = crop_tasks if start_percent == 0 else crop_tasks[crop_tasks['day_from_sowing_start'] >= start_day]
+                for _, row in eligible_tasks.iterrows():
+                    d_start = int(row['day_from_sowing_start'])
+                    task_date = (base_date + timedelta(days=d_start)).strftime("%Y-%m-%d")
+                    generated_tasks.append({
+                        "_id": f"t-{uuid.uuid4().hex[:8]}",
+                        "title": str(row['task']),
+                        "date": task_date,
+                        "category": str(row['task_category']).lower().replace(' ', '_'),
+                        "priority": str(row['priority']).lower(),
+                        "description": str(row['description']),
+                        "stage": str(row['stage']),
+                        "status": "pending"
+                    })
+        except Exception as e:
+            logger.error(f"Error loading tasks calendar: {e}")
+
+        # Update plan's seasonProgressPct and persist generated tasks
+        plan.seasonProgressPct = start_percent
+        plan.tasks = generated_tasks
+        plan.save()
+
+        return Response({
+            'startDay': start_day,
+            'durationDays': duration_days,
+            'tasksGenerated': len(generated_tasks)
+        })
 
     @action(detail=True, methods=['post'], url_path='drop')
     def drop_plan(self, request, pk=None):
@@ -555,7 +668,43 @@ def market_locations(request):
                      'districts': districts})
 
 
+@api_view(['GET'])
+@permission_classes([permissions.AllowAny])
+def market_history(request):
+    """Return historical market price records filtered by query params."""
+    qs = MarketPrice.objects.all()
+    commodity = request.query_params.get('commodity')
+    state = request.query_params.get('state')
+    district = request.query_params.get('district')
+    market_q = request.query_params.get('market')
 
+    if commodity:
+        qs = qs.filter(commodity__icontains=commodity.strip())
+    if state:
+        qs = qs.filter(state__iexact=state.strip())
+    if district:
+        qs = qs.filter(district__iexact=district.strip())
+    if market_q:
+        qs = qs.filter(market__iexact=market_q.strip())
+
+    qs = qs.order_by('parsedDate', 'arrival_date')
+
+    # Bounded limit: default 200, max ceiling 500
+    raw_limit = request.query_params.get('limit')
+    if raw_limit is not None:
+        try:
+            limit = int(raw_limit)
+            if limit <= 0:
+                return Response({'error': 'limit parameter must be a positive integer greater than 0.'}, status=400)
+            limit = min(limit, 500)
+        except (ValueError, TypeError):
+            limit = 200
+    else:
+        limit = 200
+
+    qs = qs[:limit]
+    serializer = MarketPriceSerializer(qs, many=True)
+    return Response({'records': serializer.data})
 
 
 class RecommendationViewSet(OwnerViewSet):
@@ -601,7 +750,10 @@ class ChatMessageViewSet(OwnerViewSet):
 @permission_classes([permissions.IsAuthenticated])
 def chat_stream(request):
     """Streams a chat response from Ollama (or Gemini if preferred)."""
-    user_msg = request.data.get('message', '')
+    raw_msg = request.data.get('message')
+    if raw_msg is None or not isinstance(raw_msg, str) or not raw_msg.strip():
+        return Response({'error': 'A non-empty "message" string is required.'}, status=400)
+    user_msg = raw_msg.strip()
     session_id = request.data.get('sessionId', 'default')
     force_json = request.data.get('forceJson', False)
     field_id = request.data.get('field_id', None)
@@ -625,10 +777,18 @@ def chat_stream(request):
                         query_texts=[user_msg], n_results=min(
                             col.count(), 3))
                     if res.get("documents") and len(res["documents"]) > 0:
-                        pooled_results.extend(res["documents"][0])
+                        docs = res["documents"][0]
+                        dists = res.get("distances", [[]])[0] if res.get("distances") else []
+                        for idx, doc in enumerate(docs):
+                            dist = dists[idx] if idx < len(dists) else 1.0
+                            pooled_results.append((doc, dist))
             if pooled_results:
-                rag_context = "\n\nContext from Knowledge Base:\n" + \
-                    "\n---\n".join(pooled_results[:4])
+                pooled_results.sort(key=lambda x: x[1])
+                # Only include chunks with genuine semantic relevance (distance <= 0.55)
+                relevant_docs = [doc for doc, dist in pooled_results if dist <= 0.55]
+                if relevant_docs:
+                    rag_context = "\n\nContext from Knowledge Base:\n" + \
+                        "\n---\n".join(relevant_docs[:4])
         except Exception:
             pass
 
@@ -864,17 +1024,27 @@ Output ONLY a raw JSON object with this exact schema:
         except Exception:
             pass
 
-        # ── Tier 2: Try Cloud Gemini 2.5 Flash ────────────────────────────────
+        # ── Tier 2: Try Cloud Gemini ──────────────────────────────────────────
         if not provider_used:
             gemini_key = getattr(settings, "GEMINI_API_KEY", "")
             if gemini_key:
                 try:
-                    gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}"
+                    import time
+                    gemini_model = getattr(settings, "GEMINI_MODEL", "gemini-flash-latest")
+                    gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/{gemini_model}:generateContent?key={gemini_key}"
                     gemini_payload = {
                         "contents": [{"parts": [{"text": prompt_text}]}]
                     }
-                    res = requests.post(gemini_url, json=gemini_payload, headers={"Content-Type": "application/json"}, timeout=(3.0, 20.0))
-                    if res.status_code == 200:
+                    res = None
+                    for attempt in range(2):
+                        res = requests.post(gemini_url, json=gemini_payload, headers={"Content-Type": "application/json"}, timeout=(5.0, 60.0))
+                        if res.status_code == 200:
+                            break
+                        if res.status_code == 503 and attempt == 0:
+                            time.sleep(1.0)
+                            continue
+                        break
+                    if res and res.status_code == 200:
                         candidates = res.json().get("candidates", [])
                         if candidates:
                             text_resp = candidates[0].get("content", {}).get("parts", [{}])[0].get("text", "")
@@ -891,7 +1061,7 @@ Output ONLY a raw JSON object with this exact schema:
         if not provider_used:
             if rag_context and rag_context.strip():
                 provider_used = "chroma_direct"
-                header = "### Verified Knowledge Base Information\n\n*(AI generation offline — displaying verified agronomic records from KrishiMitra Knowledge Base)*\n\n"
+                header = "### Verified Knowledge Base Information\n\n*(AI model currently unavailable or rate-limited — displaying verified agronomic records from KrishiMitra Knowledge Base)*\n\n"
                 body = header + rag_context.strip()
                 full_response = body
                 chunk_size = 64
@@ -900,7 +1070,7 @@ Output ONLY a raw JSON object with this exact schema:
             else:
                 # ── Tier 4: Clean Insufficient Information Notice ─────────────
                 provider_used = "none"
-                msg = "I do not have enough verified information in the KrishiMitra knowledge base to answer this question, and the AI server is currently offline. Please ask an agronomic question regarding crop plans, diseases, soil, or farming practices."
+                msg = "I do not have enough verified information in the KrishiMitra knowledge base to answer this question, and the AI service is currently unavailable (offline, rate-limited, or unconfigured). Please ask an agronomic question regarding crop plans, diseases, soil, or farming practices, or try again shortly."
                 full_response = msg
                 yield f"data: {json.dumps({'chunk': msg})}\n\n"
 
@@ -969,12 +1139,14 @@ def chat_sync_plan(request):
 
 
 @api_view(['GET'])
+@permission_classes([permissions.IsAuthenticated])
 def soil_reports(request):
-    # Dummy mock returning empty array for compatibility with frontend
+    # Compatibility endpoint for frontend, scoped to authenticated user
     return Response([])
 
 
 @api_view(['GET'])
+@permission_classes([permissions.IsAuthenticated])
 def chat_sessions(request):
     # Get distinct session ids
     messages = ChatMessage.objects.filter(
@@ -993,6 +1165,7 @@ def chat_sessions(request):
 
 
 @api_view(['GET'])
+@permission_classes([permissions.IsAuthenticated])
 def chat_history(request, sid):
     messages = ChatMessage.objects.filter(
         owner=request.user,
@@ -1010,9 +1183,18 @@ def chat_history(request, sid):
 @api_view(['GET'])
 @permission_classes([permissions.AllowAny])
 def weather_cache_get(request, key):
+    from django.utils import timezone
     try:
         cache = WeatherCache.objects.get(locationKey=key)
-        return Response(WeatherCacheSerializer(cache).data)
+        dt = getattr(cache, 'fetchedAt', None) or getattr(cache, 'updated_at', timezone.now())
+        age_seconds = (timezone.now() - dt).total_seconds() if dt else 0
+        age_minutes = max(0, int(age_seconds // 60))
+        source = 'cache' if age_minutes < 60 else 'stale'
+        data = WeatherCacheSerializer(cache).data
+        data['source'] = source
+        data['ageMinutes'] = age_minutes
+        data['cachedAt'] = dt.isoformat() if dt else None
+        return Response(data)
     except WeatherCache.DoesNotExist:
         return Response({'message': 'Not found'}, status=404)
 
@@ -1020,6 +1202,7 @@ def weather_cache_get(request, key):
 @api_view(['POST'])
 @permission_classes([permissions.AllowAny])
 def weather_cache_set(request):
+    from django.utils import timezone
     key = request.data.get('locationKey')
     if not key:
         return Response({'error': 'locationKey required'}, status=400)
@@ -1033,7 +1216,164 @@ def weather_cache_set(request):
             'data': request.data.get('data', {})
         }
     )
+    cache.fetchedAt = timezone.now()
+    cache.save()
     return Response(WeatherCacheSerializer(cache).data)
+
+
+_GEOCODE_CACHE = {}
+
+@api_view(['GET'])
+@permission_classes([permissions.AllowAny])
+def geocode(request):
+    """
+    Backend geocoding endpoint: queries Nominatim with proper identifying User-Agent,
+    caches responses, and returns normalized shape:
+    { query, address, display_name, city, district, state, lat, lon, results: [...] }
+    """
+    q = request.query_params.get('q', '').strip() or request.query_params.get('query', '').strip()
+    if not q:
+        return Response({'error': 'Query parameter q is required', 'results': []}, status=400)
+    
+    try:
+        limit = int(request.query_params.get('limit', 1))
+    except ValueError:
+        limit = 1
+    limit = max(1, min(10, limit))
+    
+    cache_key = f"{q.lower()}:{limit}"
+    if cache_key in _GEOCODE_CACHE:
+        return Response(_GEOCODE_CACHE[cache_key])
+    
+    headers = {
+        'User-Agent': 'KrishiMitra-App/1.0 (agronomy-dev@krishimitra.org)',
+        'Accept': 'application/json'
+    }
+    url = f"https://nominatim.openstreetmap.org/search?format=json&q={requests.utils.quote(q)}&addressdetails=1&limit={limit}"
+    
+    try:
+        resp = requests.get(url, headers=headers, timeout=(4.0, 15.0))
+        if resp.status_code != 200:
+            return Response({'error': f'Geocoding service returned status {resp.status_code}', 'results': []}, status=502)
+        
+        try:
+            data = resp.json()
+        except Exception:
+            return Response({'error': 'Geocoding service returned invalid response format', 'results': []}, status=502)
+        
+        if not isinstance(data, list) or len(data) == 0:
+            return Response({'error': f'No coordinates found for "{q}"', 'results': []}, status=404)
+        
+        normalized_results = []
+        for item in data:
+            addr = item.get('address', {})
+            city = addr.get('city') or addr.get('town') or addr.get('village') or addr.get('suburb') or addr.get('county') or ''
+            state = addr.get('state') or ''
+            district = addr.get('state_district') or addr.get('county') or ''
+            disp = item.get('display_name') or q
+            try:
+                lat = float(item.get('lat'))
+                lon = float(item.get('lon'))
+            except (TypeError, ValueError):
+                continue
+            
+            parts = [city, state] if city and state else [disp.split(',')[0].strip(), state] if state else [disp]
+            clean_addr = ', '.join([p for p in parts if p])
+            
+            normalized_results.append({
+                'query': q,
+                'address': clean_addr or disp,
+                'display_name': disp,
+                'city': city,
+                'district': district,
+                'state': state,
+                'lat': lat,
+                'lon': lon,
+                'place_id': item.get('place_id'),
+                'raw_address': addr,
+            })
+            
+        if not normalized_results:
+            return Response({'error': f'Could not extract coordinates for "{q}"', 'results': []}, status=404)
+            
+        first = normalized_results[0]
+        out = {
+            'query': q,
+            'address': first['address'],
+            'display_name': first['display_name'],
+            'city': first['city'],
+            'district': first['district'],
+            'state': first['state'],
+            'lat': first['lat'],
+            'lon': first['lon'],
+            'results': normalized_results
+        }
+        _GEOCODE_CACHE[cache_key] = out
+        return Response(out)
+    except Exception as e:
+        return Response({'error': f'Geocoding request failed: {str(e)}', 'results': []}, status=500)
+
+
+@api_view(['GET'])
+@permission_classes([permissions.AllowAny])
+def geocode_reverse(request):
+    """
+    Backend reverse geocoding endpoint: takes lat and lon, returns normalized address info.
+    """
+    lat_str = request.query_params.get('lat')
+    lon_str = request.query_params.get('lon')
+    if not lat_str or not lon_str:
+        return Response({'error': 'lat and lon query parameters are required'}, status=400)
+    
+    try:
+        lat = float(lat_str)
+        lon = float(lon_str)
+    except ValueError:
+        return Response({'error': 'Invalid lat or lon parameter'}, status=400)
+        
+    cache_key = f"rev:{lat:.4f}:{lon:.4f}"
+    if cache_key in _GEOCODE_CACHE:
+        return Response(_GEOCODE_CACHE[cache_key])
+        
+    headers = {
+        'User-Agent': 'KrishiMitra-App/1.0 (agronomy-dev@krishimitra.org)',
+        'Accept': 'application/json'
+    }
+    url = f"https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={lon}&addressdetails=1"
+    try:
+        resp = requests.get(url, headers=headers, timeout=(4.0, 15.0))
+        if resp.status_code != 200:
+            return Response({'error': f'Reverse geocoding service returned status {resp.status_code}'}, status=502)
+        try:
+            data = resp.json()
+        except Exception:
+            return Response({'error': 'Reverse geocoding service returned invalid response format'}, status=502)
+            
+        addr = data.get('address', {})
+        city = addr.get('city') or addr.get('town') or addr.get('village') or addr.get('suburb') or addr.get('county') or ''
+        state = addr.get('state') or ''
+        district = addr.get('state_district') or addr.get('county') or ''
+        disp = data.get('display_name', '')
+        
+        parts = [city, state] if city and state else [disp.split(',')[0].strip(), state] if state else [disp]
+        clean_addr = ', '.join([p for p in parts if p])
+        
+        out = {
+            'query': clean_addr,
+            'address': clean_addr or disp,
+            'display_name': disp,
+            'city': city,
+            'district': district,
+            'state': state,
+            'lat': lat,
+            'lon': lon,
+            'raw_address': addr,
+        }
+        _GEOCODE_CACHE[cache_key] = out
+        return Response(out)
+    except Exception as e:
+        return Response({'error': f'Reverse geocoding request failed: {str(e)}'}, status=500)
+
 
 
 

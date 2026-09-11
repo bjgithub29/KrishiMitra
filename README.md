@@ -106,40 +106,36 @@ npm install
 npm run dev
 ```
 
-### Configuration
+### ⚙️ Environment Configuration
 
-Copy `backend/.env.example` to `backend/.env` and fill in the values you need.
-**Every variable is optional for the server to boot** — a missing value only
-disables the one feature that needs it. See the comments in `.env.example` for
-details (Gemini key, Ollama URL/model, data.gov.in key, SMTP for OTP email, etc.).
+KrishiMitra can boot and serve local features without a `backend/.env` file because safe development defaults are built into `settings.py`. However, **credential-dependent integrations remain unavailable until their respective API keys and credentials are configured.**
+
+To enable full external integrations, copy the public template to `backend/.env`:
+
+```bash
+cd backend
+cp .env.example .env     # Windows cmd: copy .env.example .env
+```
+
+> **Security Note:** `backend/.env` is local, strictly Git-ignored, and must **never** be committed.
+
+#### Feature & Credential Dependency Matrix:
+
+| Feature / Service | Required Environment Variable | Behavior if Unset / Unconfigured |
+|---|---|---|
+| **Core Platform & Local ML** | *None* (Built-in defaults) | ✅ Server boots on `:5001`; Crop Recommendation (`best_model.joblib`), Crop Yield (`crop_yield_model.pkl`), RAG, and Weather work immediately. |
+| **Plant Leaf Disease Vision Scanner** | `GEMINI_API_KEY` | ⚠️ Returns user-friendly error: *"Gemini API key is not configured in backend/.env"*. |
+| **AI Mitra Cloud LLM Fallback** | `GEMINI_API_KEY` | ℹ️ Automatically cascades to Tier-3 verified ChromaDB knowledge retrieval. |
+| **Password Reset OTP Email** | `EMAIL_HOST_USER` + `EMAIL_HOST_PASSWORD` | ℹ️ OTP codes are logged to the server console instead of sending real SMTP emails. |
+| **Live Mandi Price Sync** | `DATAGOV_API_KEY` | ℹ️ Live API sync skipped; platform serves 3,937 pre-seeded APMC market prices from SQLite. |
+| **Local LLM Chat Streaming** | `OLLAMA_BASE_URL` + `OLLAMA_MODEL` | ℹ️ Defaults to `http://127.0.0.1:11434` (`llama3.2:1b`); cascades gracefully if Ollama is offline. |
 
 ---
 
-## ✅ Current status — what works out of the box vs. what needs setup
+## ✅ System Capabilities — Core vs. External Integrations
 
-The backend **starts and serves the API with no external services configured.**
-Features that depend on data or credentials degrade gracefully instead of
-crashing:
-
-- **Works immediately:** auth/JWT, farms/expenses/crop-plans CRUD, the scheduler,
-  weather (Open-Meteo, no key required), and the adaptive rule engine.
-- **Crop Recommendation (`/api/soil_recommend`):** Powered by the production
-  `best_model.joblib` pipeline (Random Forest, 25 crop classes, `scikit-learn==1.6.1`)
-  combined with historical Open-Meteo seasonal rainfall climatology. Falls back to
-  heuristic rules if coordinates are omitted.
-- **Crop Yield Prediction (`/api/predict_yield`):** Powered by `crop_yield_model.pkl`
-  (HistGradientBoostingRegressor + Log1p Target Transformer, `R²=0.9557, MAE=12.5050`),
-  trained using `backend/scripts/train_yield.py`.
-- **Fertilizer & Irrigation Scheduling:** Integrated via verified agronomic CSV
-  task calendars (`06_crop_fertilizer_plan.csv`, `02_crop_task_calendar.csv`)
-  embedded into crop plan timelines.
-- **RAG retrieval (`/api/retrieve`, `/api/crop_stage_tips`):** Uses ChromaDB persistent
-  vector store indexing 181 agronomic protocols.
-- **AI Mitra Chat Streaming (`/api/chat`):** 4-tier hybrid fallback assistant
-  (Local Ollama `llama3.2:1b` → Cloud Gemini 2.5 Flash → Direct ChromaDB Verified
-  Knowledge Base → Insufficient Info Notice).
-- **Gemini-backed disease detection (`/api/disease/predict`):** Cloud plant leaf
-  pathology vision scanner (requires `GEMINI_API_KEY` in `backend/.env`).
+- **Core Capabilities (Work immediately with local assets):** Auth/JWT, Farms/Expenses/Crop-Plans CRUD, Risk Radar, Weather (Open-Meteo), Crop Recommendation ML, Crop Yield ML, Fertilizer & Irrigation plans, and ChromaDB RAG retrieval.
+- **External Integrations (Require credentials in `backend/.env`):** Leaf pathology vision scanning (Google Gemini Vision API), live government market price synchronization (Data.gov.in API), and SMTP email delivery (Gmail SMTP).
 
 ### ML Models & Artifacts
 

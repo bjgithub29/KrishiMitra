@@ -29,7 +29,7 @@ export function CurrentStageCard({ activeStage, currentDay, durationDays, stageP
         />
       </div>
       
-      <div className="grid grid-cols-2 gap-4 text-sm">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
         <div className="flex items-center gap-2">
           <div className="p-2 bg-secondary/50 rounded-lg text-cyan">
             <Timer className="w-4 h-4" />
