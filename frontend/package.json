@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite dev --port 3000 --strictPort",
     "dev:ui": "vite dev",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-static-shell.js",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",

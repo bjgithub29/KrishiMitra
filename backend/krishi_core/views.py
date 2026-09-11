@@ -277,19 +277,15 @@ def auth_request_otp(request):
     </div>
     """
     
-    try:
-        send_mail(
-            'KrishiMitra - Your Verification Code',
-            f'Your verification OTP is: {otp_code}. It will expire in 15 minutes.',
-            getattr(settings, 'EMAIL_HOST_USER', 'noreply@krishimitra.com'),
-            [email],
-            fail_silently=False,
-            html_message=html_content
-        )
-    except Exception as e:
-        import logging
-        logging.getLogger("krishi_core").error("Failed to send email: %s", e)
-        return Response({'message': 'Failed to send email. Check SMTP settings.'}, status=500)
+    from .services.email_service import email_service
+    success, _ = email_service.send_email(
+        to_email=email,
+        subject='KrishiMitra - Your Verification Code',
+        html_content=html_content,
+        text_content=f'Your verification OTP is: {otp_code}. It will expire in 15 minutes.'
+    )
+    if not success:
+        return Response({'message': 'Failed to send email. Check email service configuration.'}, status=500)
         
     return Response({'message': 'OTP sent successfully.'})
 
@@ -378,8 +374,7 @@ def auth_forgot_password(request):
         )
         
         # Send email
-        try:
-            html_content = f"""
+        html_content = f"""
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;">
                 <div style="background-color: #10b981; padding: 24px; text-align: center;">
                     <h1 style="color: white; margin: 0; font-size: 24px;">KrishiMitra</h1>
@@ -400,18 +395,15 @@ def auth_forgot_password(request):
             </div>
             """
             
-            send_mail(
-                'KrishiMitra - Password Reset OTP',
-                f'Your password reset OTP is: {otp_code}. It will expire in 15 minutes.',
-                getattr(settings, 'EMAIL_HOST_USER', 'noreply@krishimitra.com'),
-                [email],
-                fail_silently=False,
-                html_message=html_content
-            )
-        except Exception as e:
-            import logging
-            logging.getLogger("krishi_core").error("Failed to send email: %s", e)
-            return Response({'message': 'Failed to send email. Check SMTP settings.'}, status=500)
+        from .services.email_service import email_service
+        success, _ = email_service.send_email(
+            to_email=email,
+            subject='KrishiMitra - Password Reset OTP',
+            html_content=html_content,
+            text_content=f'Your password reset OTP is: {otp_code}. It will expire in 15 minutes.'
+        )
+        if not success:
+            return Response({'message': 'Failed to send email. Check email service configuration.'}, status=500)
             
     return Response({'message': 'If an account exists with this email, a password reset OTP has been sent.'})
 

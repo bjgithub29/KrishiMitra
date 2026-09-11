@@ -9,7 +9,10 @@ class KrishiCoreConfig(AppConfig):
         from . import ml_loader
         ml_loader.load_everything()
         import os
-        # Only run jobs if it's the main server process, avoid running in manage.py commands
+        from django.conf import settings
+        # Only run jobs if scheduler is explicitly enabled and running in main server process
+        if not getattr(settings, 'ENABLE_SCHEDULER', False):
+            return
         if os.environ.get('RUN_MAIN', None) != 'true':
             return
         from .jobs import start_jobs

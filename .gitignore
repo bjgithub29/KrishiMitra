@@ -30,6 +30,7 @@ build/
 .eggs/
 venv/
 .venv/
+staticfiles/
 
 # ─── Chroma / Vector DB ───────────────────────────────────────────────────────
 chroma_db/
