@@ -1,5 +1,6 @@
 import os
 import logging
+import threading
 import joblib
 import pandas as pd
 from django.conf import settings
@@ -21,7 +22,14 @@ class CropYieldPredictionService:
         self.model = None
         # Internal state flag: True only when the model artifact loaded OK.
         self._loaded = False
-        self._load_model()
+        self._lock = threading.Lock()
+
+    def _ensure_loaded(self):
+        """Thread-safe lazy loader called on first access."""
+        if not self._loaded:
+            with self._lock:
+                if not self._loaded:
+                    self._load_model()
 
     def _load_model(self):
         """Load the model artifact if it exists.
@@ -41,6 +49,7 @@ class CropYieldPredictionService:
             )
 
     def predict(self, data):
+        self._ensure_loaded()
         if not self._loaded or self.model is None:
             return "N/A (Model unavailable)"
 

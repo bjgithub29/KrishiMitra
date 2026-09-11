@@ -6,7 +6,6 @@ django-apscheduler
 apscheduler<4.0
 python-dotenv
 chromadb
-sentence-transformers
 Pillow
 numpy
 pandas

@@ -10,7 +10,7 @@ WEBSITE_KB_PATH = os.path.join(KB_ROOT, 'data', 'website_kb.json')
 # Initialize ChromaDB client
 chroma_client = chromadb.PersistentClient(path=DB_PATH)
 from chromadb.utils import embedding_functions
-ef = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
+ef = embedding_functions.DefaultEmbeddingFunction()
 
 try:
     chroma_client.delete_collection("website_kb")

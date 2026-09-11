@@ -21,6 +21,7 @@ missing.
 """
 import os
 import logging
+import threading
 
 import joblib
 import pandas as pd
@@ -121,7 +122,14 @@ class CropRecommendationService:
     def __init__(self):
         self.model = None
         self._loaded = False
-        self._load_model()
+        self._lock = threading.Lock()
+
+    def _ensure_loaded(self):
+        """Thread-safe lazy loader called on first access."""
+        if not self._loaded:
+            with self._lock:
+                if not self._loaded:
+                    self._load_model()
 
     def _load_model(self):
         """Load the artifact once. A missing/unreadable file leaves the
@@ -140,6 +148,7 @@ class CropRecommendationService:
             )
 
     def is_available(self):
+        self._ensure_loaded()
         return self._loaded and self.model is not None
 
     def recommend(self, data, top_n=5):
