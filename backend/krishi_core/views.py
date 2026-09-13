@@ -59,9 +59,10 @@ class OwnerViewSet(viewsets.ModelViewSet):
 @api_view(['POST'])
 @permission_classes([permissions.AllowAny])
 def auth_register(request):
-    """Register a new user. Returns { token, user }."""
+    """Register a new user. Supports both passwordless (via verificationToken) and legacy (password + otp). Returns { token, user }."""
     from django.contrib.auth.password_validation import validate_password
     from django.core.exceptions import ValidationError
+    from django.core.signing import TimestampSigner, BadSignature, SignatureExpired
     from .models import AuthOTP
 
     data = request.data
@@ -70,35 +71,54 @@ def auth_register(request):
     password = data.get('password', '')
     first_name = (data.get('firstName') or '').strip()
     last_name = (data.get('lastName') or '').strip()
+    name = (data.get('name') or '').strip()
+    if name and not first_name:
+        parts = name.split(' ', 1)
+        first_name = parts[0]
+        if len(parts) > 1 and not last_name:
+            last_name = parts[1]
 
-    if not email or not password:
-        return Response(
-            {'message': 'Email and password are required.'}, status=400)
-            
-    try:
-        validate_password(password)
-    except ValidationError as e:
-        return Response({'message': 'Password does not meet requirements: ' + '; '.join(e.messages), 'errors': list(e.messages)}, status=400)
-
+    verification_token = data.get('verificationToken')
     otp_code = (data.get('otp') or '').strip()
-    if not otp_code:
-        return Response({'message': 'OTP is required for registration.'}, status=400)
-        
-    otp_record = AuthOTP.objects.filter(email=email, purpose='register').last()
-    
-    if not otp_record or not otp_record.is_valid():
-        return Response({'message': 'OTP has expired or does not exist.'}, status=400)
-        
-    if otp_record.otp != otp_code:
-        return Response({'message': 'Invalid OTP.'}, status=400)
+
+    if not email:
+        return Response({'message': 'Email is required.'}, status=400)
+
+    # 1. Verification via signed token (OTP-first passwordless registration)
+    if verification_token:
+        signer = TimestampSigner()
+        try:
+            unsigned_email = signer.unsign(verification_token, max_age=900)
+            if unsigned_email.lower() != email:
+                return Response({'message': 'Verification token does not match email.'}, status=400)
+        except SignatureExpired:
+            return Response({'message': 'Verification token has expired. Please verify your email again.'}, status=400)
+        except BadSignature:
+            return Response({'message': 'Invalid verification token.'}, status=400)
+
+    # 2. Legacy verification via OTP record in AuthOTP
+    elif otp_code:
+        otp_record = AuthOTP.objects.filter(email=email, purpose='register').last()
+        if not otp_record or not otp_record.is_valid():
+            return Response({'message': 'OTP has expired or does not exist.'}, status=400)
+        if otp_record.otp != otp_code:
+            return Response({'message': 'Invalid OTP.'}, status=400)
+        otp_record.delete()
+    else:
+        return Response({'message': 'Verification token or OTP is required for registration.'}, status=400)
+
+    # Check password only if password was provided or if legacy mode without token
+    if password:
+        try:
+            validate_password(password)
+        except ValidationError as e:
+            return Response({'message': 'Password does not meet requirements: ' + '; '.join(e.messages), 'errors': list(e.messages)}, status=400)
 
     if User.objects.filter(email=email).exists():
-        return Response(
-            {'message': 'An account with this email already exists.'}, status=400)
+        return Response({'message': 'An account with this email already exists.'}, status=400)
 
     if phone and User.objects.filter(phone=phone).exists():
-        return Response(
-            {'message': 'Phone number already registered.'}, status=400)
+        return Response({'message': 'Phone number already registered.'}, status=400)
 
     if not phone:
         import random
@@ -114,16 +134,20 @@ def auth_register(request):
         first_name=first_name,
         last_name=last_name,
         phone=phone,
-        password=make_password(password),
         role=data.get('role', 'farmer'),
         location=loc_dict,
         farmingMode=data.get('farmingMode', 'moderate'),
         isVerified=True,
     )
 
+    if password:
+        user.set_password(password)
+    else:
+        user.set_unusable_password()
+    user.save()
+
     token = get_tokens_for_user(user)
     serializer = UserSerializer(user)
-    otp_record.delete()
     return Response({'token': token, 'user': serializer.data}, status=201)
 
 
@@ -225,7 +249,6 @@ def auth_change_password(request):
 @api_view(['POST'])
 @permission_classes([permissions.AllowAny])
 def auth_request_otp(request):
-    from django.core.mail import send_mail
     from django.conf import settings
     from django.utils import timezone
     from datetime import timedelta
@@ -233,12 +256,23 @@ def auth_request_otp(request):
     from .models import AuthOTP
 
     email = (request.data.get('email') or '').strip().lower()
-    purpose = request.data.get('purpose')
-    if not purpose or purpose not in ['login', 'register']:
+    purpose = request.data.get('purpose') or 'login'
+    if purpose not in ['login', 'register']:
         return Response({'message': 'A valid purpose (login or register) is required.'}, status=400)
 
     if not email:
         return Response({'message': 'Email is required'}, status=400)
+
+    # Cooldown check: 60 seconds
+    existing_otp = AuthOTP.objects.filter(email=email, purpose=purpose).order_by('-created_at').first()
+    if existing_otp:
+        elapsed = (timezone.now() - existing_otp.created_at).total_seconds()
+        if elapsed < 60:
+            remaining = int(60 - elapsed)
+            return Response({
+                'message': f'Please wait {remaining} seconds before requesting a new OTP.',
+                'retryAfter': remaining
+            }, status=429)
 
     otp_code = str(random.randint(100000, 999999))
     
@@ -292,18 +326,22 @@ def auth_request_otp(request):
 @api_view(['POST'])
 @permission_classes([permissions.AllowAny])
 def auth_verify_otp(request):
+    from django.core.signing import TimestampSigner
     from .models import AuthOTP
     
     email = (request.data.get('email') or '').strip().lower()
     otp_code = (request.data.get('otp') or '').strip()
     purpose = request.data.get('purpose')
-    if not purpose or purpose not in ['login', 'register']:
+    if purpose and purpose not in ['login', 'register']:
         return Response({'message': 'A valid purpose (login or register) is required.'}, status=400)
     
     if not email or not otp_code:
         return Response({'message': 'Email and OTP are required'}, status=400)
         
-    otp_record = AuthOTP.objects.filter(email=email, purpose=purpose).last()
+    otp_query = {'email': email}
+    if purpose:
+        otp_query['purpose'] = purpose
+    otp_record = AuthOTP.objects.filter(**otp_query).order_by('-created_at').first()
     
     if not otp_record or not otp_record.is_valid():
         return Response({'message': 'OTP has expired or does not exist.'}, status=400)
@@ -315,10 +353,13 @@ def auth_verify_otp(request):
     
     user = User.objects.filter(email=email).first()
     if not user:
+        signer = TimestampSigner()
+        verification_token = signer.sign(email)
         return Response({
             'verified': True,
             'email': email,
             'requiresRegistration': True,
+            'verificationToken': verification_token,
             'message': 'Email verified. Please complete your registration.'
         })
         
@@ -327,7 +368,8 @@ def auth_verify_otp(request):
     refresh = RefreshToken.for_user(user)
     return Response({
         'token': str(refresh.access_token),
-        'user': UserSerializer(user).data
+        'user': UserSerializer(user).data,
+        'isNewUser': False
     })
 
 
@@ -337,13 +379,22 @@ def auth_check_exists(request):
     email = (request.data.get('email') or '').strip().lower()
     phone = (request.data.get('phone') or '').strip()
     
-    if email and User.objects.filter(email=email).exists():
-        return Response({'message': 'An account with this email already exists.', 'field': 'email'}, status=400)
-        
-    if phone and User.objects.filter(phone=phone).exists():
-        return Response({'message': 'An account with this phone number already exists.', 'field': 'phone'}, status=400)
-        
-    return Response({'message': 'Available'})
+    if not email and not phone:
+        return Response({'message': 'Email or phone is required.'}, status=400)
+
+    user_by_email = User.objects.filter(email=email).first() if email else None
+    user_by_phone = User.objects.filter(phone=phone).first() if phone else None
+    user = user_by_email or user_by_phone
+    exists = bool(user)
+
+    return Response({
+        'exists': exists,
+        'email': email,
+        'hasPassword': bool(user and user.has_usable_password()) if exists else False,
+        'isVerified': bool(user and user.isVerified) if exists else False,
+        'firstName': user.first_name if user else '',
+        'message': 'Account exists' if exists else 'Available'
+    }, status=200)
 
 
 @api_view(['POST'])
