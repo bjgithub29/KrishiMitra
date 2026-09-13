@@ -11,6 +11,21 @@ const serverEntryPath = path.resolve(__dirname, '../.output/server/index.mjs');
 const publicDir = path.resolve(__dirname, '../.output/public');
 const targetIndexPath = path.join(publicDir, 'index.html');
 
+const ROUTE_SHELLS = [
+  'dashboard/index.html',
+  'auth/index.html',
+  'weather/index.html',
+  'crop-plan/index.html',
+  'farms/index.html',
+  'market/index.html',
+  'alerts/index.html',
+  'expenses/index.html',
+  'profile/index.html',
+  'ai-saathi/index.html',
+  'recommendations/index.html',
+  '200.html',
+];
+
 async function generateStaticShell() {
   if (!fs.existsSync(serverEntryPath)) {
     console.error(`[StaticShell] Error: Server entry not found at ${serverEntryPath}`);
@@ -35,9 +50,17 @@ async function generateStaticShell() {
   const html = await response.text();
   fs.writeFileSync(targetIndexPath, html, 'utf-8');
   console.log(`[StaticShell] Successfully created ${targetIndexPath} (${html.length} bytes)`);
+
+  for (const relPath of ROUTE_SHELLS) {
+    const destPath = path.join(publicDir, relPath);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, html, 'utf-8');
+    console.log(`[StaticShell] Generated route shell: ${destPath}`);
+  }
 }
 
 generateStaticShell().catch((err) => {
   console.error('[StaticShell] Error generating static shell:', err);
   process.exit(1);
 });
+
